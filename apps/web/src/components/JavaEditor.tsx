@@ -1,11 +1,10 @@
 /**
  * JavaEditor — Monaco editor wrapper.
  *
- * - Displays the Java source from the store.
- * - Shows compile-error markers as inline red squiggles.
- * - Becomes read-only when a trace is loaded.
- * - Provides "Edit" button to clear the trace.
- * - Triggers run on Ctrl/Cmd+Enter.
+ * Stage 8 additions:
+ *  - useEditorSync drives line decorations and auto-scroll from currentStepIndex.
+ *  - Gutter click jumps to the first step that executes the clicked line.
+ *  - useKeyboardShortcuts registered at this level (effect only, no render).
  */
 
 import React, { useRef, useCallback } from 'react';
@@ -15,6 +14,8 @@ import { useAppStore } from '../store';
 import { compileErrorsToMarkers } from '../utils/compile-error-markers';
 import { runSource } from '../api';
 import { validateTrace } from '../trace';
+import { useEditorSync } from '../hooks/useEditorSync';
+import { usePlayback } from '../hooks/usePlayback';
 
 export const JavaEditor: React.FC = () => {
   const monacoRef = useRef<typeof Monaco | null>(null);
@@ -29,12 +30,16 @@ export const JavaEditor: React.FC = () => {
   const setError = useAppStore((s) => s.setError);
   const clearTrace = useAppStore((s) => s.clearTrace);
 
+  // Gutter-click integration
+  const { jumpToLine } = usePlayback();
+
   const isReadOnly = trace !== null;
   const isRunning = runState === 'running';
 
-  // -------------------------------------------------------------------------
-  // Compile-error markers: sync whenever trace changes
-  // -------------------------------------------------------------------------
+  // ── Editor sync: decorations + scroll ────────────────────────────────────
+  useEditorSync(editorRef, monacoRef);
+
+  // ── Compile-error markers ─────────────────────────────────────────────────
   const syncMarkers = useCallback(
     (monaco: typeof Monaco, model: Monaco.editor.ITextModel) => {
       if (!trace || trace.status !== 'compile_error') {
@@ -47,9 +52,7 @@ export const JavaEditor: React.FC = () => {
     [trace],
   );
 
-  // -------------------------------------------------------------------------
-  // Run action (shared between button and keybinding)
-  // -------------------------------------------------------------------------
+  // ── Run action ────────────────────────────────────────────────────────────
   const run = useCallback(async () => {
     if (isRunning) return;
     const currentSource = editorRef.current?.getValue() ?? source;
@@ -67,33 +70,27 @@ export const JavaEditor: React.FC = () => {
       return;
     }
     setTrace(validated.data);
-    // After trace is set, update markers
+    // Sync markers after trace loads
     if (monacoRef.current && editorRef.current) {
       const model = editorRef.current.getModel();
       if (model) syncMarkers(monacoRef.current, model);
     }
   }, [isRunning, source, startRun, setError, setTrace, syncMarkers]);
 
-  // -------------------------------------------------------------------------
-  // Monaco mount
-  // -------------------------------------------------------------------------
+  // ── Monaco mount ──────────────────────────────────────────────────────────
   const handleEditorMount: OnMount = (editor, monaco) => {
     editorRef.current = editor;
     monacoRef.current = monaco;
 
-    // Register Ctrl/Cmd+Enter keybinding
+    // Ctrl/Cmd+Enter → Run
     editor.addAction({
       id: 'javascope-run',
       label: 'Run program',
-      keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
-      ],
-      run: () => {
-        void run();
-      },
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter],
+      run: () => void run(),
     });
 
-    // Apply dark theme overrides
+    // Custom dark theme
     monaco.editor.defineTheme('javascope-dark', {
       base: 'vs-dark',
       inherit: true,
@@ -104,14 +101,24 @@ export const JavaEditor: React.FC = () => {
         'editorLineNumber.foreground': '#3d444d',
         'editorLineNumber.activeForeground': '#7d8590',
         'editor.selectionBackground': '#264f78',
+        'editorGutter.background': '#0d1117',
       },
     });
     monaco.editor.setTheme('javascope-dark');
+
+    // Gutter (line-number) click → jump to first step at that line
+    editor.onMouseDown((e) => {
+      if (
+        e.target.type ===
+        monaco.editor.MouseTargetType.GUTTER_LINE_NUMBERS
+      ) {
+        const line = e.target.position?.lineNumber;
+        if (line !== undefined) jumpToLine(line);
+      }
+    });
   };
 
-  // -------------------------------------------------------------------------
   // Sync markers whenever trace changes
-  // -------------------------------------------------------------------------
   React.useEffect(() => {
     if (!monacoRef.current || !editorRef.current) return;
     const model = editorRef.current.getModel();
@@ -121,7 +128,7 @@ export const JavaEditor: React.FC = () => {
 
   return (
     <div className="flex h-full flex-col">
-      {/* Editor toolbar */}
+      {/* Toolbar */}
       <div className="flex h-10 shrink-0 items-center justify-between border-b border-white/8 bg-canvas-subtle px-3">
         <span className="text-xs font-medium text-gray-400">Main.java</span>
         <div className="flex items-center gap-2">
@@ -129,6 +136,7 @@ export const JavaEditor: React.FC = () => {
             <button
               onClick={clearTrace}
               className="rounded px-2 py-1 text-xs font-medium text-gray-300 hover:bg-white/8 hover:text-white"
+              title="Clear trace and return to editing"
             >
               ✎ Edit
             </button>
@@ -159,7 +167,8 @@ export const JavaEditor: React.FC = () => {
           options={{
             readOnly: isReadOnly,
             fontSize: 13,
-            fontFamily: "'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace",
+            fontFamily:
+              "'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace",
             fontLigatures: true,
             minimap: { enabled: false },
             scrollBeyondLastLine: false,
@@ -168,10 +177,11 @@ export const JavaEditor: React.FC = () => {
             folding: true,
             wordWrap: 'off',
             tabSize: 4,
-            renderLineHighlight: 'line',
+            renderLineHighlight: 'none', // we control highlights ourselves
             automaticLayout: true,
             overviewRulerLanes: 0,
             smoothScrolling: true,
+            cursorStyle: isReadOnly ? 'underline' : 'line',
           }}
           onChange={(value) => {
             if (!isReadOnly) setSource(value ?? '');
@@ -189,10 +199,7 @@ export const JavaEditor: React.FC = () => {
           </div>
           <ul className="space-y-0.5 pb-2">
             {trace.compileErrors.map((err, i) => (
-              <li
-                key={i}
-                className="flex gap-2 px-3 py-0.5 text-xs text-red-300"
-              >
+              <li key={i} className="flex gap-2 px-3 py-0.5 text-xs text-red-300">
                 <span className="shrink-0 font-mono text-red-400">
                   L{err.line}:{err.column}
                 </span>

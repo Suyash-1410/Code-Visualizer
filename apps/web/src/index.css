@@ -51,3 +51,55 @@ input[type='range'] {
 [data-panel-resize-handle-enabled] {
   transition: background-color 0.15s;
 }
+
+/* ── Monaco editor: step decorations ── */
+
+/* Current execution line — blue highlight */
+.javascope-current-line {
+  background-color: rgba(51, 153, 255, 0.12) !important;
+  border-left: 3px solid #3399ff !important;
+  box-sizing: border-box;
+}
+
+/* Exception line — red highlight */
+.javascope-exception-line {
+  background-color: rgba(248, 81, 73, 0.15) !important;
+  border-left: 3px solid #f85149 !important;
+  box-sizing: border-box;
+}
+
+/* Glyph margin indicators */
+.javascope-step-glyph::before {
+  content: '→';
+  color: #3399ff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 2px;
+}
+
+.javascope-exception-glyph::before {
+  content: '✖';
+  color: #f85149;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: 4px;
+}
+
+/* Disable CSS transitions on decorations for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .javascope-current-line,
+  .javascope-exception-line {
+    transition: none !important;
+  }
+}
+
+/* ── Speed selector ── */
+select {
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  color: #c9d1d9;
+}
+

@@ -1,59 +1,45 @@
 /**
- * ControlBar — bottom bar with step navigation and playback controls.
+ * ControlBar — full playback controls (PRD 4.2).
  *
- * This is the placeholder for Stage 7. Full playback logic (auto-play timer)
- * comes with the full visualization in a later stage.
+ * All controls are driven by a single currentStepIndex from the store.
+ * Keyboard shortcuts are registered in the App-level useKeyboardShortcuts hook.
  */
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useAppStore } from '../store';
+import { usePlayback } from '../hooks/usePlayback';
+
+const SPEEDS = [0.25, 0.5, 1, 2, 4] as const;
 
 export const ControlBar: React.FC = () => {
+  const runState = useAppStore((s) => s.runState);
   const trace = useAppStore((s) => s.trace);
   const currentStepIndex = useAppStore((s) => s.currentStepIndex);
-  const runState = useAppStore((s) => s.runState);
-  const playback = useAppStore((s) => s.playback);
-  const stepForward = useAppStore((s) => s.stepForward);
-  const stepBackward = useAppStore((s) => s.stepBackward);
-  const goToStart = useAppStore((s) => s.goToStart);
-  const goToEnd = useAppStore((s) => s.goToEnd);
-  const setStepIndex = useAppStore((s) => s.setStepIndex);
-  const setPlaying = useAppStore((s) => s.setPlaying);
-  const setSpeed = useAppStore((s) => s.setSpeed);
 
-  const stepCount = trace?.steps.length ?? 0;
-  const isReady = runState === 'ready' && stepCount > 0;
+  const {
+    isPlaying,
+    speed,
+    totalSteps,
+    play,
+    pause,
+    stepForward,
+    stepBackward,
+    restart,
+    jumpToEnd,
+    stepOver,
+    stepOut,
+    setSpeed,
+    setStepIndex,
+  } = usePlayback();
 
-  // Auto-play timer
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const isReady = runState === 'ready' && totalSteps > 0;
+  const atStart = currentStepIndex === 0;
+  const atEnd = currentStepIndex >= totalSteps - 1;
 
-  useEffect(() => {
-    if (!isReady || !playback.isPlaying) {
-      if (timerRef.current !== null) {
-        clearInterval(timerRef.current);
-        timerRef.current = null;
-      }
-      return;
-    }
-
-    const intervalMs = Math.round(1000 / playback.speed);
-    timerRef.current = setInterval(() => {
-      const { currentStepIndex: idx, trace: t } = useAppStore.getState();
-      if (!t || idx >= t.steps.length - 1) {
-        setPlaying(false);
-        return;
-      }
-      stepForward();
-    }, intervalMs);
-
-    return () => {
-      if (timerRef.current !== null) clearInterval(timerRef.current);
-    };
-  }, [isReady, playback.isPlaying, playback.speed, stepForward, setPlaying]);
-
+  // ── Not ready ─────────────────────────────────────────────────────────────
   if (!isReady) {
     return (
-      <div className="flex h-12 items-center justify-center border-t border-white/8 bg-canvas-subtle text-xs text-gray-600">
+      <div className="flex h-12 shrink-0 items-center justify-center border-t border-white/8 bg-canvas-subtle text-xs text-gray-600">
         {runState === 'running'
           ? 'Running…'
           : 'Run a program to start stepping.'}
@@ -61,93 +47,170 @@ export const ControlBar: React.FC = () => {
     );
   }
 
-  const pct = stepCount > 1 ? (currentStepIndex / (stepCount - 1)) * 100 : 100;
-
+  // ── Ready ─────────────────────────────────────────────────────────────────
   return (
-    <div className="flex h-12 shrink-0 items-center gap-3 border-t border-white/8 bg-canvas-subtle px-4">
-      {/* Navigation buttons */}
-      <button
-        onClick={goToStart}
-        disabled={currentStepIndex === 0}
-        className="rounded p-1 text-gray-400 hover:text-white disabled:opacity-30"
-        title="Go to start"
+    <div className="flex h-12 shrink-0 items-center gap-1.5 border-t border-white/8 bg-canvas-subtle px-3">
+      {/* ── Navigation cluster ── */}
+
+      {/* Restart ⏮ */}
+      <CtrlBtn
+        onClick={restart}
+        disabled={atStart}
+        title="Restart (Home)"
+        aria-label="Restart"
       >
         ⏮
-      </button>
-      <button
+      </CtrlBtn>
+
+      {/* Step Back ◀ */}
+      <CtrlBtn
         onClick={stepBackward}
-        disabled={currentStepIndex === 0}
-        className="rounded p-1 text-gray-400 hover:text-white disabled:opacity-30"
-        title="Step back"
+        disabled={atStart}
+        title="Step back (←)"
+        aria-label="Step back"
       >
         ◀
-      </button>
+      </CtrlBtn>
 
       {/* Play / Pause */}
       <button
-        onClick={() => setPlaying(!playback.isPlaying)}
-        className="rounded bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-500"
-        title={playback.isPlaying ? 'Pause' : 'Play'}
+        onClick={isPlaying ? pause : play}
+        disabled={!isPlaying && atEnd}
+        className="flex items-center gap-1.5 rounded bg-blue-600 px-3 py-1 text-xs font-semibold text-white hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
+        title={isPlaying ? 'Pause (Space)' : 'Play (Space)'}
+        aria-label={isPlaying ? 'Pause' : 'Play'}
       >
-        {playback.isPlaying ? '⏸ Pause' : '▶ Play'}
+        {isPlaying ? '⏸ Pause' : '▶ Play'}
       </button>
 
-      <button
+      {/* Step Forward ▶ */}
+      <CtrlBtn
         onClick={stepForward}
-        disabled={currentStepIndex >= stepCount - 1}
-        className="rounded p-1 text-gray-400 hover:text-white disabled:opacity-30"
-        title="Step forward"
+        disabled={atEnd}
+        title="Step forward (→)"
+        aria-label="Step forward"
       >
         ▶
-      </button>
-      <button
-        onClick={goToEnd}
-        disabled={currentStepIndex >= stepCount - 1}
-        className="rounded p-1 text-gray-400 hover:text-white disabled:opacity-30"
-        title="Go to end"
+      </CtrlBtn>
+
+      {/* Jump to End ⏭ */}
+      <CtrlBtn
+        onClick={jumpToEnd}
+        disabled={atEnd}
+        title="Jump to end (End)"
+        aria-label="Jump to end"
       >
         ⏭
-      </button>
+      </CtrlBtn>
 
-      {/* Scrubber */}
+      {/* ── Separator ── */}
+      <div className="mx-1 h-5 w-px bg-white/10" />
+
+      {/* ── Step Over / Step Out ── */}
+      <CtrlBtn
+        onClick={stepOver}
+        disabled={atEnd}
+        title="Step over (skip function calls on this line)"
+        aria-label="Step over"
+        className="text-[10px]"
+      >
+        ↷ Over
+      </CtrlBtn>
+
+      <CtrlBtn
+        onClick={stepOut}
+        disabled={atEnd}
+        title="Step out (run until current function returns)"
+        aria-label="Step out"
+        className="text-[10px]"
+      >
+        ↑ Out
+      </CtrlBtn>
+
+      {/* ── Separator ── */}
+      <div className="mx-1 h-5 w-px bg-white/10" />
+
+      {/* ── Timeline scrubber ── */}
       <input
         type="range"
         min={0}
-        max={stepCount - 1}
+        max={totalSteps - 1}
         value={currentStepIndex}
-        onChange={(e) => setStepIndex(Number(e.target.value))}
-        className="flex-1 accent-blue-500"
-        title="Scrub steps"
+        onChange={(e) => {
+          if (isPlaying) pause();
+          setStepIndex(Number(e.target.value));
+        }}
+        className="w-40 flex-shrink-0 accent-blue-500 sm:flex-1"
+        aria-label="Timeline scrubber"
+        title={`Step ${String(currentStepIndex + 1)} of ${String(totalSteps)}`}
       />
 
-      {/* Step counter */}
-      <span className="shrink-0 text-xs tabular-nums text-gray-400">
-        {currentStepIndex + 1} / {stepCount}
+      {/* ── Step counter ── */}
+      <span
+        className="shrink-0 min-w-[5rem] text-center text-xs tabular-nums text-gray-400"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        Step {currentStepIndex + 1} of {totalSteps}
       </span>
 
-      {/* Speed selector */}
-      <label className="flex items-center gap-1 text-xs text-gray-400">
+      {/* ── Speed selector ── */}
+      <label className="flex shrink-0 items-center gap-1 text-xs text-gray-400">
         ×
         <select
-          value={playback.speed}
+          value={speed}
           onChange={(e) => setSpeed(Number(e.target.value))}
-          className="bg-canvas-muted text-gray-300 focus:outline-none"
+          className="rounded bg-canvas-muted px-1 py-0.5 text-gray-300 focus:outline-none"
+          aria-label="Playback speed"
         >
-          {[0.25, 0.5, 1, 2, 4].map((s) => (
+          {SPEEDS.map((s) => (
             <option key={s} value={s}>
-              {String(s)}
+              {s}x
             </option>
           ))}
         </select>
       </label>
 
-      {/* Progress indicator */}
-      <div className="h-1 w-16 overflow-hidden rounded-full bg-white/10">
-        <div
-          className="h-full rounded-full bg-blue-500 transition-all"
-          style={{ width: `${String(pct)}%` }}
-        />
-      </div>
+      {/* Event badge */}
+      {trace && (
+        <EventBadge event={trace.steps[currentStepIndex]?.event} />
+      )}
     </div>
+  );
+};
+
+// ---------------------------------------------------------------------------
+// Sub-components
+// ---------------------------------------------------------------------------
+
+interface CtrlBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
+
+const CtrlBtn: React.FC<CtrlBtnProps> = ({ children, className = '', ...props }) => (
+  <button
+    {...props}
+    className={`rounded px-1.5 py-1 text-sm text-gray-300 hover:bg-white/8 hover:text-white disabled:cursor-not-allowed disabled:opacity-30 ${className}`}
+  >
+    {children}
+  </button>
+);
+
+const EVENT_COLORS: Record<string, string> = {
+  call: 'text-blue-400 bg-blue-400/10 border-blue-400/30',
+  return: 'text-purple-400 bg-purple-400/10 border-purple-400/30',
+  line: 'text-gray-400 bg-white/5 border-white/10',
+  exception: 'text-red-400 bg-red-400/10 border-red-400/30',
+  end: 'text-gray-500 bg-white/5 border-white/10',
+};
+
+const EventBadge: React.FC<{ event?: string }> = ({ event }) => {
+  if (!event) return null;
+  return (
+    <span
+      className={`shrink-0 rounded border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider ${EVENT_COLORS[event] ?? EVENT_COLORS.line}`}
+    >
+      {event}
+    </span>
   );
 };
