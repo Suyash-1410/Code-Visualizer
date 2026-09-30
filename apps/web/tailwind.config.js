@@ -14,6 +14,10 @@ export default {
           muted: '#21262d',
         },
       },
+      opacity: {
+        4: '0.04',
+        8: '0.08',
+      },
     },
   },
   plugins: [],

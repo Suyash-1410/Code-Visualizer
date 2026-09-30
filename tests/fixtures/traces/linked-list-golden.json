@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 4,
+  "expectedChain": {
+    "step": -2,
+    "var": "head",
+    "expectedValues": [10, 20, 30],
+    "checkIdStability": true
+  }
+}

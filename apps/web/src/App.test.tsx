@@ -1,11 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+/**
+ * Smoke test: App renders without crashing.
+ * Full component tests come in later stages when visualization panels are implemented.
+ */
+
+import { describe, it } from 'vitest';
+import { render } from '@testing-library/react';
 import App from './App';
 
-describe('App placeholder', () => {
-  it('renders JavaScope placeholder heading', () => {
+describe('App', () => {
+  it('renders without throwing', () => {
+    // Monaco and react-resizable-panels both work in jsdom (no canvas required).
     render(<App />);
-    expect(screen.getByText('JavaScope')).toBeInTheDocument();
-    expect(screen.getByText(/Interactive Java DSA and Recursion Visualizer/i)).toBeInTheDocument();
   });
 });

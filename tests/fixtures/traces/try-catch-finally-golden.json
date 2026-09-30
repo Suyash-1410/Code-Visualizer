@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "ok",
+  "hasExceptionEvent": true,
+  "expectedStdout": "res=30\n"
+}
