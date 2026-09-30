@@ -1,0 +1,14 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Line 1\nLine 2\n",
+  "expectedStdoutOrder": [
+    {
+      "var": "a",
+      "expectedStdoutPrefix": "Line 1\n"
+    },
+    {
+      "var": "b",
+      "expectedStdoutPrefix": "Line 1\nLine 2\n"
+    }
+  ]
+}

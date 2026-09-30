@@ -1,0 +1,14 @@
+{
+  "expectedStatus": "ok",
+  "expectedMaxDepth": 6,
+  "expectedCalls": [
+    { "method": "Factorial.fact", "count": 5 }
+  ],
+  "expectedReturns": [
+    {
+      "method": "Factorial.fact",
+      "count": 5,
+      "lastReturnValue": { "k": "prim", "t": "int", "v": 120 }
+    }
+  ]
+}

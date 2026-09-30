@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Move disk 1 from A to C\nMove disk 2 from A to B\nMove disk 1 from C to B\nMove disk 3 from A to C\nMove disk 1 from B to A\nMove disk 2 from B to C\nMove disk 1 from A to C\n"
+}

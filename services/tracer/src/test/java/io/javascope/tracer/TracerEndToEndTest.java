@@ -27,12 +27,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 class TracerEndToEndTest {
 
   private ObjectMapper objectMapper;
+  private TraceWriter traceWriter;
   private Path programsDir;
   private Path expectedDir;
 
   @BeforeEach
   void setUp() {
-    objectMapper = new TraceWriter().getObjectMapper();
+    traceWriter = new TraceWriter();
+    objectMapper = traceWriter.getObjectMapper();
 
     Path prog = Paths.get("../../tests/programs");
     if (!prog.toFile().exists()) {
@@ -69,7 +71,23 @@ class TracerEndToEndTest {
         "CircularList",
         "ReferenceAliasing",
         "ArrayListUsage",
-        "BigArray"
+        "BigArray",
+        // Stage 4 recursion, exceptions, stdout, system.exit
+        "Factorial",
+        "Fibonacci",
+        "MutualRecursion",
+        "TowerOfHanoi",
+        "DeepRecursion",
+        "ArrayIndexError",
+        "NullPointer",
+        "CustomException",
+        "TryCatchFinally",
+        "SystemExit",
+        "StdoutOrder",
+        "StaticInit",
+        "ThreadUse",
+        "ScannerUse",
+        "OutputFlood"
       })
   void testGoldenPrograms(String baseName) throws IOException {
     runAndVerify(baseName, TracerConfig.load());
@@ -80,6 +98,13 @@ class TracerEndToEndTest {
     TracerConfig fastCapConfig =
         new TracerConfig(50, 3000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
     runAndVerify("InfiniteLoop", fastCapConfig);
+  }
+
+  @Test
+  void testStepCapHitTruncation() throws IOException {
+    TracerConfig fastCapConfig =
+        new TracerConfig(60, 3000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
+    runAndVerify("StepCapHit", fastCapConfig);
   }
 
   @Test
@@ -103,6 +128,36 @@ class TracerEndToEndTest {
             + " ms ("
             + trace.steps().size()
             + " steps) ===");
+  }
+
+  @Test
+  void testAllGoldenProgramsSchemaValidation() throws IOException {
+    try (var stream = Files.list(programsDir)) {
+      List<Path> javaFiles = stream.filter(p -> p.toString().endsWith(".java")).toList();
+      assertTrue(javaFiles.size() >= 20, "Should have at least 20 golden programs");
+
+      for (Path javaFile : javaFiles) {
+        String baseName = javaFile.getFileName().toString().replace(".java", "");
+        TracerConfig cfg =
+            baseName.equals("InfiniteLoop") || baseName.equals("StepCapHit")
+                ? new TracerConfig(
+                    50, 3000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128)
+                : TracerConfig.load();
+
+        String source = Files.readString(javaFile);
+        Trace trace = TracerRunner.trace(source, cfg);
+        assertNotNull(trace, "Trace must not be null for " + baseName);
+
+        String json = traceWriter.writeToString(trace);
+        Trace roundTripped = objectMapper.readValue(json, Trace.class);
+        assertNotNull(roundTripped, "Round-tripped trace must not be null for " + baseName);
+        assertEquals(trace.status(), roundTripped.status(), "Status mismatch in " + baseName);
+        assertEquals(
+            trace.steps().size(),
+            roundTripped.steps().size(),
+            "Steps count mismatch in " + baseName);
+      }
+    }
   }
 
   private void runAndVerify(String baseName, TracerConfig config) throws IOException {
@@ -145,7 +200,98 @@ class TracerEndToEndTest {
       assertEquals(expected.path("expectedStdout").asText(), trace.stdout());
     }
 
-    // 5. Verify variable values
+    // 5. Verify stdout truncation marker
+    if (expected.has("expectedStdoutTruncationMarker")) {
+      String marker = expected.path("expectedStdoutTruncationMarker").asText();
+      assertTrue(
+          trace.stdout().contains(marker), "Stdout should contain truncation marker: " + marker);
+    }
+
+    // 6. Verify stdout order per step
+    if (expected.has("expectedStdoutOrder")) {
+      for (JsonNode orderNode : expected.path("expectedStdoutOrder")) {
+        String varName = orderNode.path("var").asText();
+        String expectedPrefix = orderNode.path("expectedStdoutPrefix").asText();
+
+        Step matchingStep =
+            trace.steps().stream()
+                .filter(
+                    s -> {
+                      LocalVariable lv = getVariable(s, varName);
+                      return lv != null;
+                    })
+                .findFirst()
+                .orElse(null);
+
+        assertNotNull(matchingStep, "No step found where variable '" + varName + "' exists");
+        String prefixAtStep = trace.stdout().substring(0, matchingStep.stdoutLen());
+        assertEquals(expectedPrefix, prefixAtStep);
+      }
+    }
+
+    // 7. Verify runtime error
+    if (expected.has("expectedRuntimeErrorType")) {
+      assertNotNull(trace.runtimeError(), "Expected runtime error for " + baseName);
+      assertEquals(expected.path("expectedRuntimeErrorType").asText(), trace.runtimeError().type());
+    }
+    if (expected.has("expectedRuntimeErrorMessage")) {
+      assertNotNull(trace.runtimeError(), "Expected runtime error for " + baseName);
+      assertEquals(
+          expected.path("expectedRuntimeErrorMessage").asText(), trace.runtimeError().message());
+    }
+
+    // 8. Verify exception step exists
+    if (expected.has("hasExceptionEvent") && expected.path("hasExceptionEvent").asBoolean()) {
+      boolean hasExc = trace.steps().stream().anyMatch(s -> "exception".equals(s.event()));
+      assertTrue(hasExc, "Expected an 'exception' step in trace for " + baseName);
+    }
+
+    // 9. Verify method call counts
+    if (expected.has("expectedCalls")) {
+      for (JsonNode callNode : expected.path("expectedCalls")) {
+        String method = callNode.path("method").asText();
+        int expectedCount = callNode.path("count").asInt();
+
+        long actualCount =
+            trace.steps().stream()
+                .filter(
+                    s ->
+                        "call".equals(s.event())
+                            && !s.stack().isEmpty()
+                            && s.stack().get(s.stack().size() - 1).method().equals(method))
+                .count();
+
+        assertEquals(expectedCount, actualCount, "Call count mismatch for " + method);
+      }
+    }
+
+    // 10. Verify method return counts and return values
+    if (expected.has("expectedReturns")) {
+      for (JsonNode retNode : expected.path("expectedReturns")) {
+        String method = retNode.path("method").asText();
+        int expectedCount = retNode.path("count").asInt();
+
+        List<Step> retSteps =
+            trace.steps().stream()
+                .filter(
+                    s ->
+                        "return".equals(s.event())
+                            && !s.stack().isEmpty()
+                            && s.stack().get(s.stack().size() - 1).method().equals(method))
+                .toList();
+
+        assertEquals(expectedCount, retSteps.size(), "Return count mismatch for " + method);
+
+        if (retNode.has("lastReturnValue")) {
+          Value expVal = objectMapper.treeToValue(retNode.path("lastReturnValue"), Value.class);
+          Step lastRetStep = retSteps.get(retSteps.size() - 1);
+          assertEquals(
+              expVal, lastRetStep.returnValue(), "Last return value mismatch for " + method);
+        }
+      }
+    }
+
+    // 11. Verify variable values
     if (expected.has("expectedVariables")) {
       for (JsonNode varExpect : expected.path("expectedVariables")) {
         int stepIdx = varExpect.path("step").asInt();
@@ -162,7 +308,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 6. Verify single array
+    // 12. Verify single array
     if (expected.has("expectedArray")) {
       JsonNode arrExpect = expected.path("expectedArray");
       Step step = resolveStep(trace, arrExpect.path("step").asInt());
@@ -189,7 +335,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 7. Verify 2D array
+    // 13. Verify 2D array
     if (expected.has("expectedTwoDArray")) {
       JsonNode tdExpect = expected.path("expectedTwoDArray");
       Step step = resolveStep(trace, tdExpect.path("step").asInt());
@@ -226,7 +372,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 8. Verify object instance
+    // 14. Verify object instance
     if (expected.has("expectedObject")) {
       JsonNode objExpect = expected.path("expectedObject");
       Step step = resolveStep(trace, objExpect.path("step").asInt());
@@ -249,7 +395,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 9. Verify static fields
+    // 15. Verify static fields
     if (expected.has("expectedStatics")) {
       JsonNode staticsExpect = expected.path("expectedStatics");
       for (JsonNode sfNode : staticsExpect) {
@@ -271,7 +417,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 10. Verify linked list chain & id stability
+    // 16. Verify linked list chain & id stability
     if (expected.has("expectedChain")) {
       JsonNode chainExpect = expected.path("expectedChain");
       Step step = resolveStep(trace, chainExpect.path("step").asInt());
@@ -319,7 +465,7 @@ class TracerEndToEndTest {
       }
     }
 
-    // 11. Verify circular list
+    // 17. Verify circular list
     if (expected.has("expectedCycle")) {
       JsonNode cycleExpect = expected.path("expectedCycle");
       Step step = resolveStep(trace, cycleExpect.path("step").asInt());
@@ -350,7 +496,7 @@ class TracerEndToEndTest {
       assertEquals(idA, ((Value.Ref) bNext).id(), "b.next must point to a (cycle)");
     }
 
-    // 12. Verify reference aliasing
+    // 18. Verify reference aliasing
     if (expected.has("expectedAliasing")) {
       JsonNode aliasExpect = expected.path("expectedAliasing");
       Step step = resolveStep(trace, aliasExpect.path("step").asInt());
@@ -375,7 +521,7 @@ class TracerEndToEndTest {
       assertEquals(expVal, ((HeapObject.ObjectInstance) ho).fields().get(fieldName));
     }
 
-    // 13. Verify opaque JDK object
+    // 19. Verify opaque JDK object
     if (expected.has("expectedOpaque")) {
       JsonNode opExpect = expected.path("expectedOpaque");
       Step step = resolveStep(trace, opExpect.path("step").asInt());
@@ -395,7 +541,7 @@ class TracerEndToEndTest {
               + opExpect.path("expectedSummaryPrefix").asText());
     }
 
-    // 14. Verify big array clipping
+    // 20. Verify big array clipping
     if (expected.has("expectedBigArray")) {
       JsonNode bigExpect = expected.path("expectedBigArray");
       Step step = resolveStep(trace, bigExpect.path("step").asInt());

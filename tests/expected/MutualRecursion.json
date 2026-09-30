@@ -1,0 +1,14 @@
+{
+  "expectedStatus": "ok",
+  "expectedCalls": [
+    { "method": "MutualRecursion.isEven", "count": 3 },
+    { "method": "MutualRecursion.isOdd", "count": 2 }
+  ],
+  "expectedReturns": [
+    {
+      "method": "MutualRecursion.isEven",
+      "count": 3,
+      "lastReturnValue": { "k": "prim", "t": "boolean", "v": true }
+    }
+  ]
+}

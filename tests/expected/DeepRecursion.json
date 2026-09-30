@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "truncated",
+  "expectedTruncationReason": "depth_limit"
+}

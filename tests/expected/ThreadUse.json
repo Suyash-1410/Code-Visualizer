@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "unsupported",
+  "expectedStdout": "Multithreaded programs are not supported."
+}

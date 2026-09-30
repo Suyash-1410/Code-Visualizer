@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "has=false\n"
+}

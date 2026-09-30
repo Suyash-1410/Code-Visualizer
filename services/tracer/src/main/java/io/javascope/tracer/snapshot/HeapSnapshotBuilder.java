@@ -32,6 +32,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
@@ -39,40 +40,79 @@ import java.util.Set;
 
 public class HeapSnapshotBuilder {
 
-  private final VirtualMachine vm;
-  private final TracerConfig config;
-
   public record SnapshotResult(
       List<io.javascope.tracer.model.StackFrame> stack,
       Map<String, HeapObject> heap,
       List<StaticField> statics,
+      Value returnValue,
       boolean clipped) {}
+
+  private final VirtualMachine vm;
+  private final TracerConfig config;
+  private final Set<ClassType> userClasses = new LinkedHashSet<>();
 
   public HeapSnapshotBuilder(VirtualMachine vm, TracerConfig config) {
     this.vm = vm;
     this.config = config;
   }
 
+  public void addUserClass(ClassType ct) {
+    if (ct != null && isUserClass(ct.name())) {
+      userClasses.add(ct);
+    }
+  }
+
+  public Set<ClassType> getUserClasses() {
+    return userClasses;
+  }
+
   public SnapshotResult buildSnapshot(ThreadReference thread, FrameTracker frameTracker) {
+    return buildSnapshot(thread, frameTracker, null, null);
+  }
+
+  public SnapshotResult buildSnapshot(
+      ThreadReference thread,
+      FrameTracker frameTracker,
+      Method exitingMethod,
+      com.sun.jdi.Value jdiReturnValue) {
+
     Queue<ObjectReference> queue = new ArrayDeque<>();
     Set<Long> visited = new HashSet<>();
     Map<String, HeapObject> heap = new LinkedHashMap<>();
     boolean isClipped = false;
 
+    // Process return value if exiting a method
+    Value retVal = null;
+    if (exitingMethod != null) {
+      if ("void".equals(exitingMethod.returnTypeName())) {
+        retVal = new Value.Void();
+      } else if (jdiReturnValue != null) {
+        retVal = convertValue(jdiReturnValue, queue);
+      } else {
+        retVal = new Value.Null();
+      }
+    }
+
     // 1. Collect static fields of user classes (and enqueue reachable objects)
+    if (userClasses.isEmpty()) {
+      for (ReferenceType rt : vm.allClasses()) {
+        if (isUserClass(rt.name()) && rt instanceof ClassType ct) {
+          userClasses.add(ct);
+        }
+      }
+    }
+
     List<StaticField> statics = new ArrayList<>();
-    for (ReferenceType rt : vm.allClasses()) {
-      if (isUserClass(rt.name()) && rt instanceof ClassType ct) {
-        for (Field f : ct.fields()) {
-          if (f.isStatic() && !f.isSynthetic()) {
-            try {
-              com.sun.jdi.Value rawVal = ct.getValue(f);
-              Value val = convertValue(rawVal, queue);
-              statics.add(
-                  new StaticField(
-                      simpleClassName(ct.name()), f.name(), simpleClassName(f.typeName()), val));
-            } catch (Exception ignored) {
-            }
+    for (ClassType ct : userClasses) {
+      for (Field f : ct.fields()) {
+        if (f.isStatic() && !f.isSynthetic()) {
+          try {
+            com.sun.jdi.Value rawVal = ct.getValue(f);
+            Value val = convertValue(rawVal, queue);
+            statics.add(
+                new StaticField(
+                    simpleClassName(ct.name()), f.name(), simpleClassName(f.typeName()), val));
+          } catch (Exception ignored) {
           }
         }
       }
@@ -87,6 +127,9 @@ public class HeapSnapshotBuilder {
       for (StackFrame jf : jdiFrames) {
         if (isUserClass(jf.location().declaringType().name())) {
           userFrames.add(jf);
+          if (jf.location().declaringType() instanceof ClassType ct) {
+            userClasses.add(ct);
+          }
         }
       }
 
@@ -95,6 +138,15 @@ public class HeapSnapshotBuilder {
 
       for (int depth = 0; depth < userFrames.size(); depth++) {
         StackFrame jf = userFrames.get(depth);
+        boolean isCallerFrame = (depth < userFrames.size() - 1);
+        CachedFrame cached = frameTracker.getCachedFrame(depth);
+
+        if (isCallerFrame && cached != null) {
+          stack.add(cached.modelFrame);
+          queue.addAll(cached.objectRoots);
+          continue;
+        }
+
         Location loc = jf.location();
         Method m = loc.method();
         String methodFullName = loc.declaringType().name() + "." + m.name();
@@ -102,21 +154,25 @@ public class HeapSnapshotBuilder {
         long frameId = frameTracker.getOrCreateFrameId(depth, methodFullName);
 
         List<LocalVariable> locals = new ArrayList<>();
+        List<ObjectReference> frameRoots = new ArrayList<>();
         try {
-          for (com.sun.jdi.LocalVariable lv : jf.visibleVariables()) {
-            try {
-              com.sun.jdi.Value jdiVal = jf.getValue(lv);
-              Value val = convertValue(jdiVal, queue);
+          List<com.sun.jdi.LocalVariable> visible = jf.visibleVariables();
+          if (!visible.isEmpty()) {
+            Map<com.sun.jdi.LocalVariable, com.sun.jdi.Value> vals = jf.getValues(visible);
+            for (com.sun.jdi.LocalVariable lv : visible) {
+              com.sun.jdi.Value jdiVal = vals.get(lv);
+              Value val = convertValue(jdiVal, queue, frameRoots);
               locals.add(new LocalVariable(lv.name(), simpleClassName(lv.typeName()), val));
-            } catch (Exception ignored) {
             }
           }
         } catch (AbsentInformationException ignored) {
         }
 
-        stack.add(
+        io.javascope.tracer.model.StackFrame modelFrame =
             new io.javascope.tracer.model.StackFrame(
-                frameId, methodFullName, signature, loc.lineNumber(), locals));
+                frameId, methodFullName, signature, loc.lineNumber(), locals);
+        stack.add(modelFrame);
+        frameTracker.setCachedFrame(depth, new CachedFrame(modelFrame, frameRoots));
       }
     } catch (Exception ignored) {
     }
@@ -177,6 +233,7 @@ public class HeapSnapshotBuilder {
         if (refType instanceof ClassType ct) {
           ClassType cur = ct;
           while (cur != null && isUserClass(cur.name())) {
+            userClasses.add(cur);
             hierarchy.add(0, cur);
             cur = cur.superclass();
           }
@@ -199,10 +256,15 @@ public class HeapSnapshotBuilder {
       }
     }
 
-    return new SnapshotResult(stack, heap, statics, isClipped);
+    return new SnapshotResult(stack, heap, statics, retVal, isClipped);
   }
 
   public Value convertValue(com.sun.jdi.Value jdiVal, Queue<ObjectReference> queue) {
+    return convertValue(jdiVal, queue, null);
+  }
+
+  public Value convertValue(
+      com.sun.jdi.Value jdiVal, Queue<ObjectReference> queue, List<ObjectReference> roots) {
     if (jdiVal == null) {
       return new Value.Null();
     }
@@ -253,6 +315,9 @@ public class HeapSnapshotBuilder {
         } catch (Exception ignored) {
         }
         queue.add(objRef);
+        if (roots != null) {
+          roots.add(objRef);
+        }
         return new Value.Ref("@" + objRef.uniqueID());
       }
 
@@ -307,11 +372,14 @@ public class HeapSnapshotBuilder {
 
   public static String formatSignature(Method m) {
     try {
-      String returnType = simpleClassName(m.returnTypeName());
       List<String> argTypes = new ArrayList<>();
       for (String arg : m.argumentTypeNames()) {
         argTypes.add(simpleClassName(arg));
       }
+      if ("<init>".equals(m.name())) {
+        return simpleClassName(m.declaringType().name()) + "(" + String.join(", ", argTypes) + ")";
+      }
+      String returnType = simpleClassName(m.returnTypeName());
       return returnType + " " + m.name() + "(" + String.join(", ", argTypes) + ")";
     } catch (Exception e) {
       return m.name() + "()";
@@ -340,13 +408,28 @@ public class HeapSnapshotBuilder {
     return true;
   }
 
+  public static class CachedFrame {
+    final io.javascope.tracer.model.StackFrame modelFrame;
+    final List<ObjectReference> objectRoots;
+
+    public CachedFrame(
+        io.javascope.tracer.model.StackFrame modelFrame, List<ObjectReference> objectRoots) {
+      this.modelFrame = modelFrame;
+      this.objectRoots = objectRoots;
+    }
+  }
+
   public static class FrameTracker {
     private final List<Long> activeFrameIds = new ArrayList<>();
+    private final List<CachedFrame> cachedFrames = new ArrayList<>();
     private long idSeq = 1;
 
     public void trimToDepth(int currentDepth) {
       while (activeFrameIds.size() > currentDepth) {
         activeFrameIds.remove(activeFrameIds.size() - 1);
+      }
+      while (cachedFrames.size() > currentDepth) {
+        cachedFrames.remove(cachedFrames.size() - 1);
       }
     }
 
@@ -357,6 +440,20 @@ public class HeapSnapshotBuilder {
       long newId = idSeq++;
       activeFrameIds.add(newId);
       return newId;
+    }
+
+    public CachedFrame getCachedFrame(int depth) {
+      if (depth < cachedFrames.size()) {
+        return cachedFrames.get(depth);
+      }
+      return null;
+    }
+
+    public void setCachedFrame(int depth, CachedFrame cf) {
+      while (cachedFrames.size() <= depth) {
+        cachedFrames.add(null);
+      }
+      cachedFrames.set(depth, cf);
     }
   }
 }

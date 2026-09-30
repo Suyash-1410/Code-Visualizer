@@ -1,0 +1,13 @@
+{
+  "expectedStatus": "ok",
+  "expectedCalls": [
+    { "method": "Fibonacci.fib", "count": 15 }
+  ],
+  "expectedReturns": [
+    {
+      "method": "Fibonacci.fib",
+      "count": 15,
+      "lastReturnValue": { "k": "prim", "t": "int", "v": 5 }
+    }
+  ]
+}

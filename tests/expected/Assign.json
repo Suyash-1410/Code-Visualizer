@@ -5,22 +5,22 @@
   "expectedStdout": "hello 30\n",
   "expectedVariables": [
     {
-      "step": 0,
+      "step": 1,
       "name": "a",
       "expectedValue": { "k": "prim", "t": "int", "v": 10 }
     },
     {
-      "step": 1,
+      "step": 2,
       "name": "b",
       "expectedValue": { "k": "prim", "t": "int", "v": 20 }
     },
     {
-      "step": 2,
+      "step": 3,
       "name": "s",
       "expectedValue": { "k": "str", "v": "hello", "full": true }
     },
     {
-      "step": 3,
+      "step": 4,
       "name": "c",
       "expectedValue": { "k": "prim", "t": "int", "v": 30 }
     }

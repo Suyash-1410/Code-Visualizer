@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "runtime_error",
+  "expectedRuntimeErrorType": "java.lang.ArrayIndexOutOfBoundsException"
+}

@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "runtime_error",
+  "expectedRuntimeErrorType": "MyException",
+  "expectedRuntimeErrorMessage": "Something failed"
+}

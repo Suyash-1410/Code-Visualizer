@@ -4,17 +4,17 @@
   "maxStepCount": 20,
   "expectedVariables": [
     {
-      "step": 0,
+      "step": 1,
       "name": "sum",
       "expectedValue": { "k": "prim", "t": "int", "v": 0 }
     },
     {
-      "step": 2,
+      "step": 4,
       "name": "sum",
       "expectedValue": { "k": "prim", "t": "int", "v": 1 }
     },
     {
-      "step": 10,
+      "step": 12,
       "name": "sum",
       "expectedValue": { "k": "prim", "t": "int", "v": 15 }
     }

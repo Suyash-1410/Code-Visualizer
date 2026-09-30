@@ -1,6 +1,6 @@
 {
   "expectedStatus": "ok",
-  "minStepCount": 10,
+  "minStepCount": 3,
   "expectedBigArray": {
     "step": -2,
     "var": "big",

@@ -1,0 +1,19 @@
+{
+  "expectedStatus": "ok",
+  "expectedStatics": [
+    {
+      "step": -2,
+      "class": "StaticInit",
+      "name": "counter",
+      "type": "int",
+      "expectedValue": { "k": "prim", "t": "int", "v": 100 }
+    }
+  ],
+  "expectedVariables": [
+    {
+      "step": -2,
+      "name": "local",
+      "expectedValue": { "k": "prim", "t": "int", "v": 50 }
+    }
+  ]
+}
