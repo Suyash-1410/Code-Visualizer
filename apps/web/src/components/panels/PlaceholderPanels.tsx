@@ -1,29 +1,47 @@
 /**
- * Placeholder panel components for the right-side visualization area.
- * Stage 7 scope: layout skeleton only. Real implementations in later stages.
+ * Visualizer panels for the right-side layout area.
+ * Stage 9: Variables panel with change highlighting & statics,
+ * DiagramPanel with pure DiagramArea rendering 1D/2D arrays & objects,
+ * and CallStackPanel with frame selection.
  */
 
 import React from 'react';
-import { useCurrentStep } from '../../store';
+import {
+  useAppStore,
+  useCurrentStep,
+  useSelectedFrame,
+  useStepDiff,
+} from '../../store';
+import { DiagramArea } from '../../visualizer/DiagramArea';
+import { VariablesPanel as RealVariablesPanel } from '../../visualizer/VariablesPanel';
 
 // ---------------------------------------------------------------------------
-// DiagramPanel — top-right: will become the heap / data-structure diagram
+// DiagramPanel — top-right: heap diagram
 // ---------------------------------------------------------------------------
 export const DiagramPanel: React.FC = () => {
   const step = useCurrentStep();
+  const selectedFrame = useSelectedFrame();
+  const diff = useStepDiff();
+
+  const hoveredHeapId = useAppStore((s) => s.hoveredHeapId);
+  const focusedHeapId = useAppStore((s) => s.focusedHeapId);
+  const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
+  const setFocusedHeapId = useAppStore((s) => s.setFocusedHeapId);
 
   return (
-    <div className="flex h-full flex-col">
-      <PanelHeader title="Heap Diagram" />
-      <div className="flex flex-1 items-center justify-center text-xs text-gray-600">
-        {step ? (
-          <span>
-            {Object.keys(step.heap).length} heap object
-            {Object.keys(step.heap).length !== 1 ? 's' : ''} at step {step.i}
-          </span>
-        ) : (
-          <span>Heap diagram will appear here.</span>
-        )}
+    <div className="flex h-full flex-col overflow-hidden bg-canvas">
+      <PanelHeader title="Heap / Data Structures" />
+      <div className="min-h-0 flex-1">
+        <DiagramArea
+          step={step}
+          selectedFrame={selectedFrame}
+          statics={step?.statics}
+          diff={diff}
+          hoveredHeapId={hoveredHeapId}
+          focusedHeapId={focusedHeapId}
+          onHoverHeap={setHoveredHeapId}
+          onFocusHeap={setFocusedHeapId}
+        />
       </div>
     </div>
   );
@@ -34,83 +52,70 @@ export const DiagramPanel: React.FC = () => {
 // ---------------------------------------------------------------------------
 export const CallStackPanel: React.FC = () => {
   const step = useCurrentStep();
+  const selectedFrame = useSelectedFrame();
+  const setSelectedFrameId = useAppStore((s) => s.setSelectedFrameId);
 
   return (
-    <div className="flex h-full flex-col overflow-hidden">
+    <div className="flex h-full flex-col overflow-hidden bg-canvas">
       <PanelHeader title="Call Stack" />
-      {step ? (
+      {step && step.stack.length > 0 ? (
         <ul className="divide-y divide-white/5 overflow-y-auto text-xs">
-          {[...step.stack].reverse().map((frame) => (
-            <li
-              key={frame.frameId}
-              className="flex items-baseline gap-2 px-3 py-1.5 hover:bg-white/4"
-            >
-              <span className="shrink-0 font-mono text-blue-400">
-                #{String(frame.frameId)}
-              </span>
-              <span className="truncate text-gray-300">{frame.method}()</span>
-              <span className="ml-auto shrink-0 tabular-nums text-gray-600">
-                :{String(frame.line)}
-              </span>
-            </li>
-          ))}
+          {[...step.stack].reverse().map((frame) => {
+            const isSelected = selectedFrame?.frameId === frame.frameId;
+
+            return (
+              <li
+                key={frame.frameId}
+                onClick={() => setSelectedFrameId(frame.frameId)}
+                className={`flex cursor-pointer items-baseline gap-2 px-3 py-1.5 transition-colors ${
+                  isSelected
+                    ? 'border-l-2 border-blue-400 bg-blue-950/30'
+                    : 'hover:bg-white/4'
+                }`}
+                title="Click to view variables in this frame"
+              >
+                <span className="shrink-0 font-mono text-blue-400">
+                  #{String(frame.frameId)}
+                </span>
+                <span className="truncate font-medium text-gray-200">
+                  {frame.method}()
+                </span>
+                <span className="ml-auto shrink-0 tabular-nums text-gray-500">
+                  :{String(frame.line)}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       ) : (
-        <Empty>Call stack will appear here.</Empty>
+        <div className="flex flex-1 items-center justify-center text-xs text-gray-600">
+          No active call frames.
+        </div>
       )}
     </div>
   );
 };
 
 // ---------------------------------------------------------------------------
-// VariablesPanel — bottom-right of right pane
+// VariablesPanel — bottom-center of right pane
 // ---------------------------------------------------------------------------
 export const VariablesPanel: React.FC = () => {
   const step = useCurrentStep();
-  const topFrame = step?.stack[step.stack.length - 1];
+  const selectedFrame = useSelectedFrame();
+  const diff = useStepDiff();
+
+  const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
+  const setFocusedHeapId = useAppStore((s) => s.setFocusedHeapId);
 
   return (
-    <div className="flex h-full flex-col overflow-hidden">
-      <PanelHeader title="Variables" />
-      {topFrame ? (
-        <table className="w-full overflow-y-auto text-xs">
-          <thead>
-            <tr className="border-b border-white/8 text-left text-[10px] text-gray-500">
-              <th className="px-3 py-1 font-medium">Name</th>
-              <th className="px-3 py-1 font-medium">Type</th>
-              <th className="px-3 py-1 font-medium">Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {topFrame.locals.map((local) => (
-              <tr
-                key={local.name}
-                className="border-b border-white/4 hover:bg-white/4"
-              >
-                <td className="px-3 py-1 font-mono text-blue-300">
-                  {local.name}
-                </td>
-                <td className="px-3 py-1 text-gray-500">{local.type}</td>
-                <td className="px-3 py-1 font-mono text-emerald-300">
-                  {formatValue(local.value)}
-                </td>
-              </tr>
-            ))}
-            {topFrame.locals.length === 0 && (
-              <tr>
-                <td
-                  colSpan={3}
-                  className="px-3 py-2 text-center text-gray-600"
-                >
-                  No local variables
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      ) : (
-        <Empty>Variables will appear here.</Empty>
-      )}
+    <div className="flex h-full flex-col overflow-hidden bg-canvas">
+      <RealVariablesPanel
+        frame={selectedFrame}
+        statics={step?.statics}
+        diff={diff}
+        onHoverHeap={setHoveredHeapId}
+        onFocusHeap={setFocusedHeapId}
+      />
     </div>
   );
 };
@@ -120,40 +125,9 @@ export const VariablesPanel: React.FC = () => {
 // ---------------------------------------------------------------------------
 
 const PanelHeader: React.FC<{ title: string }> = ({ title }) => (
-  <div className="flex h-8 shrink-0 items-center border-b border-white/8 px-3">
-    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+  <div className="flex h-8 shrink-0 items-center justify-between border-b border-white/8 bg-canvas-subtle px-3">
+    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
       {title}
     </span>
   </div>
 );
-
-const Empty: React.FC<React.PropsWithChildren> = ({ children }) => (
-  <div className="flex flex-1 items-center justify-center text-xs text-gray-600">
-    {children}
-  </div>
-);
-
-function formatValue(value: {
-  k: string;
-  v?: unknown;
-  id?: string;
-  type?: string;
-  summary?: string;
-}): string {
-  switch (value.k) {
-    case 'prim':
-      return String(value.v);
-    case 'str':
-      return `"${String(value.v)}"`;
-    case 'null':
-      return 'null';
-    case 'ref':
-      return String(value.id);
-    case 'opaque':
-      return `<${String(value.type)}>`;
-    case 'void':
-      return 'void';
-    default:
-      return '?';
-  }
-}

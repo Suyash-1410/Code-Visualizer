@@ -2,21 +2,27 @@
  * JavaScope Zustand store.
  *
  * State shape:
- *  - source        : current editor content
- *  - trace         : validated Trace, or null
+ *  - source           : current editor content
+ *  - trace            : validated Trace, or null
  *  - currentStepIndex : index into trace.steps
- *  - runState      : idle | running | ready | error
- *  - error         : user-visible error message
- *  - playback      : { isPlaying, speed }
+ *  - runState         : idle | running | ready | error
+ *  - error            : user-visible error message
+ *  - playback         : { isPlaying, speed }
+ *  - selectedFrameId  : number | null
+ *  - hoveredHeapId    : string | null
+ *  - focusedHeapId    : string | null
  *
  * Derived selectors (hooks):
  *  - useCurrentStep()   → Step | undefined
  *  - useCurrentStdout() → string
+ *  - useSelectedFrame() → StackFrame | undefined
+ *  - useStepDiff()      → StepDiff
  */
 
 import { create } from 'zustand';
-import type { Trace, Step } from '../trace';
+import type { Trace, Step, StackFrame } from '../trace';
 import { getStep, getVisibleStdout } from '../trace';
+import { computeStepDiff, type StepDiff } from '../visualizer/diff';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -47,6 +53,11 @@ interface AppState {
   // Playback
   playback: PlaybackState;
 
+  // Selection & Interactions (Stage 9)
+  selectedFrameId: number | null;
+  hoveredHeapId: string | null;
+  focusedHeapId: string | null;
+
   // ---------------------------------------------------------------------------
   // Actions
   // ---------------------------------------------------------------------------
@@ -75,6 +86,11 @@ interface AppState {
   // Playback
   setPlaying: (playing: boolean) => void;
   setSpeed: (speed: number) => void;
+
+  // Selection actions
+  setSelectedFrameId: (frameId: number | null) => void;
+  setHoveredHeapId: (id: string | null) => void;
+  setFocusedHeapId: (id: string | null) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -98,6 +114,9 @@ export const useAppStore = create<AppState>((set, get) => ({
   runState: 'idle',
   error: null,
   playback: { isPlaying: false, speed: 1 },
+  selectedFrameId: null,
+  hoveredHeapId: null,
+  focusedHeapId: null,
 
   setSource: (source) => set({ source }),
 
@@ -108,6 +127,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       trace: null,
       currentStepIndex: 0,
       playback: { isPlaying: false, speed: get().playback.speed },
+      selectedFrameId: null,
+      hoveredHeapId: null,
+      focusedHeapId: null,
     }),
 
   setTrace: (trace) =>
@@ -116,6 +138,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       currentStepIndex: 0,
       runState: 'ready',
       error: null,
+      selectedFrameId: null,
+      hoveredHeapId: null,
+      focusedHeapId: null,
     }),
 
   setError: (message) =>
@@ -132,6 +157,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       runState: 'idle',
       error: null,
       playback: { isPlaying: false, speed: get().playback.speed },
+      selectedFrameId: null,
+      hoveredHeapId: null,
+      focusedHeapId: null,
     }),
 
   setStepIndex: (index) => {
@@ -166,6 +194,10 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   setSpeed: (speed) =>
     set((s) => ({ playback: { ...s.playback, speed } })),
+
+  setSelectedFrameId: (selectedFrameId) => set({ selectedFrameId }),
+  setHoveredHeapId: (hoveredHeapId) => set({ hoveredHeapId }),
+  setFocusedHeapId: (focusedHeapId) => set({ focusedHeapId }),
 }));
 
 // ---------------------------------------------------------------------------
@@ -182,4 +214,34 @@ export function useCurrentStdout(): string {
   return useAppStore((s) =>
     s.trace ? getVisibleStdout(s.trace, s.currentStepIndex) : '',
   );
+}
+
+export function useSelectedFrame(): StackFrame | undefined {
+  return useAppStore((s) => {
+    if (!s.trace) return undefined;
+    const step = getStep(s.trace, s.currentStepIndex);
+    if (!step || step.stack.length === 0) return undefined;
+    if (s.selectedFrameId !== null) {
+      const match = step.stack.find((f) => f.frameId === s.selectedFrameId);
+      if (match) return match;
+    }
+    // Default: top frame
+    return step.stack[step.stack.length - 1];
+  });
+}
+
+const EMPTY_DIFF: StepDiff = {
+  changedLocals: new Map(),
+  changedHeap: new Map(),
+};
+
+export function useStepDiff(): StepDiff {
+  return useAppStore((s) => {
+    if (!s.trace) return EMPTY_DIFF;
+    const curr = getStep(s.trace, s.currentStepIndex);
+    if (!curr) return EMPTY_DIFF;
+    const prev =
+      s.currentStepIndex > 0 ? getStep(s.trace, s.currentStepIndex - 1) : undefined;
+    return computeStepDiff(prev, curr);
+  });
 }

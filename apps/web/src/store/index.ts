@@ -1,2 +1,8 @@
-export { useAppStore, useCurrentStep, useCurrentStdout } from './appStore';
+export {
+  useAppStore,
+  useCurrentStep,
+  useCurrentStdout,
+  useSelectedFrame,
+  useStepDiff,
+} from './appStore';
 export type { RunState, PlaybackState } from './appStore';
