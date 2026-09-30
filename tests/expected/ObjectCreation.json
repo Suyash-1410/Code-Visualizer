@@ -1,0 +1,13 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 2,
+  "expectedObject": {
+    "step": -2,
+    "var": "p",
+    "expectedType": "Person",
+    "expectedFields": {
+      "name": { "k": "str", "v": "Alice", "full": true },
+      "age": { "k": "prim", "t": "int", "v": 25 }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 20,
+  "expectedArray": {
+    "step": -2,
+    "var": "a",
+    "expectedElemType": "int",
+    "expectedLength": 5,
+    "expectedItems": [
+      { "k": "prim", "t": "int", "v": 1 },
+      { "k": "prim", "t": "int", "v": 2 },
+      { "k": "prim", "t": "int", "v": 4 },
+      { "k": "prim", "t": "int", "v": 5 },
+      { "k": "prim", "t": "int", "v": 8 }
+    ],
+    "expectedClipped": false
+  }
+}

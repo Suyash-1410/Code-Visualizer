@@ -1,0 +1,20 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 3,
+  "expectedStatics": [
+    {
+      "step": -2,
+      "class": "StaticFields",
+      "name": "counter",
+      "type": "int",
+      "expectedValue": { "k": "prim", "t": "int", "v": 2 }
+    },
+    {
+      "step": -2,
+      "class": "StaticFields",
+      "name": "label",
+      "type": "String",
+      "expectedValue": { "k": "str", "v": "count", "full": true }
+    }
+  ]
+}

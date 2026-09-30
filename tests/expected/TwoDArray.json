@@ -1,0 +1,22 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 5,
+  "expectedTwoDArray": {
+    "step": -2,
+    "var": "grid",
+    "expectedOuterElemType": "int[]",
+    "expectedOuterLength": 2,
+    "expectedInnerElemType": "int",
+    "expectedInnerLength": 2,
+    "expectedGridItems": [
+      [
+        { "k": "prim", "t": "int", "v": 1 },
+        { "k": "prim", "t": "int", "v": 2 }
+      ],
+      [
+        { "k": "prim", "t": "int", "v": 3 },
+        { "k": "prim", "t": "int", "v": 4 }
+      ]
+    ]
+  }
+}

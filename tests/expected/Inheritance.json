@@ -1,0 +1,14 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 2,
+  "expectedObject": {
+    "step": -2,
+    "var": "dog",
+    "expectedType": "Dog",
+    "expectedFields": {
+      "name": { "k": "str", "v": "Buddy", "full": true },
+      "legs": { "k": "prim", "t": "int", "v": 4 },
+      "barks": { "k": "prim", "t": "boolean", "v": true }
+    }
+  }
+}

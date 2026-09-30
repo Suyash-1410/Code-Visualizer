@@ -1,0 +1,9 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 4,
+  "expectedCycle": {
+    "step": -2,
+    "varA": "a",
+    "varB": "b"
+  }
+}

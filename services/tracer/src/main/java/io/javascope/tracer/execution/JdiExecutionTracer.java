@@ -1,21 +1,10 @@
 package io.javascope.tracer.execution;
 
-import com.sun.jdi.AbsentInformationException;
-import com.sun.jdi.BooleanValue;
 import com.sun.jdi.Bootstrap;
-import com.sun.jdi.ByteValue;
-import com.sun.jdi.CharValue;
-import com.sun.jdi.DoubleValue;
 import com.sun.jdi.Field;
-import com.sun.jdi.FloatValue;
 import com.sun.jdi.IntegerValue;
 import com.sun.jdi.Location;
-import com.sun.jdi.LongValue;
-import com.sun.jdi.Method;
 import com.sun.jdi.ReferenceType;
-import com.sun.jdi.ShortValue;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.StringReference;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.connect.Connector;
@@ -34,12 +23,11 @@ import com.sun.jdi.request.EventRequestManager;
 import com.sun.jdi.request.MethodEntryRequest;
 import com.sun.jdi.request.StepRequest;
 import io.javascope.tracer.config.TracerConfig;
-import io.javascope.tracer.model.LocalVariable;
 import io.javascope.tracer.model.Step;
 import io.javascope.tracer.model.Trace;
 import io.javascope.tracer.model.TraceStats;
 import io.javascope.tracer.model.Truncation;
-import io.javascope.tracer.model.Value;
+import io.javascope.tracer.snapshot.HeapSnapshotBuilder;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
@@ -98,8 +86,9 @@ public class JdiExecutionTracer {
     int maxDepthRecorded = 0;
     int lastExecutedLine = 1;
 
-    // Track frame IDs stably
-    FrameTracker frameTracker = new FrameTracker();
+    // Track frame IDs stably and build snapshots
+    HeapSnapshotBuilder.FrameTracker frameTracker = new HeapSnapshotBuilder.FrameTracker();
+    HeapSnapshotBuilder heapSnapshotBuilder = new HeapSnapshotBuilder(vm, config);
 
     try {
       // 1. Listen for main class preparation
@@ -153,13 +142,14 @@ public class JdiExecutionTracer {
             Location loc = se.location();
             String declaringClassName = loc.declaringType().name();
 
-            if (isUserClass(declaringClassName)) {
+            if (HeapSnapshotBuilder.isUserClass(declaringClassName)) {
               lastExecutedLine = loc.lineNumber();
               int currentStdoutLen = readStdoutLength(vm);
 
-              List<io.javascope.tracer.model.StackFrame> stackFrames =
-                  captureStack(se.thread(), frameTracker);
+              HeapSnapshotBuilder.SnapshotResult snapshot =
+                  heapSnapshotBuilder.buildSnapshot(se.thread(), frameTracker);
 
+              List<io.javascope.tracer.model.StackFrame> stackFrames = snapshot.stack();
               if (stackFrames.size() > maxDepthRecorded) {
                 maxDepthRecorded = stackFrames.size();
               }
@@ -177,11 +167,11 @@ public class JdiExecutionTracer {
                       "line",
                       loc.lineNumber(),
                       stackFrames,
-                      Collections.emptyMap(),
-                      Collections.emptyList(),
+                      snapshot.heap(),
+                      snapshot.statics(),
                       null,
                       currentStdoutLen,
-                      false);
+                      snapshot.clipped());
 
               recordedSteps.add(step);
 
@@ -274,18 +264,6 @@ public class JdiExecutionTracer {
     stepRequest.addClassExclusionFilter("io.javascope.tracer.wrapper.*");
   }
 
-  private boolean isUserClass(String className) {
-    if (className.startsWith("java.")
-        || className.startsWith("javax.")
-        || className.startsWith("jdk.")
-        || className.startsWith("sun.")
-        || className.startsWith("com.sun.")
-        || className.startsWith("io.javascope.tracer.wrapper.")) {
-      return false;
-    }
-    return true;
-  }
-
   private int readStdoutLength(VirtualMachine vm) {
     try {
       List<ReferenceType> classes = vm.classesByName("io.javascope.tracer.wrapper.WrapperLauncher");
@@ -304,88 +282,6 @@ public class JdiExecutionTracer {
     return 0;
   }
 
-  private List<io.javascope.tracer.model.StackFrame> captureStack(
-      ThreadReference thread, FrameTracker frameTracker) {
-    List<io.javascope.tracer.model.StackFrame> result = new ArrayList<>();
-    try {
-      List<StackFrame> jdiFrames = thread.frames();
-      List<StackFrame> userFrames = new ArrayList<>();
-      for (StackFrame jf : jdiFrames) {
-        String declaring = jf.location().declaringType().name();
-        if (isUserClass(declaring)) {
-          userFrames.add(jf);
-        }
-      }
-
-      Collections.reverse(userFrames);
-
-      for (int depth = 0; depth < userFrames.size(); depth++) {
-        StackFrame jf = userFrames.get(depth);
-        Location loc = jf.location();
-        Method m = loc.method();
-        String methodFullName = loc.declaringType().name() + "." + m.name();
-        String signature = m.genericSignature() != null ? m.genericSignature() : m.signature();
-        long frameId = frameTracker.getOrCreateFrameId(depth, methodFullName);
-
-        List<LocalVariable> locals = new ArrayList<>();
-        try {
-          for (com.sun.jdi.LocalVariable lv : jf.visibleVariables()) {
-            com.sun.jdi.Value jdiVal = jf.getValue(lv);
-            Value val = convertValue(jdiVal);
-            if (val != null) {
-              locals.add(new LocalVariable(lv.name(), lv.typeName(), val));
-            }
-          }
-        } catch (AbsentInformationException ignored) {
-        }
-
-        result.add(
-            new io.javascope.tracer.model.StackFrame(
-                frameId, methodFullName, signature, loc.lineNumber(), locals));
-      }
-    } catch (Exception ignored) {
-    }
-    return result;
-  }
-
-  private Value convertValue(com.sun.jdi.Value jdiVal) {
-    if (jdiVal == null) {
-      return new Value.Null();
-    }
-    if (jdiVal instanceof IntegerValue iv) {
-      return new Value.Prim("int", iv.value());
-    }
-    if (jdiVal instanceof BooleanValue bv) {
-      return new Value.Prim("boolean", bv.value());
-    }
-    if (jdiVal instanceof LongValue lv) {
-      return new Value.Prim("long", lv.value());
-    }
-    if (jdiVal instanceof DoubleValue dv) {
-      return new Value.Prim("double", dv.value());
-    }
-    if (jdiVal instanceof FloatValue fv) {
-      return new Value.Prim("float", fv.value());
-    }
-    if (jdiVal instanceof ShortValue sv) {
-      return new Value.Prim("short", sv.value());
-    }
-    if (jdiVal instanceof ByteValue bval) {
-      return new Value.Prim("byte", bval.value());
-    }
-    if (jdiVal instanceof CharValue cv) {
-      return new Value.Prim("char", String.valueOf(cv.value()));
-    }
-    if (jdiVal instanceof StringReference sr) {
-      String strVal = sr.value();
-      if (strVal.length() > config.maxStringLength()) {
-        return new Value.Str(strVal.substring(0, config.maxStringLength()), false);
-      }
-      return new Value.Str(strVal, true);
-    }
-    return null;
-  }
-
   private String buildClasspath(Path classesDir) {
     String currentCp = System.getProperty("java.class.path");
     return classesDir.toAbsolutePath().toString() + File.pathSeparator + currentCp;
@@ -397,19 +293,5 @@ public class JdiExecutionTracer {
         .findFirst()
         .orElseThrow(
             () -> new IllegalStateException("com.sun.jdi.CommandLineLaunch connector not found"));
-  }
-
-  private static class FrameTracker {
-    private final List<Long> activeFrameIds = new ArrayList<>();
-    private long idSeq = 1;
-
-    public long getOrCreateFrameId(int depth, String method) {
-      if (depth < activeFrameIds.size()) {
-        return activeFrameIds.get(depth);
-      }
-      long newId = idSeq++;
-      activeFrameIds.add(newId);
-      return newId;
-    }
   }
 }

@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 10,
+  "expectedBigArray": {
+    "step": -2,
+    "var": "big",
+    "expectedLength": 1000,
+    "expectedItemsCount": 100,
+    "expectedClipped": true
+  }
+}

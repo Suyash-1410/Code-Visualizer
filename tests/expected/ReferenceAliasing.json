@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 3,
+  "expectedAliasing": {
+    "step": -2,
+    "var1": "b1",
+    "var2": "b2",
+    "expectedField": "value",
+    "expectedValue": { "k": "prim", "t": "int", "v": 200 }
+  }
+}

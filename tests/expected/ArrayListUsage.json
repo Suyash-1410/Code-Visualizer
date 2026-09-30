@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 3,
+  "expectedOpaque": {
+    "step": -2,
+    "var": "list",
+    "expectedType": "java.util.ArrayList",
+    "expectedSummaryPrefix": "size="
+  }
+}
