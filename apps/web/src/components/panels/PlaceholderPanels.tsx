@@ -13,16 +13,23 @@ import {
   useStepDiff,
 } from '../../store';
 import { DiagramArea } from '../../visualizer/DiagramArea';
+import { CallTreeView } from '../../visualizer/CallTreeView';
 import { CallStackPanel as RealCallStackPanel } from '../../visualizer/CallStackPanel';
 import { VariablesPanel as RealVariablesPanel } from '../../visualizer/VariablesPanel';
 
 // ---------------------------------------------------------------------------
-// DiagramPanel — top-right: heap diagram
+// DiagramPanel — top-right: heap diagram / call tree tabs
 // ---------------------------------------------------------------------------
 export const DiagramPanel: React.FC = () => {
+  const [vizTab, setVizTab] = React.useState<'diagram' | 'tree'>('diagram');
+
   const step = useCurrentStep();
   const selectedFrame = useSelectedFrame();
   const diff = useStepDiff();
+
+  const trace = useAppStore((s) => s.trace);
+  const currentStepIndex = useAppStore((s) => s.currentStepIndex);
+  const setStepIndex = useAppStore((s) => s.setStepIndex);
 
   const hoveredHeapId = useAppStore((s) => s.hoveredHeapId);
   const focusedHeapId = useAppStore((s) => s.focusedHeapId);
@@ -31,18 +38,56 @@ export const DiagramPanel: React.FC = () => {
 
   return (
     <div className="flex h-full flex-col overflow-hidden bg-canvas">
-      <PanelHeader title="Heap / Data Structures" />
+      {/* Tab Switcher Header */}
+      <div className="flex h-8 shrink-0 items-center justify-between border-b border-white/8 bg-canvas-subtle px-3">
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            data-testid="tab-diagram"
+            onClick={() => setVizTab('diagram')}
+            className={`rounded px-2.5 py-0.5 text-[11px] font-semibold transition-colors ${
+              vizTab === 'diagram'
+                ? 'border border-blue-500/40 bg-blue-600/30 text-blue-300'
+                : 'text-gray-400 hover:text-gray-200'
+            }`}
+          >
+            Diagram
+          </button>
+          <button
+            type="button"
+            data-testid="tab-call-tree"
+            onClick={() => setVizTab('tree')}
+            className={`rounded px-2.5 py-0.5 text-[11px] font-semibold transition-colors ${
+              vizTab === 'tree'
+                ? 'border border-blue-500/40 bg-blue-600/30 text-blue-300'
+                : 'text-gray-400 hover:text-gray-200'
+            }`}
+          >
+            Call Tree
+          </button>
+        </div>
+      </div>
+
       <div className="min-h-0 flex-1">
-        <DiagramArea
-          step={step}
-          selectedFrame={selectedFrame}
-          statics={step?.statics}
-          diff={diff}
-          hoveredHeapId={hoveredHeapId}
-          focusedHeapId={focusedHeapId}
-          onHoverHeap={setHoveredHeapId}
-          onFocusHeap={setFocusedHeapId}
-        />
+        {vizTab === 'diagram' ? (
+          <DiagramArea
+            step={step}
+            selectedFrame={selectedFrame}
+            statics={step?.statics}
+            diff={diff}
+            hoveredHeapId={hoveredHeapId}
+            focusedHeapId={focusedHeapId}
+            onHoverHeap={setHoveredHeapId}
+            onFocusHeap={setFocusedHeapId}
+          />
+        ) : (
+          <CallTreeView
+            trace={trace}
+            currentStep={step}
+            currentStepIndex={currentStepIndex}
+            onJumpToStep={setStepIndex}
+          />
+        )}
       </div>
     </div>
   );
@@ -93,14 +138,3 @@ export const VariablesPanel: React.FC = () => {
   );
 };
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-const PanelHeader: React.FC<{ title: string }> = ({ title }) => (
-  <div className="flex h-8 shrink-0 items-center justify-between border-b border-white/8 bg-canvas-subtle px-3">
-    <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
-      {title}
-    </span>
-  </div>
-);

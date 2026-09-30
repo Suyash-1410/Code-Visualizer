@@ -1,0 +1,943 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class RecException {\n  public static void main(String[] args) {\n    try {\n      recurse(3);\n    } catch (Exception e) {}\n  }\n  static int recurse(int n) {\n    if (n == 0) throw new RuntimeException(\"boom\");\n    return recurse(n - 1) + 1;\n  }\n}\r\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "exception",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "RecException.recurse",
+      "signature" : "int recurse(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "return",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RecException.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@824"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@824" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "end",
+    "line" : 6,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 17,
+    "maxDepth" : 5,
+    "durationMs" : 221
+  }
+}
