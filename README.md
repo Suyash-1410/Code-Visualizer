@@ -13,7 +13,13 @@ JavaScope is an interactive Java DSA and recursion visualizer that steps through
 ├── sandbox/
 │   └── Dockerfile      # Sandbox container configuration
 ├── config/
-│   └── limits.json     # Single source of truth for runtime limits
+│   ├── limits.json     # Single source of truth for runtime limits
+│   └── sandbox-flags.json # Canonical container hardening flags
+├── scripts/
+│   ├── run-sandbox.sh  # Standalone sandbox execution script (bash)
+│   ├── run-sandbox.ps1 # Standalone sandbox execution script (powershell)
+│   ├── test-security.sh # Hostile security test runner (bash)
+│   └── test-security.ps1# Hostile security test runner (powershell)
 ├── tests/
 │   ├── programs/       # Golden Java programs
 │   ├── expected/       # Trace assertions
@@ -40,6 +46,32 @@ mvn -q verify
 # Format Java code (Spotless / Google Java Format)
 mvn spotless:apply
 ```
+
+### Running the API Service
+
+#### Option 1: Docker Compose (Local Dev)
+To start the API service along with Docker socket access for sandbox container spawning:
+
+```bash
+# 1. Build the sandbox image first
+docker build -t javascope-sandbox:latest -f sandbox/Dockerfile .
+
+# 2. Start the API container
+docker compose up --build
+```
+
+> **Security Warning (Local Dev Only):** Mounting `/var/run/docker.sock` grants root-equivalent control over the host Docker daemon. This configuration is strictly for isolated local development. In production, utilize rootless Podman, Docker socket proxies, or dedicated worker VMs without public daemon access. See `docs/security.md`.
+
+#### Option 2: Standalone JVM
+Run the API directly using Java 21 with the required production memory limit (`-Xmx256m`):
+
+```bash
+java -Xmx256m -jar services/api/target/api-1.0.0-SNAPSHOT.jar
+```
+
+API Endpoints:
+- `GET /api/health`: Health status probe (`{"status": "ok"}`)
+- `POST /api/run`: Execute untrusted user code in the container sandbox (`{"source": "..."}`)
 
 ### Frontend (`apps/web`)
 From `apps/web`:

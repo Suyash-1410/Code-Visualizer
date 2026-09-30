@@ -70,9 +70,10 @@ The API service interacts with the Docker engine to spawn sandbox containers.
 > Access to `/var/run/docker.sock` is **root-equivalent** on the host. Any process capable of sending arbitrary requests to the Docker daemon can mount the host root filesystem (`-v /:/host`) and achieve host root privileges.
 
 ### Hardening Recommendations:
-1. **Never Mount the Docker Socket Inside Containers:** The API service should run either directly on the VM (bound to localhost behind a reverse proxy) or interact with a restricted rootless daemon.
+1. **Never Mount the Docker Socket in Public Containers:** In local development (`docker-compose.yml`), `/var/run/docker.sock` is mounted into the API container for convenience so it can spawn the sandbox container. This is strictly acceptable only on a private developer machine. In production or shared hosting, the Docker socket must never be exposed or mounted into internet-facing containers.
 2. **Rootless Docker / Podman:** Run Docker daemon in rootless mode, where the daemon itself runs under an unprivileged user namespace.
 3. **Strict Parameter Sanitization:** The API service must never accept arbitrary Docker arguments from users or clients. Only the hardcoded flags from `config/sandbox-flags.json` are passed to `docker run`.
+4. **Executor Isolation:** In production, decouple the API service from the execution runner using unprivileged worker daemons, rootless Podman, or a Docker socket proxy that permits only `POST /containers/create` and `POST /containers/{id}/start` with hardened defaults.
 
 ---
 

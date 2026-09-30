@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    image: javascope-api:latest
+    container_name: javascope-api
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xmx256m
+      - JAVASCOPE_CONFIG_DIR=/app/config
+    volumes:
+      # DANGER: Docker socket access is root-equivalent on host.
+      # Permitted ONLY for local development. Never expose publicly.
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config:/app/config:ro
+    restart: unless-stopped

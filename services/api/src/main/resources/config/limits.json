@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "limits": {
+    "maxExecutionSteps": 7000,
+    "minAllowedStepCap": 6000,
+    "maxAllowedStepCap": 8000,
+    "executionWallClockTimeoutMs": 5000,
+    "compileTimeoutMs": 10000,
+    "containerHardKillTimeoutMs": 20000,
+    "maxRecursionDepth": 200,
+    "maxHeapObjectsPerSnapshot": 300,
+    "maxArrayElementsPerSnapshot": 100,
+    "maxStringLength": 100,
+    "maxStdoutBytes": 65536,
+    "maxSourceCodeBytes": 20480,
+    "maxTraceJsonBytes": 15728640,
+    "containerMemoryMb": 512,
+    "targetJvmMaxMemoryMb": 128,
+    "tracerJvmMaxMemoryMb": 192,
+    "apiJvmMaxMemoryMb": 256,
+    "rateLimit": {
+      "runsPerMinutePerIp": 10,
+      "runsPerDayPerIp": 200
+    },
+    "maxConcurrentExecutions": 2,
+    "maxQueueLength": 10
+  }
+}
