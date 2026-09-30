@@ -5,6 +5,7 @@ import {
   buildCallTree,
   findNodesByMethod,
   formatCallTreeReturn,
+  formatCallTreeLabel,
 } from '../callTree';
 import type { Trace } from '../../trace/types';
 
@@ -153,3 +154,30 @@ describe('buildCallTree — Exception in Recursion', () => {
     expect(exceptionThrower.hasException).toBe(true);
   });
 });
+
+describe('formatCallTreeLabel', () => {
+  it('formats single argument into fibo(5)', () => {
+    expect(formatCallTreeLabel('fibo', 'n = 5')).toBe('fibo(5)');
+    expect(formatCallTreeLabel('fibo', 'n = 4')).toBe('fibo(4)');
+    expect(formatCallTreeLabel('fibo', 'n = 3')).toBe('fibo(3)');
+    expect(formatCallTreeLabel('fact', 'n = 1')).toBe('fact(1)');
+  });
+
+  it('formats multiple arguments cleanly', () => {
+    expect(formatCallTreeLabel('gcd', 'a = 48, b = 18')).toBe('gcd(48, 18)');
+    expect(formatCallTreeLabel('solve', "n = 3, from = 'A', to = 'C', aux = 'B'")).toBe(
+      "solve(3, 'A', 'C', 'B')",
+    );
+  });
+
+  it('formats main() with empty argument list', () => {
+    expect(formatCallTreeLabel('main', 'args = @707')).toBe('main()');
+    expect(formatCallTreeLabel('main', '')).toBe('main()');
+  });
+
+  it('handles functions with no arguments or already clean arguments', () => {
+    expect(formatCallTreeLabel('test', '')).toBe('test()');
+    expect(formatCallTreeLabel('fibo', '5')).toBe('fibo(5)');
+  });
+});
+

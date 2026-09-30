@@ -66,7 +66,9 @@ describe('CallTreeView component', () => {
     );
 
     // Return value for fact(1) -> 1, fact(2) -> 2, fact(5) -> 120
-    expect(screen.getByText(/→ 120/)).toBeInTheDocument();
+    expect(screen.getAllByText(/→ 120/).length).toBeGreaterThan(0);
+    // Verify concise function label like fact(5)
+    expect(screen.getAllByText('fact(5)').length).toBeGreaterThan(0);
   });
 
   it('invokes onJumpToStep when clicking a node', () => {

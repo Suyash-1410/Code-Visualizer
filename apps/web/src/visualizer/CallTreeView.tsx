@@ -7,6 +7,7 @@ import {
   getActiveStackFrameIds,
   getCurrentExecutingFrameId,
   formatCallTreeReturn,
+  formatCallTreeLabel,
   type CallTreeNode,
 } from './callTree';
 
@@ -32,10 +33,10 @@ interface LayoutEdge {
   isActivePath: boolean;
 }
 
-const NODE_WIDTH = 136;
-const NODE_HEIGHT = 44;
-const LEVEL_HEIGHT = 80;
-const SIBLING_SPACING = 154;
+const NODE_WIDTH = 144;
+const NODE_HEIGHT = 48;
+const LEVEL_HEIGHT = 86;
+const SIBLING_SPACING = 158;
 
 export const CallTreeView: React.FC<CallTreeViewProps> = ({
   trace,
@@ -327,6 +328,7 @@ export const CallTreeView: React.FC<CallTreeViewProps> = ({
               const returnStr = isReturned
                 ? formatCallTreeReturn(nodeData.returnValue)
                 : '';
+              const nodeLabel = formatCallTreeLabel(nodeData.method, nodeData.args);
 
               const animProps = shouldReduceMotion
                 ? {
@@ -342,82 +344,138 @@ export const CallTreeView: React.FC<CallTreeViewProps> = ({
                   };
 
               return (
-                <motion.g
+                <g
                   key={nodeData.frameId}
-                  data-testid={`call-tree-node-${nodeData.frameId}`}
                   transform={`translate(${node.x}, ${node.y})`}
+                  className="cursor-pointer group"
                   onClick={(e) => {
                     e.stopPropagation();
                     onJumpToStep?.(nodeData.callStep);
                   }}
-                  className="cursor-pointer"
-                  {...animProps}
                 >
-                  {/* Outer Node Box */}
-                  <rect
-                    x={-NODE_WIDTH / 2}
-                    y={-NODE_HEIGHT / 2}
-                    width={NODE_WIDTH}
-                    height={NODE_HEIGHT}
-                    rx={8}
-                    className={`transition-all duration-200 ${
-                      isExecuting
-                        ? 'fill-blue-950 stroke-blue-400 stroke-[2.5px] filter drop-shadow-[0_0_8px_rgba(59,130,246,0.6)]'
-                        : isOnStack
-                          ? 'fill-blue-950/60 stroke-blue-500/80 stroke-[2px]'
-                          : isReturned
-                            ? 'fill-[#121820] stroke-emerald-500/70 stroke-[1.5px]'
-                            : 'fill-[#161b22] stroke-white/20 stroke-[1px]'
-                    }`}
-                  />
-
-                  {/* Method & Arguments label */}
-                  <text
-                    x={0}
-                    y={isReturned && returnStr ? -4 : 4}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    className={`font-mono text-[11px] font-semibold select-none ${
-                      isExecuting
-                        ? 'fill-blue-100 font-bold'
-                        : isOnStack
-                          ? 'fill-blue-200'
-                          : isReturned
-                            ? 'fill-gray-200'
-                            : 'fill-gray-400'
-                    }`}
+                  <title>{`${nodeLabel}${isReturned && returnStr ? ` → ${returnStr}` : ''} (Frame #${nodeData.frameId})`}</title>
+                  <motion.g
+                    data-testid={`call-tree-node-${nodeData.frameId}`}
+                    {...animProps}
                   >
-                    {nodeData.method}({nodeData.args})
-                  </text>
+                    {/* Outer Node Box */}
+                    <rect
+                      x={-NODE_WIDTH / 2}
+                      y={-NODE_HEIGHT / 2}
+                      width={NODE_WIDTH}
+                      height={NODE_HEIGHT}
+                      rx={8}
+                      className={`transition-all duration-200 ${
+                        isExecuting
+                          ? 'fill-blue-950 stroke-blue-400 stroke-[2.5px] filter drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]'
+                          : isOnStack
+                            ? 'fill-blue-950/60 stroke-blue-500/80 stroke-[2px]'
+                            : isReturned
+                              ? 'fill-[#121820] stroke-emerald-500/80 stroke-[1.5px]'
+                              : 'fill-[#161b22] stroke-white/20 stroke-[1px]'
+                      } group-hover:stroke-blue-300`}
+                    />
 
-                  {/* Return value badge (e.g. "→ 2" or "✓ 120") */}
-                  {isReturned && returnStr && (
-                    <g transform={`translate(0, 12)`}>
+                    {/* Method & Arguments label: e.g. "fibo(5)" */}
+                    <text
+                      x={0}
+                      y={-5}
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                      className={`font-mono text-[11px] font-bold select-none ${
+                        isExecuting
+                          ? 'fill-blue-100'
+                          : isOnStack
+                            ? 'fill-blue-200'
+                            : isReturned
+                              ? 'fill-gray-100'
+                              : 'fill-gray-300'
+                      }`}
+                    >
+                      {nodeLabel}
+                    </text>
+
+                    {/* Status / Return value badge at bottom of node */}
+                    {isReturned && returnStr ? (
+                      <g transform="translate(0, 11)">
+                        <rect
+                          x={-34}
+                          y={-7}
+                          width={68}
+                          height={15}
+                          rx={4}
+                          className="fill-emerald-950/90 stroke-emerald-500/60 stroke-[1px]"
+                        />
+                        <text
+                          x={0}
+                          y={0}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          className="fill-emerald-400 font-mono text-[10px] font-bold select-none"
+                        >
+                          → {returnStr}
+                        </text>
+                      </g>
+                    ) : isExecuting ? (
+                      <g transform="translate(0, 11)">
+                        <rect
+                          x={-32}
+                          y={-7}
+                          width={64}
+                          height={15}
+                          rx={4}
+                          className="fill-blue-900/80 stroke-blue-400/60 stroke-[1px]"
+                        />
+                        <text
+                          x={0}
+                          y={0}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          className="fill-blue-200 font-mono text-[9px] font-bold select-none"
+                        >
+                          ● ACTIVE
+                        </text>
+                      </g>
+                    ) : isOnStack ? (
+                      <g transform="translate(0, 11)">
+                        <text
+                          x={0}
+                          y={0}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          className="fill-blue-400/80 font-mono text-[9px] select-none"
+                        >
+                          waiting
+                        </text>
+                      </g>
+                    ) : nodeData.hasException ? (
+                      <g transform="translate(0, 11)">
+                        <text
+                          x={0}
+                          y={0}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          className="fill-red-400 font-mono text-[9px] font-bold select-none"
+                        >
+                          ⚠ EXCEPTION
+                        </text>
+                      </g>
+                    ) : null}
+
+                    {/* Frame ID badge at top-left corner */}
+                    <g transform={`translate(${-NODE_WIDTH / 2 + 10}, ${-NODE_HEIGHT / 2 + 8})`}>
                       <text
                         x={0}
                         y={0}
                         textAnchor="middle"
                         dominantBaseline="middle"
-                        className="fill-emerald-400 font-mono text-[10px] font-bold select-none"
+                        className="fill-gray-500 font-mono text-[8px]"
                       >
-                        → {returnStr}
+                        #{nodeData.frameId}
                       </text>
                     </g>
-                  )}
-
-                  {/* Frame ID badge at top-left corner */}
-                  <g transform={`translate(${-NODE_WIDTH / 2 + 10}, ${-NODE_HEIGHT / 2 + 9})`}>
-                    <text
-                      x={0}
-                      y={0}
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                      className="fill-gray-500 font-mono text-[8px]"
-                    >
-                      #{nodeData.frameId}
-                    </text>
-                  </g>
-                </motion.g>
+                  </motion.g>
+                </g>
               );
             })}
           </AnimatePresence>

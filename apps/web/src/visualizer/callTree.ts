@@ -196,3 +196,24 @@ export function formatCallTreeReturn(v: Value | null | undefined): string {
   if (v.k === 'opaque') return `<${v.type}>`;
   return '?';
 }
+
+/**
+ * Formats a clean function call label for call tree nodes (e.g. `fibo(5)`, `gcd(48, 18)`).
+ * Extracts argument values cleanly and strips parameter names.
+ */
+export function formatCallTreeLabel(method: string, args: string): string {
+  if (!method || method === 'main') {
+    return 'main()';
+  }
+  if (!args || args.trim() === '') {
+    return `${method}()`;
+  }
+
+  // Strip parameter names: "n = 5" -> "5", "a = 10, b = 20" -> "10, 20"
+  const cleanArgs = args
+    .replace(/(?:^|,\s*)[a-zA-Z0-9_$]+\s*=\s*/g, (match) => (match.startsWith(',') ? ', ' : ''))
+    .trim();
+
+  return `${method}(${cleanArgs})`;
+}
+
