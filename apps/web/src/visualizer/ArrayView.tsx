@@ -107,7 +107,13 @@ export const ArrayView: React.FC<ArrayViewProps> = ({
               className="flex shrink-0 flex-col items-center"
             >
               {/* Index label above cell */}
-              <span className="mb-1 font-mono text-[10px] text-gray-500">
+              <span
+                className={`mb-1 font-mono text-[10px] ${
+                  cellMarkers && cellMarkers.length > 0
+                    ? 'font-bold text-blue-400'
+                    : 'text-gray-500'
+                }`}
+              >
                 {index}
               </span>
 
@@ -116,10 +122,14 @@ export const ArrayView: React.FC<ArrayViewProps> = ({
                 variants={cellVariants}
                 initial="initial"
                 animate="animate"
-                className={`relative flex min-h-[44px] min-w-[52px] items-center justify-center border-y border-r border-white/15 bg-canvas-muted px-2 py-1.5 font-mono text-xs transition-colors ${
+                className={`relative flex min-h-[44px] min-w-[52px] items-center justify-center border-y border-r border-white/15 px-2 py-1.5 font-mono text-xs transition-colors ${
                   index === 0 ? 'rounded-l border-l' : ''
                 } ${index === obj.items.length - 1 && !obj.clipped ? 'rounded-r' : ''} ${
-                  isChanged ? 'bg-amber-950/30 ring-1 ring-inset ring-amber-400/50' : ''
+                  isChanged
+                    ? 'bg-amber-950/30 ring-1 ring-inset ring-amber-400/50'
+                    : cellMarkers && cellMarkers.length > 0
+                      ? 'border-blue-400/80 bg-blue-500/25 ring-2 ring-inset ring-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.35)]'
+                      : 'bg-canvas-muted'
                 }`}
               >
                 <ValueView

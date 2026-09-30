@@ -70,6 +70,10 @@ export const JavaEditor: React.FC = () => {
       return;
     }
     setTrace(validated.data);
+    // Auto-start playback so traversal and step execution are animated immediately
+    if (validated.data.steps.length > 1) {
+      useAppStore.getState().setPlaying(true);
+    }
     // Sync markers after trace loads
     if (monacoRef.current && editorRef.current) {
       const model = editorRef.current.getModel();

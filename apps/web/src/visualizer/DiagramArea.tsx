@@ -92,9 +92,16 @@ export const DiagramArea: React.FC<DiagramAreaProps> = ({
   }
 
   // Filter reachable objects to those that should be rendered as standalone cards
-  const standaloneIds = Array.from(reachable).filter(
-    (id) => !gridInnerArrayIds.has(id),
-  );
+  const standaloneIds = Array.from(reachable).filter((id) => {
+    if (gridInnerArrayIds.has(id)) return false;
+    // Omit default empty String[0] args array from JVM
+    const name = varNamesByHeapId.get(id);
+    const obj = step.heap[id];
+    if (name === 'args' && obj && obj.kind === 'array' && obj.length === 0) {
+      return false;
+    }
+    return true;
+  });
 
   if (standaloneIds.length === 0) {
     return (
