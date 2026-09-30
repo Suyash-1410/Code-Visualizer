@@ -1,0 +1,27 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 6,
+  "maxStepCount": 15,
+  "expectedVariables": [
+    {
+      "step": 0,
+      "name": "count",
+      "expectedValue": { "k": "prim", "t": "int", "v": 3 }
+    },
+    {
+      "step": 2,
+      "name": "count",
+      "expectedValue": { "k": "prim", "t": "int", "v": 2 }
+    },
+    {
+      "step": 4,
+      "name": "count",
+      "expectedValue": { "k": "prim", "t": "int", "v": 1 }
+    },
+    {
+      "step": 6,
+      "name": "count",
+      "expectedValue": { "k": "prim", "t": "int", "v": 0 }
+    }
+  ]
+}

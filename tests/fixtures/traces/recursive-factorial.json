@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "status": "ok",
+  "truncation": null,
+  "compileErrors": [],
+  "runtimeError": null,
+  "source": "public class Main {\n  public static void main(String[] args) {\n    int res = fact(3);\n  }\n  public static int fact(int n) {\n    if (n <= 1) {\n      return 1;\n    }\n    return n * fact(n - 1);\n  }\n}",
+  "stdout": "",
+  "steps": [
+    {
+      "i": 0,
+      "event": "call",
+      "line": 3,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 1,
+      "event": "line",
+      "line": 3,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 2,
+      "event": "call",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 3,
+      "event": "line",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 4,
+      "event": "line",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 5,
+      "event": "call",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 6,
+      "event": "line",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 7,
+      "event": "line",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 8,
+      "event": "call",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        },
+        {
+          "frameId": 4,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 1 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 9,
+      "event": "line",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        },
+        {
+          "frameId": 4,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 6,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 1 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 10,
+      "event": "line",
+      "line": 7,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        },
+        {
+          "frameId": 4,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 7,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 1 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 11,
+      "event": "return",
+      "line": 7,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        },
+        {
+          "frameId": 4,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 7,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 1 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": { "k": "prim", "t": "int", "v": 1 },
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 12,
+      "event": "line",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 13,
+      "event": "return",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        },
+        {
+          "frameId": 3,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 2 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": { "k": "prim", "t": "int", "v": 2 },
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 14,
+      "event": "line",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 15,
+      "event": "return",
+      "line": 9,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        },
+        {
+          "frameId": 2,
+          "method": "Main.fact",
+          "signature": "int fact(int)",
+          "line": 9,
+          "locals": [
+            { "name": "n", "type": "int", "value": { "k": "prim", "t": "int", "v": 3 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": { "k": "prim", "t": "int", "v": 6 },
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 16,
+      "event": "line",
+      "line": 3,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "res", "type": "int", "value": { "k": "prim", "t": "int", "v": 6 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 17,
+      "event": "return",
+      "line": 4,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 4,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "res", "type": "int", "value": { "k": "prim", "t": "int", "v": 6 } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": { "k": "void" },
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 18,
+      "event": "end",
+      "line": 4,
+      "stack": [],
+      "heap": {},
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    }
+  ],
+  "stats": {
+    "stepCount": 19,
+    "maxDepth": 4,
+    "durationMs": 62
+  }
+}

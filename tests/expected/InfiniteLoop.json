@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "truncated",
+  "expectedTruncationReason": "step_cap"
+}

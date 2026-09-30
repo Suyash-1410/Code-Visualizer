@@ -1,0 +1,22 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 10,
+  "maxStepCount": 20,
+  "expectedVariables": [
+    {
+      "step": 0,
+      "name": "sum",
+      "expectedValue": { "k": "prim", "t": "int", "v": 0 }
+    },
+    {
+      "step": 2,
+      "name": "sum",
+      "expectedValue": { "k": "prim", "t": "int", "v": 1 }
+    },
+    {
+      "step": 10,
+      "name": "sum",
+      "expectedValue": { "k": "prim", "t": "int", "v": 15 }
+    }
+  ]
+}

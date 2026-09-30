@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "status": "ok",
+  "truncation": null,
+  "compileErrors": [],
+  "runtimeError": null,
+  "source": "public class Main {\n  public static void main(String[] args) {\n    int[] nums = new int[]{10, 20, 30};\n    Node head = new Node(1);\n    head.next = new Node(2);\n    head.next.next = new Node(3);\n  }\n}\nclass Node {\n  int val;\n  Node next;\n  Node(int val) {\n    this.val = val;\n  }\n}",
+  "stdout": "",
+  "steps": [
+    {
+      "i": 0,
+      "event": "call",
+      "line": 3,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 1,
+      "event": "line",
+      "line": 3,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 3,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "nums", "type": "int[]", "value": { "k": "ref", "id": "@10" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false },
+        "@10": {
+          "kind": "array",
+          "elemType": "int",
+          "length": 3,
+          "items": [
+            { "k": "prim", "t": "int", "v": 10 },
+            { "k": "prim", "t": "int", "v": 20 },
+            { "k": "prim", "t": "int", "v": 30 }
+          ],
+          "clipped": false
+        }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 2,
+      "event": "line",
+      "line": 4,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 4,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "nums", "type": "int[]", "value": { "k": "ref", "id": "@10" } },
+            { "name": "head", "type": "Node", "value": { "k": "ref", "id": "@20" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false },
+        "@10": {
+          "kind": "array",
+          "elemType": "int",
+          "length": 3,
+          "items": [
+            { "k": "prim", "t": "int", "v": 10 },
+            { "k": "prim", "t": "int", "v": 20 },
+            { "k": "prim", "t": "int", "v": 30 }
+          ],
+          "clipped": false
+        },
+        "@20": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 1 },
+            "next": { "k": "null" }
+          }
+        }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 3,
+      "event": "line",
+      "line": 5,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 5,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "nums", "type": "int[]", "value": { "k": "ref", "id": "@10" } },
+            { "name": "head", "type": "Node", "value": { "k": "ref", "id": "@20" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false },
+        "@10": {
+          "kind": "array",
+          "elemType": "int",
+          "length": 3,
+          "items": [
+            { "k": "prim", "t": "int", "v": 10 },
+            { "k": "prim", "t": "int", "v": 20 },
+            { "k": "prim", "t": "int", "v": 30 }
+          ],
+          "clipped": false
+        },
+        "@20": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 1 },
+            "next": { "k": "ref", "id": "@21" }
+          }
+        },
+        "@21": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 2 },
+            "next": { "k": "null" }
+          }
+        }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 4,
+      "event": "line",
+      "line": 6,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 6,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "nums", "type": "int[]", "value": { "k": "ref", "id": "@10" } },
+            { "name": "head", "type": "Node", "value": { "k": "ref", "id": "@20" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false },
+        "@10": {
+          "kind": "array",
+          "elemType": "int",
+          "length": 3,
+          "items": [
+            { "k": "prim", "t": "int", "v": 10 },
+            { "k": "prim", "t": "int", "v": 20 },
+            { "k": "prim", "t": "int", "v": 30 }
+          ],
+          "clipped": false
+        },
+        "@20": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 1 },
+            "next": { "k": "ref", "id": "@21" }
+          }
+        },
+        "@21": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 2 },
+            "next": { "k": "ref", "id": "@22" }
+          }
+        },
+        "@22": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 3 },
+            "next": { "k": "null" }
+          }
+        }
+      },
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 5,
+      "event": "return",
+      "line": 7,
+      "stack": [
+        {
+          "frameId": 1,
+          "method": "Main.main",
+          "signature": "void main(String[])",
+          "line": 7,
+          "locals": [
+            { "name": "args", "type": "String[]", "value": { "k": "ref", "id": "@1" } },
+            { "name": "nums", "type": "int[]", "value": { "k": "ref", "id": "@10" } },
+            { "name": "head", "type": "Node", "value": { "k": "ref", "id": "@20" } }
+          ]
+        }
+      ],
+      "heap": {
+        "@1": { "kind": "array", "elemType": "String", "length": 0, "items": [], "clipped": false },
+        "@10": {
+          "kind": "array",
+          "elemType": "int",
+          "length": 3,
+          "items": [
+            { "k": "prim", "t": "int", "v": 10 },
+            { "k": "prim", "t": "int", "v": 20 },
+            { "k": "prim", "t": "int", "v": 30 }
+          ],
+          "clipped": false
+        },
+        "@20": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 1 },
+            "next": { "k": "ref", "id": "@21" }
+          }
+        },
+        "@21": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 2 },
+            "next": { "k": "ref", "id": "@22" }
+          }
+        },
+        "@22": {
+          "kind": "object",
+          "type": "Node",
+          "fields": {
+            "val": { "k": "prim", "t": "int", "v": 3 },
+            "next": { "k": "null" }
+          }
+        }
+      },
+      "statics": [],
+      "returnValue": { "k": "void" },
+      "stdoutLen": 0,
+      "clipped": false
+    },
+    {
+      "i": 6,
+      "event": "end",
+      "line": 7,
+      "stack": [],
+      "heap": {},
+      "statics": [],
+      "returnValue": null,
+      "stdoutLen": 0,
+      "clipped": false
+    }
+  ],
+  "stats": {
+    "stepCount": 7,
+    "maxDepth": 1,
+    "durationMs": 55
+  }
+}
