@@ -13,6 +13,7 @@ import {
   useStepDiff,
 } from '../../store';
 import { DiagramArea } from '../../visualizer/DiagramArea';
+import { CallStackPanel as RealCallStackPanel } from '../../visualizer/CallStackPanel';
 import { VariablesPanel as RealVariablesPanel } from '../../visualizer/VariablesPanel';
 
 // ---------------------------------------------------------------------------
@@ -52,47 +53,19 @@ export const DiagramPanel: React.FC = () => {
 // ---------------------------------------------------------------------------
 export const CallStackPanel: React.FC = () => {
   const step = useCurrentStep();
-  const selectedFrame = useSelectedFrame();
+  const trace = useAppStore((s) => s.trace);
+  const selectedFrameId = useAppStore((s) => s.selectedFrameId);
   const setSelectedFrameId = useAppStore((s) => s.setSelectedFrameId);
+  const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
 
   return (
-    <div className="flex h-full flex-col overflow-hidden bg-canvas">
-      <PanelHeader title="Call Stack" />
-      {step && step.stack.length > 0 ? (
-        <ul className="divide-y divide-white/5 overflow-y-auto text-xs">
-          {[...step.stack].reverse().map((frame) => {
-            const isSelected = selectedFrame?.frameId === frame.frameId;
-
-            return (
-              <li
-                key={frame.frameId}
-                onClick={() => setSelectedFrameId(frame.frameId)}
-                className={`flex cursor-pointer items-baseline gap-2 px-3 py-1.5 transition-colors ${
-                  isSelected
-                    ? 'border-l-2 border-blue-400 bg-blue-950/30'
-                    : 'hover:bg-white/4'
-                }`}
-                title="Click to view variables in this frame"
-              >
-                <span className="shrink-0 font-mono text-blue-400">
-                  #{String(frame.frameId)}
-                </span>
-                <span className="truncate font-medium text-gray-200">
-                  {frame.method}()
-                </span>
-                <span className="ml-auto shrink-0 tabular-nums text-gray-500">
-                  :{String(frame.line)}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <div className="flex flex-1 items-center justify-center text-xs text-gray-600">
-          No active call frames.
-        </div>
-      )}
-    </div>
+    <RealCallStackPanel
+      step={step}
+      trace={trace}
+      selectedFrameId={selectedFrameId}
+      onSelectFrame={setSelectedFrameId}
+      onHoverHeap={setHoveredHeapId}
+    />
   );
 };
 
