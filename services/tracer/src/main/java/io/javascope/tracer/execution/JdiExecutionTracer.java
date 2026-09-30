@@ -67,7 +67,12 @@ public class JdiExecutionTracer {
     arguments.get("home").setValue(System.getProperty("java.home"));
     arguments
         .get("options")
-        .setValue("-Xmx" + config.targetJvmMemoryMb() + "m -cp \"" + classpath + "\"");
+        .setValue(
+            "-XX:-UsePerfData -Djava.io.tmpdir=/tmp -Xmx"
+                + config.targetJvmMemoryMb()
+                + "m -cp \""
+                + classpath
+                + "\"");
     arguments.get("main").setValue("io.javascope.tracer.wrapper.WrapperLauncher " + mainClassName);
     arguments.get("suspend").setValue("true");
 
@@ -377,10 +382,20 @@ public class JdiExecutionTracer {
               boolean isUserCatch =
                   ee.catchLocation() != null
                       && HeapSnapshotBuilder.isUserClass(ee.catchLocation().declaringType().name());
+              String catchClassName =
+                  ee.catchLocation() != null ? ee.catchLocation().declaringType().name() : "";
               boolean isUncaught =
                   ee.catchLocation() == null
-                      || !HeapSnapshotBuilder.isUserClass(
-                          ee.catchLocation().declaringType().name());
+                      || catchClassName.startsWith("io.javascope.tracer.wrapper.")
+                      || catchClassName.startsWith("jdk.internal.reflect.")
+                      || catchClassName.startsWith("java.lang.reflect.")
+                      || catchClassName.startsWith("sun.reflect.")
+                      || (isUserThrow && !isUserCatch);
+
+              if (!isUserThrow && !isUserCatch && !isUncaught) {
+                // Internal JDK exception caught entirely within JDK implementation
+                continue;
+              }
 
               if (isUserThrow || isUserCatch || isUncaught) {
                 int throwingLine =

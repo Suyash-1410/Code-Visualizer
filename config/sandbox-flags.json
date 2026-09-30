@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Canonical Docker container execution flags for the JavaScope sandbox (PRD Section 9.2)",
+  "image": "javascope-sandbox:latest",
+  "flags": [
+    "--network", "none",
+    "--memory", "512m",
+    "--memory-swap", "512m",
+    "--cpus", "1",
+    "--pids-limit", "64",
+    "--read-only",
+    "--tmpfs", "/tmp:rw,nosuid,size=64m",
+    "--cap-drop", "ALL",
+    "--security-opt", "no-new-privileges",
+    "--user", "10001:10001",
+    "--rm"
+  ]
+}

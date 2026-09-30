@@ -1,0 +1,6 @@
+.git
+.gemini
+**/node_modules
+**/dist
+**/target
+**/*.log
