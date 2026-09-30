@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { FixtureLoader } from './dev/FixtureLoader';
+import { ExamplesDropdown } from './ExamplesDropdown';
 
 export const Header: React.FC = () => (
   <header className="flex h-12 shrink-0 items-center gap-3 border-b border-white/8 bg-canvas-subtle px-4">
@@ -15,6 +16,11 @@ export const Header: React.FC = () => (
       <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-blue-400">
         beta
       </span>
+    </div>
+
+    {/* Examples Dropdown */}
+    <div className="ml-4">
+      <ExamplesDropdown />
     </div>
 
     {/* Spacer */}

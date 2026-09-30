@@ -16,6 +16,7 @@ import { DiagramArea } from '../../visualizer/DiagramArea';
 import { CallTreeView } from '../../visualizer/CallTreeView';
 import { CallStackPanel as RealCallStackPanel } from '../../visualizer/CallStackPanel';
 import { VariablesPanel as RealVariablesPanel } from '../../visualizer/VariablesPanel';
+import { EmptyState } from '../EmptyState';
 
 // ---------------------------------------------------------------------------
 // DiagramPanel — top-right: heap diagram / call tree tabs
@@ -35,6 +36,23 @@ export const DiagramPanel: React.FC = () => {
   const focusedHeapId = useAppStore((s) => s.focusedHeapId);
   const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
   const setFocusedHeapId = useAppStore((s) => s.setFocusedHeapId);
+  const runState = useAppStore((s) => s.runState);
+
+  if (runState === 'running') {
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-3 bg-canvas p-6 text-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-blue-500/30 border-t-blue-400" />
+        <div className="space-y-1">
+          <p className="text-xs font-semibold text-gray-200">Executing in secure Docker sandbox…</p>
+          <p className="text-[11px] text-gray-500">Tracing bytecode, heap allocations, and call stack frames</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!trace) {
+    return <EmptyState />;
+  }
 
   return (
     <div className="flex h-full flex-col overflow-hidden bg-canvas">

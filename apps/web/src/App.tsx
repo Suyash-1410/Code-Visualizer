@@ -38,6 +38,12 @@ const VResizeHandle: React.FC = () => (
   </PanelResizeHandle>
 );
 
+const MobileNotice: React.FC = () => (
+  <div className="md:hidden flex items-center justify-between gap-2 border-b border-blue-500/30 bg-blue-950/90 px-3 py-1.5 text-[11px] text-blue-200">
+    <span>📱 JavaScope is optimized for tablet &amp; desktop screens (≥ 768px). Rotate to landscape for the best visualization.</span>
+  </div>
+);
+
 // ── Root component ───────────────────────────────────────────────────────────
 
 export const App: React.FC = () => {
@@ -46,6 +52,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden bg-[#0d1117] text-gray-200">
+      <MobileNotice />
       <Header />
       <StatusBanner />
 

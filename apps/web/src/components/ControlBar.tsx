@@ -5,9 +5,10 @@
  * Keyboard shortcuts are registered in the App-level useKeyboardShortcuts hook.
  */
 
-import React from 'react';
-import { useAppStore } from '../store';
+import React, { useMemo } from 'react';
+import { useAppStore, useCurrentStep, useStepDiff } from '../store';
 import { usePlayback } from '../hooks/usePlayback';
+import { describeStep } from '../visualizer/stepDescription';
 
 const SPEEDS = [0.25, 0.5, 1, 2, 4] as const;
 
@@ -31,6 +32,16 @@ export const ControlBar: React.FC = () => {
     setSpeed,
     setStepIndex,
   } = usePlayback();
+
+  const currentStep = useCurrentStep();
+  const prevStep = trace?.steps ? trace.steps[currentStepIndex - 1] : undefined;
+  const diff = useStepDiff();
+  const stepNarration = describeStep(currentStep, prevStep, diff, trace);
+
+  const maxDepth = useMemo(() => {
+    if (!trace?.steps) return 0;
+    return trace.steps.reduce((max, s) => Math.max(max, s.stack ? s.stack.length : 0), 0);
+  }, [trace]);
 
   const isReady = runState === 'ready' && totalSteps > 0;
   const atStart = currentStepIndex === 0;
@@ -174,6 +185,39 @@ export const ControlBar: React.FC = () => {
       {/* Event badge */}
       {trace && (
         <EventBadge event={trace.steps[currentStepIndex]?.event} />
+      )}
+
+      {/* ── Step Description Narration (P1) ── */}
+      {stepNarration && (
+        <div
+          data-testid="step-narration"
+          className="hidden lg:flex items-center gap-1.5 truncate rounded bg-white/5 border border-white/10 px-2.5 py-1 text-xs text-blue-200 max-w-[280px] xl:max-w-md"
+          title={stepNarration}
+        >
+          <span className="text-blue-400 font-bold">💬</span>
+          <span className="truncate font-mono text-[11px]">{stepNarration}</span>
+        </div>
+      )}
+
+      {/* ── Post-run summary after last step (P1) ── */}
+      {atEnd && (
+        <span
+          data-testid="post-run-summary"
+          className={`shrink-0 rounded border px-2 py-0.5 text-[10px] font-semibold tracking-wide ${
+            trace?.status === 'truncated'
+              ? 'border-amber-500/40 bg-amber-500/10 text-amber-300'
+              : trace?.status === 'runtime_error'
+                ? 'border-red-500/40 bg-red-500/10 text-red-300'
+                : 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300'
+          }`}
+          title={`Total Steps: ${totalSteps}, Max Call Depth: ${maxDepth}`}
+        >
+          {trace?.status === 'truncated'
+            ? `⚠️ Truncated (${totalSteps} steps, max depth ${maxDepth})`
+            : trace?.status === 'runtime_error'
+              ? `⚠ Exception at step ${totalSteps}`
+              : `✓ Finished (${totalSteps} steps, max depth ${maxDepth})`}
+        </span>
       )}
     </div>
   );

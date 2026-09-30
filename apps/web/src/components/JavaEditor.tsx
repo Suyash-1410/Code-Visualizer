@@ -16,6 +16,7 @@ import { runSource } from '../api';
 import { validateTrace } from '../trace';
 import { useEditorSync } from '../hooks/useEditorSync';
 import { usePlayback } from '../hooks/usePlayback';
+import { loadSourceFromStorage, saveSourceToStorage } from '../utils/storage';
 
 export const JavaEditor: React.FC = () => {
   const monacoRef = useRef<typeof Monaco | null>(null);
@@ -35,6 +36,14 @@ export const JavaEditor: React.FC = () => {
 
   const isReadOnly = trace !== null;
   const isRunning = runState === 'running';
+
+  // ── Restore source from localStorage on initial load ─────────────────────
+  React.useEffect(() => {
+    const saved = loadSourceFromStorage();
+    if (saved && saved.trim()) {
+      setSource(saved);
+    }
+  }, [setSource]);
 
   // ── Editor sync: decorations + scroll ────────────────────────────────────
   useEditorSync(editorRef, monacoRef);
@@ -188,7 +197,11 @@ export const JavaEditor: React.FC = () => {
             cursorStyle: isReadOnly ? 'underline' : 'line',
           }}
           onChange={(value) => {
-            if (!isReadOnly) setSource(value ?? '');
+            if (!isReadOnly) {
+              const code = value ?? '';
+              setSource(code);
+              saveSourceToStorage(code);
+            }
           }}
           onMount={handleEditorMount}
           theme="javascope-dark"
