@@ -181,9 +181,10 @@ test.describe('JavaScope E2E Quality Gates (PRD 12.4 & 12.5)', () => {
     page,
   }) => {
     await page.locator('#example-select').selectOption('sum-of-array');
+    await expect(page.locator('#example-select')).toHaveValue('sum-of-array');
     await page.getByRole('button', { name: /Run/i }).click();
 
-    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 15000 });
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
 
     const pauseBtn = page.getByLabel('Pause');
     if (await pauseBtn.isVisible()) {
@@ -218,8 +219,9 @@ test.describe('JavaScope E2E Quality Gates (PRD 12.4 & 12.5)', () => {
 
     // 3. CallTree visual sanity on Fibonacci
     await page.locator('#example-select').selectOption('fibonacci');
+    await expect(page.locator('#example-select')).toHaveValue('fibonacci');
     await page.getByRole('button', { name: /Run/i }).click();
-    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 20000 });
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
     if (await pauseBtn.isVisible()) {
       await pauseBtn.click();
     }

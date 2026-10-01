@@ -143,7 +143,7 @@ export const runtimeErrorSchema = z.object({
 export const traceStatsSchema = z.object({
   stepCount: z.number().int().nonnegative(),
   maxDepth: z.number().int().nonnegative(),
-  durationMs: z.number().nonnegative(),
+  durationMs: z.number().transform((val) => Math.max(0, val)),
 });
 
 export const traceSchema = z.object({

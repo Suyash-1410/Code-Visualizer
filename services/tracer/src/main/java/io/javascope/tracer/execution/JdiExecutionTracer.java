@@ -491,7 +491,7 @@ public class JdiExecutionTracer {
               false));
     }
 
-    long duration = System.currentTimeMillis() - startTime;
+    long duration = Math.max(0L, System.currentTimeMillis() - startTime);
     TraceStats stats = new TraceStats(recordedSteps.size(), maxDepthRecorded, duration);
 
     return new Trace(

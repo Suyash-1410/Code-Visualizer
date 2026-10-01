@@ -1,4 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '../..');
 
 /**
  * Playwright E2E configuration for JavaScope (PRD 12.4 & 12.5).
@@ -30,10 +36,19 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
-    reuseExistingServer: true,
-    timeout: 60000,
-  },
+  webServer: [
+    {
+      command: 'java -Xmx256m -jar services/api/target/api-1.0.0-SNAPSHOT.jar',
+      cwd: rootDir,
+      url: 'http://localhost:8080/api/health',
+      reuseExistingServer: true,
+      timeout: 60000,
+    },
+    {
+      command: 'npm run dev',
+      url: 'http://localhost:5173',
+      reuseExistingServer: true,
+      timeout: 60000,
+    },
+  ],
 });

@@ -98,6 +98,11 @@ Report-Gate "6. Web Frontend Production Build" $buildSuccess $gateDuration
 # Gate 7: Playwright End-to-End & Visual Sanity Tests
 $gateStart = Get-Date
 Write-Host "--> Running Gate 7: Playwright E2E & Visual Sanity Suite..." -ForegroundColor Yellow
+$apiJar = Join-Path $RootDir "services\api\target\api-1.0.0-SNAPSHOT.jar"
+if (-not (Test-Path $apiJar)) {
+    Write-Host "--> Packaging API and tracer JARs for E2E runner..."
+    Start-Process -FilePath "mvn.cmd" -ArgumentList "package", "-DskipTests", "-B", "-pl", "services/tracer,services/api" -WorkingDirectory $RootDir -NoNewWindow -Wait
+}
 Push-Location $WebDir
 $e2eOutput = npx playwright test 2>&1
 $e2eSuccess = ($LASTEXITCODE -eq 0)

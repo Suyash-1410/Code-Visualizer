@@ -96,6 +96,10 @@ report_gate "6. Web Frontend Production Build" "$G6_EXIT" "$G6_DUR"
 # Gate 7: Playwright End-to-End & Visual Sanity Tests
 echo -e "${YELLOW}--> Running Gate 7: Playwright E2E & Visual Sanity Suite...${NC}"
 G7_START=$(date +%s)
+if [ ! -f "$API_DIR/target/api-1.0.0-SNAPSHOT.jar" ]; then
+  echo "--> Packaging API and tracer JARs for E2E runner..."
+  (cd "$ROOT_DIR" && mvn package -DskipTests -B -pl services/tracer,services/api)
+fi
 (cd "$WEB_DIR" && npx playwright test)
 G7_EXIT=$?
 G7_DUR=$(( $(date +%s) - G7_START ))

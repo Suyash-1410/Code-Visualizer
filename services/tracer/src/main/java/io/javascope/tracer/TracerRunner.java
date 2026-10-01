@@ -35,7 +35,7 @@ public class TracerRunner {
           source,
           "",
           Collections.emptyList(),
-          new TraceStats(0, 0, System.currentTimeMillis() - start));
+          new TraceStats(0, 0, Math.max(0L, System.currentTimeMillis() - start)));
     }
 
     Path workDir = compileResult.workDir();
@@ -50,7 +50,7 @@ public class TracerRunner {
             source,
             "",
             Collections.emptyList(),
-            new TraceStats(0, 0, System.currentTimeMillis() - start));
+            new TraceStats(0, 0, Math.max(0L, System.currentTimeMillis() - start)));
       }
 
       // 2. Detect Main Class
@@ -67,7 +67,7 @@ public class TracerRunner {
             source,
             detection.errorMessage(),
             Collections.emptyList(),
-            new TraceStats(0, 0, System.currentTimeMillis() - start));
+            new TraceStats(0, 0, Math.max(0L, System.currentTimeMillis() - start)));
       }
 
       // 3. Execute with JDI
@@ -83,7 +83,7 @@ public class TracerRunner {
           source,
           e.getMessage() != null ? e.getMessage() : "",
           Collections.emptyList(),
-          new TraceStats(0, 0, System.currentTimeMillis() - start));
+          new TraceStats(0, 0, Math.max(0L, System.currentTimeMillis() - start)));
     } finally {
       // Clean up temp directory
       try {

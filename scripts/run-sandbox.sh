@@ -16,7 +16,19 @@ set -euo pipefail
 
 IMAGE_NAME="${JAVASCOPE_IMAGE:-javascope-sandbox:latest}"
 
-exec docker run -i \
+# Detect Docker CLI invocation (native docker vs WSL docker on Windows)
+if command -v docker >/dev/null 2>&1; then
+  DOCKER_CMD=("docker")
+elif command -v wsl.exe >/dev/null 2>&1; then
+  DOCKER_CMD=("wsl.exe" "-u" "root" "--" "docker")
+elif command -v wsl >/dev/null 2>&1; then
+  DOCKER_CMD=("wsl" "-u" "root" "--" "docker")
+else
+  echo "Error: Neither docker nor wsl found. Docker is required to run the sandbox." >&2
+  exit 127
+fi
+
+exec "${DOCKER_CMD[@]}" run -i \
   --rm \
   --network none \
   --memory 512m \

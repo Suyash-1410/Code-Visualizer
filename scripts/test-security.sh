@@ -5,6 +5,18 @@ ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 SECURITY_DIR="${ROOT_DIR}/tests/security"
 RUN_SANDBOX="${SCRIPT_DIR}/run-sandbox.sh"
 
+# Detect Docker CLI invocation (native docker vs WSL docker on Windows)
+if command -v docker >/dev/null 2>&1; then
+  DOCKER_CMD=("docker")
+elif command -v wsl.exe >/dev/null 2>&1; then
+  DOCKER_CMD=("wsl.exe" "-u" "root" "--" "docker")
+elif command -v wsl >/dev/null 2>&1; then
+  DOCKER_CMD=("wsl" "-u" "root" "--" "docker")
+else
+  echo "Error: Neither docker nor wsl found. Docker is required for security tests." >&2
+  exit 1
+fi
+
 PASSED=0
 FAILED=0
 TOTAL=0
@@ -30,14 +42,14 @@ run_test() {
   # Run container with hard 20-second timeout
   local output
   local exit_code=0
-  output=$(timeout 20s "$RUN_SANDBOX" < "$test_file" 2>&1) || exit_code=$?
+  output=$(timeout 20s bash "$RUN_SANDBOX" < "$test_file" 2>&1) || exit_code=$?
 
   # Check that no container was left running
   local running_containers
-  running_containers=$(docker ps -q --filter "ancestor=javascope-sandbox:latest")
+  running_containers=$("${DOCKER_CMD[@]}" ps -q --filter "ancestor=javascope-sandbox:latest")
   if [ -n "$running_containers" ]; then
     echo "FAIL (Container left running: $running_containers)"
-    docker kill $running_containers >/dev/null 2>&1 || true
+    "${DOCKER_CMD[@]}" kill $running_containers >/dev/null 2>&1 || true
     FAILED=$((FAILED + 1))
     return
   fi

@@ -77,7 +77,7 @@ jobs:
         run: mvn package -DskipTests -B
 
       - name: Build Sandbox Docker Image
-        run: docker build -t javascope-sandbox:latest -f docker/sandbox/Dockerfile .
+        run: docker build -t javascope-sandbox:latest -f sandbox/Dockerfile .
 
       - name: Run Hostile Container Security Tests (Shell)
         run: bash scripts/test-security.sh
@@ -113,7 +113,7 @@ jobs:
           mvn package -DskipTests -B -pl services/tracer,services/api
 
       - name: Build Sandbox Docker Image
-        run: docker build -t javascope-sandbox:latest -f docker/sandbox/Dockerfile .
+        run: docker build -t javascope-sandbox:latest -f sandbox/Dockerfile .
 
       - name: Install Frontend Dependencies & Playwright
         working-directory: apps/web
