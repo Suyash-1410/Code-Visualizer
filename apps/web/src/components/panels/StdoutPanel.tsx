@@ -15,7 +15,7 @@ export const StdoutPanel: React.FC = () => {
   const stdout = useCurrentStdout();
 
   return (
-    <div className="flex h-full flex-col overflow-hidden">
+    <div data-testid="stdout-panel" className="flex h-full flex-col overflow-hidden">
       {/* Header */}
       <div className="flex h-8 shrink-0 items-center justify-between border-b border-white/8 px-3">
         <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
