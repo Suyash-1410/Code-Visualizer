@@ -1,0 +1,992 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class RightOnly {\n  public static void main(String[] args) {\n    TreeNode root = new TreeNode(10);\n    root.right = new TreeNode(20);\n    System.out.println(\"Root: \" + root.val + \", Left: \" + (root.left == null) + \", Right: \" + root.right.val);\n  }\n}\n\nclass TreeNode {\n  int val;\n  TreeNode left;\n  TreeNode right;\n\n  TreeNode(int val) {\n    this.val = val;\n  }\n}\n",
+  "stdout" : "Root: 10, Left: true, Right: 20\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 32,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "return",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "RightOnly.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 32,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "end",
+    "line" : 6,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 32,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 18,
+    "maxDepth" : 2,
+    "durationMs" : 986
+  }
+}

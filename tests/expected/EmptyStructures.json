@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 5,
+  "expectedStdout": "stackTop=-1, queueFront=0, heapSize=0\n"
+}

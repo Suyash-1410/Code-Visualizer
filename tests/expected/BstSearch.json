@@ -1,0 +1,16 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Found 40: true, Found 99: false\n",
+  "expectedCalls": [
+    { "method": "BstSearch.search", "count": 6 }
+  ],
+  "expectedReturns": [
+    { "method": "BstSearch.search", "count": 6 }
+  ],
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 5,
+    "inorderValues": [20, 30, 40, 50, 70]
+  }
+}

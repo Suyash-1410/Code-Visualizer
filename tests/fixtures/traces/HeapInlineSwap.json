@@ -1,0 +1,3924 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class HeapInlineSwap {\n  int[] heap = new int[5];\n  int size = 0;\n\n  public void insert(int val) {\n    heap[size] = val;\n    int i = size;\n    while (i > 0) {\n      int p = (i - 1) / 2;\n      if (heap[i] < heap[p]) {\n        int temp = heap[i];\n        heap[i] = heap[p];\n        heap[p] = temp;\n        i = p;\n      } else {\n        break;\n      }\n    }\n    size++;\n  }\n\n  public static void main(String[] args) {\n    HeapInlineSwap h = new HeapInlineSwap();\n    h.insert(30);\n    h.insert(10);\n    h.insert(20);\n    System.out.println(\"min=\" + h.heap[0] + \", left=\" + h.heap[1] + \", right=\" + h.heap[2]);\n  }\n}\n",
+  "stdout" : "min=10, left=30, right=20\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 1,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapInlineSwap.<init>",
+      "signature" : "HeapInlineSwap()",
+      "line" : 1,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 1,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapInlineSwap.<init>",
+      "signature" : "HeapInlineSwap()",
+      "line" : 1,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 2,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapInlineSwap.<init>",
+      "signature" : "HeapInlineSwap()",
+      "line" : 2,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapInlineSwap.<init>",
+      "signature" : "HeapInlineSwap()",
+      "line" : 3,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapInlineSwap.<init>",
+      "signature" : "HeapInlineSwap()",
+      "line" : 3,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "call",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "temp",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "temp",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "temp",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "call",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "HeapInlineSwap.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 26,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "return",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapInlineSwap.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapInlineSwap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapInlineSwap",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 26,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "end",
+    "line" : 28,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 26,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 45,
+    "maxDepth" : 2,
+    "durationMs" : 1158
+  }
+}

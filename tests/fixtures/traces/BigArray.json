@@ -1,0 +1,1838 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class BigArray {\n  public static void main(String[] args) {\n    int[] big = new int[1000];\n    big[0] = 42;\n    big[999] = 99;\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BigArray.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BigArray.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "big",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 1000,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : true
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : true
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BigArray.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "big",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 1000,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 42
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : true
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : true
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BigArray.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "big",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 1000,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 42
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : true
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : true
+  }, {
+    "i" : 4,
+    "event" : "return",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BigArray.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "big",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 1000,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 42
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : true
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : true
+  }, {
+    "i" : 5,
+    "event" : "end",
+    "line" : 6,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 6,
+    "maxDepth" : 1,
+    "durationMs" : 376
+  }
+}

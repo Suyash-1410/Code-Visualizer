@@ -1,0 +1,12 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 10,
+  "expectedStdout": "Forward: 10 30\n",
+  "expectedChain": {
+    "step": -2,
+    "var": "head",
+    "prevField": "prev",
+    "expectedValues": [10, 30],
+    "checkIdStability": true
+  }
+}

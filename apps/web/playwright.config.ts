@@ -38,7 +38,7 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: 'java -Xmx256m -jar services/api/target/api-1.0.0-SNAPSHOT.jar',
+      command: 'java -Xmx256m -Djavascope.rateLimit.runsPerMinute=1000 -jar services/api/target/api-1.0.0-SNAPSHOT.jar',
       cwd: rootDir,
       url: 'http://localhost:8080/api/health',
       reuseExistingServer: true,

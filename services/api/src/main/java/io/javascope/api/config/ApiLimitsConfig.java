@@ -69,7 +69,14 @@ public class ApiLimitsConfig {
       this.maxTraceJsonBytes = limits.path("maxTraceJsonBytes").asInt(15728640);
 
       JsonNode rateLimit = limits.path("rateLimit");
-      this.rateLimitRunsPerMinute = rateLimit.path("runsPerMinutePerIp").asInt(10);
+      int runsPerMin = rateLimit.path("runsPerMinutePerIp").asInt(10);
+      String sysPropMin = System.getProperty("javascope.rateLimit.runsPerMinute");
+      if (sysPropMin != null && !sysPropMin.isBlank()) {
+        try {
+          runsPerMin = Integer.parseInt(sysPropMin);
+        } catch (NumberFormatException ignored) {}
+      }
+      this.rateLimitRunsPerMinute = runsPerMin;
       this.rateLimitRunsPerDay = rateLimit.path("runsPerDayPerIp").asInt(200);
 
       this.maxConcurrentExecutions = limits.path("maxConcurrentExecutions").asInt(2);
@@ -80,7 +87,14 @@ public class ApiLimitsConfig {
       this.containerHardKillTimeoutMs = 20000L;
       this.maxSourceCodeBytes = 20480;
       this.maxTraceJsonBytes = 15728640;
-      this.rateLimitRunsPerMinute = 10;
+      int runsPerMin = 10;
+      String sysPropMin = System.getProperty("javascope.rateLimit.runsPerMinute");
+      if (sysPropMin != null && !sysPropMin.isBlank()) {
+        try {
+          runsPerMin = Integer.parseInt(sysPropMin);
+        } catch (NumberFormatException ignored) {}
+      }
+      this.rateLimitRunsPerMinute = runsPerMin;
       this.rateLimitRunsPerDay = 200;
       this.maxConcurrentExecutions = 2;
       this.maxQueueLength = 10;

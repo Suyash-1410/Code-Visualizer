@@ -10,6 +10,7 @@ import {
   formatCallTreeLabel,
   type CallTreeNode,
 } from './callTree';
+import { useAppStore } from '../store';
 
 export interface CallTreeViewProps {
   trace?: Trace | null;
@@ -47,6 +48,8 @@ export const CallTreeView: React.FC<CallTreeViewProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const svgRef = useRef<SVGSVGElement>(null);
+  const hoveredFrameId = useAppStore((s) => s.hoveredFrameId);
+  const setHoveredFrameId = useAppStore((s) => s.setHoveredFrameId);
 
   // Pan & Zoom state
   const [zoom, setZoom] = useState(1);
@@ -343,38 +346,44 @@ export const CallTreeView: React.FC<CallTreeViewProps> = ({
                     transition: { duration: 0.25, ease: 'easeOut' },
                   };
 
-              return (
-                <g
-                  key={nodeData.frameId}
-                  transform={`translate(${node.x}, ${node.y})`}
-                  className="cursor-pointer group"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onJumpToStep?.(nodeData.callStep);
-                  }}
-                >
-                  <title>{`${nodeLabel}${isReturned && returnStr ? ` → ${returnStr}` : ''} (Frame #${nodeData.frameId})`}</title>
-                  <motion.g
-                    data-testid={`call-tree-node-${nodeData.frameId}`}
-                    {...animProps}
+                const isFrameHovered = nodeData.frameId === hoveredFrameId;
+
+                return (
+                  <g
+                    key={nodeData.frameId}
+                    transform={`translate(${node.x}, ${node.y})`}
+                    className="cursor-pointer group"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onJumpToStep?.(nodeData.callStep);
+                    }}
+                    onMouseEnter={() => setHoveredFrameId(nodeData.frameId)}
+                    onMouseLeave={() => setHoveredFrameId(null)}
                   >
-                    {/* Outer Node Box */}
-                    <rect
-                      x={-NODE_WIDTH / 2}
-                      y={-NODE_HEIGHT / 2}
-                      width={NODE_WIDTH}
-                      height={NODE_HEIGHT}
-                      rx={8}
-                      className={`transition-all duration-200 ${
-                        isExecuting
-                          ? 'fill-blue-950 stroke-blue-400 stroke-[2.5px] filter drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]'
-                          : isOnStack
-                            ? 'fill-blue-950/60 stroke-blue-500/80 stroke-[2px]'
-                            : isReturned
-                              ? 'fill-[#121820] stroke-emerald-500/80 stroke-[1.5px]'
-                              : 'fill-[#161b22] stroke-white/20 stroke-[1px]'
-                      } group-hover:stroke-blue-300`}
-                    />
+                    <title>{`${nodeLabel}${isReturned && returnStr ? ` → ${returnStr}` : ''} (Frame #${nodeData.frameId})`}</title>
+                    <motion.g
+                      data-testid={`call-tree-node-${nodeData.frameId}`}
+                      {...animProps}
+                    >
+                      {/* Outer Node Box */}
+                      <rect
+                        x={-NODE_WIDTH / 2}
+                        y={-NODE_HEIGHT / 2}
+                        width={NODE_WIDTH}
+                        height={NODE_HEIGHT}
+                        rx={8}
+                        className={`transition-all duration-200 ${
+                          isExecuting
+                            ? 'fill-blue-950 stroke-blue-400 stroke-[2.5px] filter drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]'
+                            : isFrameHovered
+                              ? 'fill-blue-950/80 stroke-sky-300 stroke-[2.5px] filter drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]'
+                              : isOnStack
+                                ? 'fill-blue-950/60 stroke-blue-500/80 stroke-[2px]'
+                                : isReturned
+                                  ? 'fill-[#121820] stroke-emerald-500/80 stroke-[1.5px]'
+                                  : 'fill-[#161b22] stroke-white/20 stroke-[1px]'
+                        } group-hover:stroke-blue-300`}
+                      />
 
                     {/* Method & Arguments label: e.g. "fibo(5)" */}
                     <text

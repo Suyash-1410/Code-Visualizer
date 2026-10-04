@@ -1,0 +1,1598 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class OrphanedNodes {\n  public static void main(String[] args) {\n    Node head = new Node(10);\n    head.next = new Node(20);\n    head.next.next = new Node(30);\n\n    head = head.next;\n    head = head.next;\n\n    System.out.println(\"Remaining: \" + head.val);\n  }\n}\n\nclass Node {\n  int val;\n  Node next;\n\n  Node(int val) {\n    this.val = val;\n  }\n}\n",
+  "stdout" : "Remaining: 30\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 14,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "return",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "OrphanedNodes.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 14,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "end",
+    "line" : 11,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 14,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 27,
+    "maxDepth" : 2,
+    "durationMs" : 496
+  }
+}

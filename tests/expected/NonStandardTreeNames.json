@@ -1,0 +1,13 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Root: 10 -> 5, 15\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 3,
+    "inorderValues": [5, 10, 15],
+    "valueField": "val",
+    "leftField": "leftChild",
+    "rightField": "rightChild"
+  }
+}

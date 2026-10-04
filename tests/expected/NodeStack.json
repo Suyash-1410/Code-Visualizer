@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 20,
+  "expectedStdout": "popped=30, top=40, size=3\n",
+  "expectedChain": {
+    "step": -2,
+    "var": "s",
+    "field": "top",
+    "expectedValues": [40, 20, 10]
+  }
+}

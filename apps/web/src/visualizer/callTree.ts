@@ -2,7 +2,7 @@
  * Pure functions to derive and manipulate call trees from execution traces.
  */
 
-import type { Trace, Step, Value, StackFrame } from '../trace/types';
+import type { Trace, Step, Value, StackFrame, HeapObject } from '../trace/types';
 import { formatArgValue } from './frameLifecycle';
 
 export interface CallTreeNode {
@@ -88,7 +88,10 @@ export function buildCallTree(trace: Trace | null | undefined): CallTreeNode[] {
 /**
  * Extracts a concise string for arguments, e.g. "n = 5" or "3, 'A', 'C', 'B'".
  */
-export function extractArgsString(frame: StackFrame): string {
+export function extractArgsString(
+  frame: StackFrame,
+  heap?: Record<string, HeapObject> | null,
+): string {
   if (!frame.locals || frame.locals.length === 0) {
     return '';
   }
@@ -98,7 +101,7 @@ export function extractArgsString(frame: StackFrame): string {
   const argLocals = frame.locals.slice(0, paramCount > 0 ? paramCount : 1);
 
   return argLocals
-    .map((l) => `${l.name} = ${formatArgValue(l.value)}`)
+    .map((l) => `${l.name} = ${formatArgValue(l.value, heap)}`)
     .join(', ');
 }
 

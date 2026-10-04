@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 3,
+  "expectedStdout": "Empty: true\n",
+  "expectedChain": {
+    "step": -2,
+    "var": "head",
+    "expectedValues": []
+  }
+}

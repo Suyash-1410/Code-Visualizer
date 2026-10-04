@@ -1,0 +1,6 @@
+{
+  "expectedStatus": "runtime_error",
+  "expectedRuntimeErrorType": "StackUnderflowException",
+  "expectedRuntimeErrorMessage": "Stack underflow",
+  "hasExceptionEvent": true
+}

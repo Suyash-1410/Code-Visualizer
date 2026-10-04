@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Deleted 30, root.left is 20: true\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 3,
+    "inorderValues": [20, 50, 70]
+  }
+}

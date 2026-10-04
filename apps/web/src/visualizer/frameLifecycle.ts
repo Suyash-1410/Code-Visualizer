@@ -2,7 +2,8 @@
  * Pure functions for call stack lifecycle and method formatting.
  */
 
-import type { StackFrame, Value } from '../trace/types';
+import type { StackFrame, Value, HeapObject } from '../trace/types';
+import { formatNodeSummary } from './nodeSummary';
 
 export interface FrameLifecycle {
   pushed: StackFrame[];
@@ -31,7 +32,10 @@ export function deriveFrameLifecycle(
 /**
  * Formats a Value compactly for display inside method call arguments (e.g. `n = 5`, `arr = int[5]`).
  */
-export function formatArgValue(v: Value): string {
+export function formatArgValue(
+  v: Value,
+  heap?: Record<string, HeapObject> | null,
+): string {
   switch (v.k) {
     case 'prim':
       return typeof v.v === 'boolean'
@@ -44,7 +48,7 @@ export function formatArgValue(v: Value): string {
     case 'null':
       return 'null';
     case 'ref':
-      return v.id;
+      return heap ? formatNodeSummary(v.id, heap) : v.id;
     case 'opaque':
       return `<${v.type}>`;
     case 'void':
@@ -81,7 +85,7 @@ export function formatMethodWithArgs(frame: StackFrame): string {
 /**
  * Helper to count parameters in standard Java method signatures.
  */
-function parseParamCount(signature: string): number {
+export function parseParamCount(signature: string): number {
   if (!signature) return 0;
 
   // Handle standard source-style signature, e.g. "int fib(int, int)" or "void main(String[])"

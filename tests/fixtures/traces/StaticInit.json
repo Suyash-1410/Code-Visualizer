@@ -1,0 +1,211 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class StaticInit {\n  static int counter = 10;\n  static {\n    counter = 50;\n  }\n\n  public static void main(String[] args) {\n    int local = counter;\n    counter = 100;\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StaticInit.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ {
+      "name" : "counter",
+      "type" : "int",
+      "value" : {
+        "k" : "prim",
+        "t" : "int",
+        "v" : 50
+      },
+      "class" : "StaticInit"
+    } ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StaticInit.main",
+      "signature" : "void main(String[])",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "local",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ {
+      "name" : "counter",
+      "type" : "int",
+      "value" : {
+        "k" : "prim",
+        "t" : "int",
+        "v" : 50
+      },
+      "class" : "StaticInit"
+    } ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StaticInit.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "local",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ {
+      "name" : "counter",
+      "type" : "int",
+      "value" : {
+        "k" : "prim",
+        "t" : "int",
+        "v" : 100
+      },
+      "class" : "StaticInit"
+    } ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StaticInit.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "local",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ {
+      "name" : "counter",
+      "type" : "int",
+      "value" : {
+        "k" : "prim",
+        "t" : "int",
+        "v" : 100
+      },
+      "class" : "StaticInit"
+    } ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "end",
+    "line" : 10,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 5,
+    "maxDepth" : 1,
+    "durationMs" : 158
+  }
+}

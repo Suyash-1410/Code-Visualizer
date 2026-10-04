@@ -2,7 +2,7 @@
 
 **Version:** 1.0
 **Product:** JavaScope, an Interactive Java DSA and Recursion Visualizer
-**Status:** Pre-development
+**Status:** Phase 3 Complete (Ready for Phase 4: Stack, Queue, Heap)
 **Builder:** Solo developer, AI-assisted (Antigravity)
 
 ---
@@ -60,13 +60,13 @@ Real public product on **free-tier hosting**. The developer has accepted low con
 
 Each phase must be usable and polished on its own. "Master the visualization, then move on."
 
-| Phase | Scope |
-|---|---|
-| **1** | Editor, tracer, sandbox, playback controls, variables, arrays, **call stack with recursion**, recursion call tree, stdout, errors |
-| **2** | Custom singly and doubly linked lists (user-written `Node` classes) |
-| **3** | Binary trees and BSTs (user-written), clean tree layout, traversal support |
-| **4** | Custom stack, queue, and heap/priority queue (array-backed and node-backed) |
-| **5 (later)** | JDK collections (`ArrayList`, `LinkedList`, `ArrayDeque`, `PriorityQueue`, `HashMap`, `HashSet`), then graphs |
+| Phase | Scope | Status |
+|---|---|---|
+| **1** | Editor, tracer, sandbox, playback controls, variables, arrays, **call stack with recursion**, recursion call tree, stdout, errors | **Complete** |
+| **2** | Custom singly and doubly linked lists (user-written `Node` classes), pointer tags, mid-operation chains, cycles, wrappers, View as… override | **Complete** |
+| **3** | Binary trees and BSTs (user-written), clean tree layout, traversal support | *Next* |
+| **4** | Custom stack, queue, and heap/priority queue (array-backed and node-backed) | *Planned* |
+| **5 (later)** | JDK collections (`ArrayList`, `LinkedList`, `ArrayDeque`, `PriorityQueue`, `HashMap`, `HashSet`), then graphs | *Planned* |
 
 **Phase 1 is the foundation.** Phases 2 to 4 are mostly frontend visualizers on top of the same trace format. Phase 5 requires new tracer work and is out of scope until the developer decides to start it.
 
@@ -226,9 +226,11 @@ For each step, produce a list of structure descriptors, for example:
 Classify by **class shape** (fields of the same class type) with **field names as a tiebreaker**, not a requirement.
 
 - A class with **exactly one** self-typed reference field is a singly linked list node. If it also has a second self-typed field named `prev`/`previous`/`back`, it is doubly linked.
-- A class with **exactly two** self-typed reference fields is a binary tree node. Names `left`/`right` (or `l`/`r`, `leftChild`/`rightChild`) give high confidence. Other names give low confidence and prompt the "View as…" menu.
-- A class with three or more self-typed fields is rendered with the generic view in v1.
-- **Array-backed structures** (Phase 4): a class with an array field plus one or more `int` fields named like `top`/`size`/`front`/`rear`/`head`/`tail`/`count`/`capacity` is a candidate stack, queue, or heap. Class or field names (`Stack`, `Queue`, `Heap`, `PriorityQueue`, `push`/`pop`/`enqueue`/`insert`/`extractMin` method names seen in the call stack) raise confidence.
+- A class with **exactly two** self-typed reference fields is a binary tree node. Names `left`/`right` (or `l`/`r`, `leftChild`/`rightChild`) give high confidence. Other names give low confidence and prompt the "View as…" menu. A class with exactly two self-typed child fields plus a third self-typed field named `parent`, `par`, `p`, or `up` is still classified as a binary tree node. The parent field is treated as a back-reference, not a child. It is shown as a small "parent" indicator or hover link, never as an arrow across the tree. Any other class with three or more self-typed fields still falls back to the generic view.
+- A class with three or more self-typed fields (unless matching the two children + parent back-reference rule above) is rendered with the generic view in v1.
+- **Array-backed structures** (Phase 4): a class with an array field plus one or more `int` fields named like `top`/`size`/`front`/`rear`/`head`/`tail`/`count`/`capacity` is a candidate stack, queue, or heap. Class or field names (`Stack`, `Queue`, `Heap`, `PriorityQueue`, `push`/`pop`/`enqueue`/`insert`/`extractMin` method names seen in the call stack) raise confidence. In addition, recognition also considers a trio of **local variables in the same frame**: an array local plus `int` locals with high-signal names (`top`, `front`, `rear`, `size`, `count`, `head`, `tail`) (e.g. students writing `int[] stack = new int[10]; int top = -1;` directly in `main`). These have low or medium confidence, and the "View as…" menu is always available for manual override.
+- **Heap layout & tree synchronization** (Phase 4): The heap's tree view uses a fixed, index-based complete-binary-tree layout (where children of index $i$ are strictly placed at indices $2i+1$ and $2i+2$), not the tidy-tree layout from Phase 3. A node's position depends strictly on its index.
+- **Node-based heaps** (Phase 4): Node-based (linked) heaps and leftist-style heaps are not treated as "array heaps". They remain binary trees visualized via Phase 3's `TreeView`.
 - A bare `int[]` or `Object[]` with no wrapper is an **array**. A bare 2D array is a **grid**.
 - A **mixed** case (a linked list node with a `Node child` field, a graph-like adjacency object) falls back to the generic view.
 - Cycles are detected and rendered without infinite loops in every visualizer.
@@ -569,7 +571,7 @@ Acceptance: all Phase 2 golden tests pass. Singly and doubly linked lists render
 Acceptance: all Phase 3 golden tests pass. A 7-node BST renders with no overlapping nodes and no edges other than parent-child. Recursive traversals highlight the active node and the recursion path. Insert and delete animate with stable node positions. Non-standard field names fall back gracefully.
 
 ### Phase 4: Stack, queue, heap
-Acceptance: all Phase 4 golden tests pass. Heap shows synchronized array and tree views with animated swaps. Ambiguous structures offer the "View as…" menu.
+Acceptance: all Phase 4 golden tests pass. Array and node-backed stacks render vertically with capacity slots and stale-element pop indication. Linear and circular queues render horizontally with clean modulo wraparound connectors. Heaps show synchronized array and complete-binary-tree views with animated derived-token swaps and live violation detection. In-frame local variable trios and ambiguous structures are accurately recognized or offered the "View as…" menu. Verified with 16 Playwright E2E tests, 10 shipped examples, and full Quality Gate passes.
 
 ### Phase 5 (deferred)
 JDK collections, then graphs. Requires a separate PRD addendum before starting.

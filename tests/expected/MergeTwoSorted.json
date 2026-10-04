@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 20,
+  "expectedStdout": "Merged: 1 2 3 4 5 6\n",
+  "expectedChain": {
+    "step": -2,
+    "var": "head",
+    "expectedValues": [1, 2, 3, 4, 5, 6],
+    "checkIdStability": true
+  }
+}

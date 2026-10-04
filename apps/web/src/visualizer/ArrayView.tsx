@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { ArrayObject, Value } from '../trace/types';
+import type { StructureOverride } from '../recognition/types';
 import { groupMarkersByCell, type IndexMarker } from './indexMarkers';
 import { ValueView } from './ValueView';
+import { ViewAsMenu } from './ViewAsMenu';
 import type { ArrayChange } from './diff';
 
 export interface ArrayViewProps {
@@ -13,8 +15,10 @@ export interface ArrayViewProps {
   changes?: ArrayChange[];
   isHovered?: boolean;
   isFocused?: boolean;
+  canViewAsStructure?: boolean;
   onHoverRef?: (id: string | null) => void;
   onClickRef?: (id: string) => void;
+  onViewOverride?: (id: string, kind: StructureOverride) => void;
   className?: string;
 }
 
@@ -26,8 +30,10 @@ export const ArrayView: React.FC<ArrayViewProps> = ({
   changes = [],
   isHovered = false,
   isFocused = false,
+  canViewAsStructure = false,
   onHoverRef,
   onClickRef,
+  onViewOverride,
   className = '',
 }) => {
   const shouldReduceMotion = useReducedMotion();
@@ -66,11 +72,20 @@ export const ArrayView: React.FC<ArrayViewProps> = ({
             {id}
           </span>
         </div>
-        {obj.clipped && (
-          <span className="rounded border border-amber-500/30 bg-amber-950/40 px-1.5 py-0.5 text-[10px] text-amber-300">
-            Clipped: showing first {obj.items.length} of {obj.length}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {obj.clipped && (
+            <span className="rounded border border-amber-500/30 bg-amber-950/40 px-1.5 py-0.5 text-[10px] text-amber-300">
+              Clipped: showing first {obj.items.length} of {obj.length}
+            </span>
+          )}
+          {canViewAsStructure && (
+            <ViewAsMenu
+              targetId={id}
+              currentKind="array"
+              onOverride={onViewOverride}
+            />
+          )}
+        </div>
       </div>
 
       {/* Row of cells */}

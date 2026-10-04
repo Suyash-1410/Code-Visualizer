@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "New root: 20, right: 30\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "newRoot",
+    "nodeCount": 4,
+    "inorderValues": [10, 20, 25, 30]
+  }
+}

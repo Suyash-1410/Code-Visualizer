@@ -1,0 +1,13 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 12,
+  "maxStepCount": 150,
+  "expectedStdout": "Cycle detected: true\n",
+  "expectedVariables": [
+    {
+      "step": -2,
+      "name": "hasCycle",
+      "expectedValue": { "k": "prim", "t": "boolean", "v": true }
+    }
+  ]
+}

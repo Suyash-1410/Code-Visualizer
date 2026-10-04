@@ -1,0 +1,1014 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class Inheritance {\n  public static void main(String[] args) {\n    Dog dog = new Dog(\"Buddy\", 4, true);\n  }\n}\n\nclass Animal {\n  String name;\n  int legs;\n\n  Animal(String name, int legs) {\n    this.name = name;\n    this.legs = legs;\n  }\n}\n\nclass Dog extends Animal {\n  boolean barks;\n\n  Dog(String name, int legs, boolean barks) {\n    super(name, legs);\n    this.barks = barks;\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "return",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Animal.<init>",
+      "signature" : "Animal(String, int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "return",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Dog.<init>",
+      "signature" : "Dog(String, int, boolean)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "name",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Buddy",
+          "full" : true
+        }
+      }, {
+        "name" : "legs",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      }, {
+        "name" : "barks",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "dog",
+        "type" : "Dog",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Dog",
+        "fields" : {
+          "name" : {
+            "k" : "str",
+            "v" : "Buddy",
+            "full" : true
+          },
+          "legs" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "barks" : {
+            "k" : "prim",
+            "t" : "boolean",
+            "v" : true
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Inheritance.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "dog",
+        "type" : "Dog",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Dog",
+        "fields" : {
+          "name" : {
+            "k" : "str",
+            "v" : "Buddy",
+            "full" : true
+          },
+          "legs" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "barks" : {
+            "k" : "prim",
+            "t" : "boolean",
+            "v" : true
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "end",
+    "line" : 4,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 16,
+    "maxDepth" : 3,
+    "durationMs" : 181
+  }
+}

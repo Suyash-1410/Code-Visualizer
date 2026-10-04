@@ -1,0 +1,16 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "1 2 3 4 5 6 7 \n",
+  "expectedCalls": [
+    { "method": "InorderRecursive.inorder", "count": 15 }
+  ],
+  "expectedReturns": [
+    { "method": "InorderRecursive.inorder", "count": 15 }
+  ],
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 7,
+    "inorderValues": [1, 2, 3, 4, 5, 6, 7]
+  }
+}

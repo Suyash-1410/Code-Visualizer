@@ -1,0 +1,4 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Shared node val: 99\n"
+}

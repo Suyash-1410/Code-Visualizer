@@ -1,0 +1,7769 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class TwoStructuresAtOnce {\n  static class StackDemo {\n    int[] data = new int[3];\n    int top = -1;\n    void push(int v) { data[++top] = v; }\n    int pop() { return data[top--]; }\n  }\n\n  static class QueueDemo {\n    int[] data = new int[3];\n    int front = 0, rear = 0;\n    void enqueue(int v) { data[rear++] = v; }\n    int dequeue() { return data[front++]; }\n  }\n\n  static class HeapDemo {\n    int[] heap = new int[3];\n    int size = 0;\n    void insert(int v) {\n      heap[size] = v;\n      int i = size;\n      while (i > 0) {\n        int p = (i - 1) / 2;\n        if (heap[i] < heap[p]) {\n          int t = heap[i]; heap[i] = heap[p]; heap[p] = t;\n          i = p;\n        } else break;\n      }\n      size++;\n    }\n  }\n\n  public static void main(String[] args) {\n    StackDemo stack = new StackDemo();\n    stack.push(10);\n    stack.push(20);\n\n    QueueDemo queue = new QueueDemo();\n    queue.enqueue(30);\n    queue.enqueue(40);\n\n    HeapDemo heap = new HeapDemo();\n    heap.insert(50);\n    heap.insert(25);\n\n    System.out.println(\"stackTop=\" + stack.data[stack.top] +\n                       \", queueFront=\" + queue.data[queue.front] +\n                       \", heapMin=\" + heap.heap[0]);\n  }\n}\n",
+  "stdout" : "stackTop=20, queueFront=30, heapMin=25\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 34,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 2,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TwoStructuresAtOnce$StackDemo.<init>",
+      "signature" : "StackDemo()",
+      "line" : 2,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 2,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TwoStructuresAtOnce$StackDemo.<init>",
+      "signature" : "StackDemo()",
+      "line" : 2,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TwoStructuresAtOnce$StackDemo.<init>",
+      "signature" : "StackDemo()",
+      "line" : 3,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TwoStructuresAtOnce$StackDemo.<init>",
+      "signature" : "StackDemo()",
+      "line" : 4,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TwoStructuresAtOnce$StackDemo.<init>",
+      "signature" : "StackDemo()",
+      "line" : 4,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 34,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 35,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "return",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 36,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "return",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TwoStructuresAtOnce$StackDemo.push",
+      "signature" : "void push(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 38,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "call",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TwoStructuresAtOnce$QueueDemo.<init>",
+      "signature" : "QueueDemo()",
+      "line" : 9,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TwoStructuresAtOnce$QueueDemo.<init>",
+      "signature" : "QueueDemo()",
+      "line" : 9,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TwoStructuresAtOnce$QueueDemo.<init>",
+      "signature" : "QueueDemo()",
+      "line" : 10,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TwoStructuresAtOnce$QueueDemo.<init>",
+      "signature" : "QueueDemo()",
+      "line" : 11,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "return",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TwoStructuresAtOnce$QueueDemo.<init>",
+      "signature" : "QueueDemo()",
+      "line" : 11,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 38,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 39,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "call",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "return",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 40,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "call",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "return",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TwoStructuresAtOnce$QueueDemo.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 42,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "call",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TwoStructuresAtOnce$HeapDemo.<init>",
+      "signature" : "HeapDemo()",
+      "line" : 16,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TwoStructuresAtOnce$HeapDemo.<init>",
+      "signature" : "HeapDemo()",
+      "line" : 16,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TwoStructuresAtOnce$HeapDemo.<init>",
+      "signature" : "HeapDemo()",
+      "line" : 17,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TwoStructuresAtOnce$HeapDemo.<init>",
+      "signature" : "HeapDemo()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "return",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TwoStructuresAtOnce$HeapDemo.<init>",
+      "signature" : "HeapDemo()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 42,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 43,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "call",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "return",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 43,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "line",
+    "line" : 44,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "call",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 48,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 49,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 50,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 51,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 52,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 53,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "p",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "t",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 54,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 55,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 56,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 57,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 58,
+    "event" : "return",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 44,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "TwoStructuresAtOnce$HeapDemo.insert",
+      "signature" : "void insert(int)",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 59,
+    "event" : "line",
+    "line" : 46,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 46,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 60,
+    "event" : "line",
+    "line" : 49,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 49,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 39,
+    "clipped" : false
+  }, {
+    "i" : 61,
+    "event" : "return",
+    "line" : 49,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TwoStructuresAtOnce.main",
+      "signature" : "void main(String[])",
+      "line" : 49,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "stack",
+        "type" : "StackDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "queue",
+        "type" : "QueueDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "HeapDemo",
+        "value" : {
+          "k" : "ref",
+          "id" : "@678"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "StackDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "QueueDemo",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@678" : {
+        "kind" : "object",
+        "type" : "HeapDemo",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@679"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@676" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@679" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 25
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 39,
+    "clipped" : false
+  }, {
+    "i" : 62,
+    "event" : "end",
+    "line" : 49,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 39,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 63,
+    "maxDepth" : 2,
+    "durationMs" : 1008
+  }
+}

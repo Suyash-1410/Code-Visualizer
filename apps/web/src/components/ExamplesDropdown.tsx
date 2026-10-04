@@ -25,7 +25,7 @@ export const ExamplesDropdown: React.FC = () => {
     saveSourceToStorage(example.code);
   };
 
-  const categories = ['Arrays', 'Recursion', 'OOP', 'Errors'] as const;
+  const categories = ['Arrays', 'Recursion', 'OOP', 'Errors', 'Linked lists', 'Binary trees', 'Stacks, queues, heaps'] as const;
 
   return (
     <div className="flex items-center gap-1.5">

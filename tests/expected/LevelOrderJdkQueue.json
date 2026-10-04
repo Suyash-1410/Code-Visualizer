@@ -1,0 +1,16 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "1 2 3 4 5 \n",
+  "expectedOpaque": {
+    "step": -2,
+    "var": "queue",
+    "expectedType": "java.util.ArrayDeque",
+    "expectedSummaryPrefix": "java.util.ArrayDeque"
+  },
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 5,
+    "inorderValues": [4, 2, 5, 1, 3]
+  }
+}

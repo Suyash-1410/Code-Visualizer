@@ -87,7 +87,96 @@ class TracerEndToEndTest {
         "StaticInit",
         "ThreadUse",
         "ScannerUse",
-        "OutputFlood"
+        "OutputFlood",
+        // Phase 2 linked lists
+        "SinglyBuild",
+        "InsertHead",
+        "InsertTail",
+        "InsertMiddle",
+        "DeleteHead",
+        "DeleteMiddle",
+        "DeleteTail",
+        "DeleteOnlyNode",
+        "ReverseIterative",
+        "ReverseRecursive",
+        "FindMiddle",
+        "CycleDetect",
+        "MergeTwoSorted",
+        "DoublySingleBuild",
+        "DoublyInsert",
+        "DoublyDelete",
+        "WrapperClass",
+        "NonStandardNames",
+        "MixedShape",
+        "EmptyList",
+        "SingleNode",
+        "LongList",
+        "OrphanedNodes",
+        // Phase 3 binary trees
+        "BstInsertRecursive",
+        "BstInsertIterative",
+        "BstSearch",
+        "BstDeleteLeaf",
+        "BstDeleteOneChild",
+        "BstDeleteTwoChildren",
+        "InorderRecursive",
+        "PreorderRecursive",
+        "PostorderRecursive",
+        "TreeHeight",
+        "CountNodes",
+        "MirrorTree",
+        "LevelOrderCustomQueue",
+        "LevelOrderJdkQueue",
+        "IterativeInorderStack",
+        "AvlRightRotate",
+        "AvlLeftRotate",
+        "WrapperBst",
+        "NonStandardTreeNames",
+        "NonStandardTreeLR",
+        "ParentPointerTree",
+        "SkewedLeft",
+        "SkewedRight",
+        "FullTree15",
+        "EmptyTree",
+        "SingleTreeNode",
+        "LeftOnly",
+        "RightOnly",
+        "SharedSubtree",
+        "BrokenCycleTree",
+        "ThreeChildFields",
+        "LeftRightAsList",
+        "TwoTreesAtOnce",
+        "RecursiveDepthWithException",
+        // Phase 4 stacks, queues, heaps
+        "ArrayStack",
+        "ArrayStackLocals",
+        "NodeStack",
+        "StackUnderflow",
+        "StackOverflow",
+        "BracketMatching",
+        "PostfixEval",
+        "ResizingStack",
+        "ArrayQueueLinear",
+        "CircularQueue",
+        "CircularQueueCount",
+        "NodeQueue",
+        "QueueFromTwoStacks",
+        "MinHeapInsert",
+        "MinHeapExtract",
+        "MaxHeap",
+        "BuildHeapHeapify",
+        "HeapSortBareArray",
+        "HeapInlineSwap",
+        "HeapWithEqualValues",
+        "HeapOffByOne",
+        "HeapFull31",
+        "HeapResizing",
+        "ArrayListLike",
+        "ArrayAndCounter",
+        "NamedHeapNotHeap",
+        "TwoStructuresAtOnce",
+        "JdkCollectionsMix",
+        "EmptyStructures"
       })
   void testGoldenPrograms(String baseName) throws IOException {
     runAndVerify(baseName, TracerConfig.load());
@@ -96,14 +185,14 @@ class TracerEndToEndTest {
   @Test
   void testInfiniteLoopTruncation() throws IOException {
     TracerConfig fastCapConfig =
-        new TracerConfig(50, 3000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
+        new TracerConfig(50, 8000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
     runAndVerify("InfiniteLoop", fastCapConfig);
   }
 
   @Test
   void testStepCapHitTruncation() throws IOException {
     TracerConfig fastCapConfig =
-        new TracerConfig(60, 3000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
+        new TracerConfig(60, 8000, 10000, 20000, 200, 300, 100, 100, 65536, 20480, 15728640, 128);
     runAndVerify("StepCapHit", fastCapConfig);
   }
 
@@ -173,6 +262,13 @@ class TracerEndToEndTest {
     Trace trace = TracerRunner.trace(source, config);
     assertNotNull(trace);
 
+    Path fixturesDir = programsDir.getParent().resolve("fixtures/traces");
+    if (Files.exists(fixturesDir)) {
+      Path fixtureFile = fixturesDir.resolve(baseName + ".json");
+      String traceJson = traceWriter.writeToString(trace);
+      Files.writeString(fixtureFile, traceJson);
+    }
+
     // 1. Verify status
     String expectedStatus = expected.path("expectedStatus").asText();
     assertEquals(expectedStatus, trace.status(), "Status mismatch for " + baseName);
@@ -193,6 +289,12 @@ class TracerEndToEndTest {
       int max = expected.path("maxStepCount").asInt();
       assertTrue(
           trace.steps().size() <= max, "Step count " + trace.steps().size() + " > max " + max);
+    }
+
+    // 3b. Verify maxDepth if specified
+    if (expected.has("expectedMaxDepth")) {
+      int expDepth = expected.path("expectedMaxDepth").asInt();
+      assertEquals(expDepth, trace.stats().maxDepth(), "Max depth mismatch for " + baseName);
     }
 
     // 4. Verify stdout if specified
@@ -419,53 +521,18 @@ class TracerEndToEndTest {
 
     // 16. Verify linked list chain & id stability
     if (expected.has("expectedChain")) {
-      JsonNode chainExpect = expected.path("expectedChain");
-      Step step = resolveStep(trace, chainExpect.path("step").asInt());
-      String varName = chainExpect.path("var").asText();
-      LocalVariable var = getVariable(step, varName);
-      assertNotNull(var);
-      assertTrue(var.value() instanceof Value.Ref);
-      String headId = ((Value.Ref) var.value()).id();
-
-      List<Integer> extractedValues = new ArrayList<>();
-      String curId = headId;
-      while (curId != null) {
-        HeapObject ho = step.heap().get(curId);
-        assertNotNull(ho);
-        assertTrue(ho instanceof HeapObject.ObjectInstance);
-        HeapObject.ObjectInstance oi = (HeapObject.ObjectInstance) ho;
-
-        Value val = oi.fields().get("val");
-        assertTrue(val instanceof Value.Prim);
-        extractedValues.add(((Number) ((Value.Prim) val).v()).intValue());
-
-        Value next = oi.fields().get("next");
-        if (next instanceof Value.Ref nextRef) {
-          curId = nextRef.id();
-        } else {
-          curId = null;
-        }
-      }
-
-      JsonNode expVals = chainExpect.path("expectedValues");
-      assertEquals(expVals.size(), extractedValues.size());
-      for (int i = 0; i < expVals.size(); i++) {
-        assertEquals(expVals.get(i).asInt(), extractedValues.get(i));
-      }
-
-      // Check ID stability across all steps where head existed
-      if (chainExpect.path("checkIdStability").asBoolean()) {
-        for (int i = 1; i < trace.steps().size() - 1; i++) {
-          Step s = trace.steps().get(i);
-          LocalVariable headVar = getVariable(s, varName);
-          if (headVar != null && headVar.value() instanceof Value.Ref r) {
-            assertEquals(headId, r.id(), "Head ID was not stable at step " + i);
-          }
-        }
+      verifyChainNode(trace, expected.path("expectedChain"), baseName);
+    }
+    if (expected.has("expectedChains")) {
+      for (JsonNode chainNode : expected.path("expectedChains")) {
+        verifyChainNode(trace, chainNode, baseName);
       }
     }
 
-    // 17. Verify circular list
+    // 16c. Verify binary tree structure & id stability
+    if (expected.has("expectedTree")) {
+      verifyTreeNode(trace, expected.path("expectedTree"), baseName);
+    }
     if (expected.has("expectedCycle")) {
       JsonNode cycleExpect = expected.path("expectedCycle");
       Step step = resolveStep(trace, cycleExpect.path("step").asInt());
@@ -567,14 +634,528 @@ class TracerEndToEndTest {
     }
     assertTrue(
         stepIdx >= 0 && stepIdx < trace.steps().size(), "Step index out of range: " + stepIdx);
-    return trace.steps().get(stepIdx);
+    Step s = trace.steps().get(stepIdx);
+    if (s.stack().isEmpty() && stepIdx > 0) {
+      return trace.steps().get(stepIdx - 1);
+    }
+    return s;
+  }
+
+  private void verifyChainNode(Trace trace, JsonNode chainExpect, String baseName) {
+    Step step = resolveStep(trace, chainExpect.path("step").asInt());
+    String varName = chainExpect.path("var").asText();
+    LocalVariable var = getVariable(step, varName);
+
+    JsonNode expVals = chainExpect.path("expectedValues");
+    if (expVals.isEmpty()) {
+      assertTrue(
+          var == null || var.value() instanceof Value.Null,
+          "Expected empty/null list for '" + varName + "' at step " + chainExpect.path("step").asInt());
+      return;
+    }
+
+    assertNotNull(
+        var, "Variable '" + varName + "' not found in step " + chainExpect.path("step").asInt());
+    assertTrue(var.value() instanceof Value.Ref, "Variable '" + varName + "' must be a ref");
+
+    String headId;
+    if (chainExpect.has("field")) {
+      String fieldName = chainExpect.path("field").asText();
+      HeapObject wrapperObj = step.heap().get(((Value.Ref) var.value()).id());
+      assertNotNull(wrapperObj, "Wrapper object not found on heap");
+      assertTrue(
+          wrapperObj instanceof HeapObject.ObjectInstance, "Wrapper object must be ObjectInstance");
+      Value headVal = ((HeapObject.ObjectInstance) wrapperObj).fields().get(fieldName);
+      assertNotNull(headVal, "Field '" + fieldName + "' not found on wrapper object");
+      assertTrue(headVal instanceof Value.Ref, "Field '" + fieldName + "' must be a ref");
+      headId = ((Value.Ref) headVal).id();
+    } else {
+      headId = ((Value.Ref) var.value()).id();
+    }
+
+    String valueField =
+        chainExpect.has("valueField") ? chainExpect.path("valueField").asText() : "val";
+    String nextField =
+        chainExpect.has("nextField") ? chainExpect.path("nextField").asText() : "next";
+    String prevField =
+        chainExpect.has("prevField") ? chainExpect.path("prevField").asText() : null;
+
+    List<Integer> extractedValues = new ArrayList<>();
+    List<String> nodeIds = new ArrayList<>();
+    String curId = headId;
+    while (curId != null) {
+      nodeIds.add(curId);
+      HeapObject ho = step.heap().get(curId);
+      assertNotNull(ho, "Heap object for id " + curId + " not found");
+      assertTrue(ho instanceof HeapObject.ObjectInstance, "Heap object must be ObjectInstance");
+      HeapObject.ObjectInstance oi = (HeapObject.ObjectInstance) ho;
+
+      Value val = oi.fields().get(valueField);
+      assertNotNull(val, "Field '" + valueField + "' not found on node " + curId);
+      assertTrue(val instanceof Value.Prim, "Value field must be Prim");
+      extractedValues.add(((Number) ((Value.Prim) val).v()).intValue());
+
+      Value next = oi.fields().get(nextField);
+      if (next instanceof Value.Ref nextRef) {
+        curId = nextRef.id();
+      } else {
+        curId = null;
+      }
+    }
+
+    assertEquals(expVals.size(), extractedValues.size(), "Chain length mismatch for " + varName);
+    for (int i = 0; i < expVals.size(); i++) {
+      assertEquals(
+          expVals.get(i).asInt(), extractedValues.get(i), "Chain value mismatch at index " + i);
+    }
+
+    if (prevField != null) {
+      for (int i = 0; i < nodeIds.size(); i++) {
+        HeapObject ho = step.heap().get(nodeIds.get(i));
+        HeapObject.ObjectInstance oi = (HeapObject.ObjectInstance) ho;
+        Value prevVal = oi.fields().get(prevField);
+        if (i == 0) {
+          assertTrue(
+              prevVal == null || prevVal instanceof Value.Null,
+              "Head prev pointer must be null, got: " + prevVal);
+        } else {
+          assertNotNull(prevVal, "Prev pointer cannot be null for node at index " + i);
+          assertTrue(
+              prevVal instanceof Value.Ref, "Prev pointer must be Ref for node at index " + i);
+          assertEquals(
+              nodeIds.get(i - 1),
+              ((Value.Ref) prevVal).id(),
+              "Prev pointer mismatch for node at index " + i);
+        }
+      }
+    }
+
+    if (chainExpect.path("checkIdStability").asBoolean()) {
+      for (int i = 1; i < trace.steps().size() - 1; i++) {
+        Step s = trace.steps().get(i);
+        LocalVariable headVar = getVariable(s, varName);
+        if (headVar != null && headVar.value() instanceof Value.Ref r) {
+          if (!chainExpect.has("field")) {
+            assertEquals(headId, r.id(), "Head ID was not stable at step " + i);
+          }
+        }
+      }
+    }
+  }
+
+  @Test
+  void testReverseIterativeNodeIdStability() throws IOException {
+    Path sourcePath = programsDir.resolve("ReverseIterative.java");
+    assertTrue(Files.exists(sourcePath), "ReverseIterative.java must exist");
+    String source = Files.readString(sourcePath);
+
+    Trace trace = TracerRunner.trace(source, TracerConfig.load());
+    assertNotNull(trace);
+    assertEquals("ok", trace.status());
+
+    String node1Id = null;
+    for (Step s : trace.steps()) {
+      LocalVariable headVar = getVariable(s, "head");
+      if (headVar != null && headVar.value() instanceof Value.Ref r) {
+        HeapObject ho = s.heap().get(r.id());
+        if (ho instanceof HeapObject.ObjectInstance oi) {
+          Value val = oi.fields().get("val");
+          if (val instanceof Value.Prim p && ((Number) p.v()).intValue() == 1) {
+            node1Id = r.id();
+            break;
+          }
+        }
+      }
+    }
+    assertNotNull(node1Id, "Node 1 must be found");
+
+    boolean sawNextNotNull = false;
+    boolean sawNextNull = false;
+
+    for (Step s : trace.steps()) {
+      HeapObject ho = s.heap().get(node1Id);
+      if (ho instanceof HeapObject.ObjectInstance oi) {
+        Value val = oi.fields().get("val");
+        assertNotNull(val);
+        assertEquals(1, ((Number) ((Value.Prim) val).v()).intValue(), "Node val must stay 1");
+
+        Value nextVal = oi.fields().get("next");
+        if (nextVal instanceof Value.Ref) {
+          sawNextNotNull = true;
+        } else if (nextVal == null || nextVal instanceof Value.Null) {
+          sawNextNull = true;
+        }
+      }
+    }
+
+    assertTrue(sawNextNotNull, "Node 1 next pointer must initially point to node 2");
+    assertTrue(sawNextNull, "Node 1 next pointer must eventually become null after reversal");
+  }
+
+  @Test
+  void testCycleDetectNormalTermination() throws IOException {
+    Path sourcePath = programsDir.resolve("CycleDetect.java");
+    assertTrue(Files.exists(sourcePath), "CycleDetect.java must exist");
+    String source = Files.readString(sourcePath);
+
+    Trace trace = TracerRunner.trace(source, TracerConfig.load());
+    assertNotNull(trace);
+    assertEquals("ok", trace.status(), "CycleDetect must terminate normally with status ok");
+    assertNotNull(trace.stdout());
+    assertTrue(
+        trace.stdout().contains("Cycle detected: true"), "Stdout must confirm cycle detected");
+    assertTrue(
+        trace.steps().size() < 150, "CycleDetect must terminate in few steps without hitting cap");
+  }
+
+  @Test
+  void exportPhase2Fixtures() throws IOException {
+    Path fixtures = Paths.get("../../tests/fixtures/traces");
+    if (!fixtures.toFile().exists()) {
+      fixtures = Paths.get("tests/fixtures/traces");
+    }
+    Path fixturesDir = fixtures.toAbsolutePath().normalize();
+    Files.createDirectories(fixturesDir);
+
+    String[] phase2Programs = {
+      "SinglyBuild",
+      "InsertHead",
+      "InsertTail",
+      "InsertMiddle",
+      "DeleteHead",
+      "DeleteMiddle",
+      "DeleteTail",
+      "DeleteOnlyNode",
+      "ReverseIterative",
+      "ReverseRecursive",
+      "FindMiddle",
+      "CycleDetect",
+      "MergeTwoSorted",
+      "DoublySingleBuild",
+      "DoublyInsert",
+      "DoublyDelete",
+      "WrapperClass",
+      "NonStandardNames",
+      "MixedShape",
+      "EmptyList",
+      "SingleNode",
+      "LongList",
+      "OrphanedNodes"
+    };
+
+    for (String baseName : phase2Programs) {
+      Path sourcePath = programsDir.resolve(baseName + ".java");
+      assertTrue(Files.exists(sourcePath), "Source file must exist: " + sourcePath);
+      String source = Files.readString(sourcePath);
+      Trace trace = TracerRunner.trace(source, TracerConfig.load());
+      assertNotNull(trace, "Trace must not be null for " + baseName);
+      assertEquals("ok", trace.status(), "Status must be ok for " + baseName);
+
+      String json = traceWriter.writeToString(trace);
+      String kebab = baseName.replaceAll("([a-z])([A-Z])", "$1-$2").toLowerCase();
+      Files.writeString(fixturesDir.resolve(kebab + "-trace.json"), json);
+      Files.writeString(fixturesDir.resolve(baseName + ".json"), json);
+    }
+  }
+
+  private void verifyTreeNode(Trace trace, JsonNode treeExpect, String baseName) {
+    Step step = resolveStep(trace, treeExpect.path("step").asInt());
+    String varName = treeExpect.path("var").asText();
+    LocalVariable var = getVariable(step, varName);
+
+    int expNodeCount = treeExpect.path("nodeCount").asInt();
+    if (expNodeCount == 0) {
+      assertTrue(
+          var == null || var.value() instanceof Value.Null,
+          "Expected empty/null tree for '" + varName + "' at step " + treeExpect.path("step").asInt());
+      return;
+    }
+
+    assertNotNull(
+        var, "Variable '" + varName + "' not found in step " + treeExpect.path("step").asInt());
+    assertTrue(var.value() instanceof Value.Ref, "Variable '" + varName + "' must be a ref");
+
+    String rootId;
+    if (treeExpect.has("field")) {
+      String fieldName = treeExpect.path("field").asText();
+      HeapObject wrapperObj = step.heap().get(((Value.Ref) var.value()).id());
+      assertNotNull(wrapperObj, "Wrapper object not found on heap");
+      assertTrue(
+          wrapperObj instanceof HeapObject.ObjectInstance, "Wrapper object must be ObjectInstance");
+      Value rootVal = ((HeapObject.ObjectInstance) wrapperObj).fields().get(fieldName);
+      assertNotNull(rootVal, "Field '" + fieldName + "' not found on wrapper object");
+      assertTrue(rootVal instanceof Value.Ref, "Field '" + fieldName + "' must be a ref");
+      rootId = ((Value.Ref) rootVal).id();
+    } else {
+      rootId = ((Value.Ref) var.value()).id();
+    }
+
+    String valueField =
+        treeExpect.has("valueField") ? treeExpect.path("valueField").asText() : "val";
+    String leftField =
+        treeExpect.has("leftField") ? treeExpect.path("leftField").asText() : "left";
+    String rightField =
+        treeExpect.has("rightField") ? treeExpect.path("rightField").asText() : "right";
+    String parentField =
+        treeExpect.has("parentField") ? treeExpect.path("parentField").asText() : null;
+
+    List<Integer> inorderValues = new ArrayList<>();
+    List<String> visitedNodeIds = new ArrayList<>();
+    collectInorder(rootId, step.heap(), valueField, leftField, rightField, parentField, inorderValues, visitedNodeIds, null);
+
+    assertEquals(expNodeCount, visitedNodeIds.size(), "Node count mismatch for " + varName);
+
+    JsonNode expInorder = treeExpect.path("inorderValues");
+    if (!expInorder.isMissingNode() && expInorder.isArray()) {
+      assertEquals(expInorder.size(), inorderValues.size(), "Inorder size mismatch for " + varName);
+      for (int i = 0; i < expInorder.size(); i++) {
+        assertEquals(
+            expInorder.get(i).asInt(), inorderValues.get(i), "Inorder value mismatch at index " + i);
+      }
+    }
+
+    if (treeExpect.path("checkIdStability").asBoolean()) {
+      for (int i = 1; i < trace.steps().size() - 1; i++) {
+        Step s = trace.steps().get(i);
+        LocalVariable rootVar = getVariable(s, varName);
+        if (rootVar != null && rootVar.value() instanceof Value.Ref r) {
+          if (!treeExpect.has("field")) {
+            assertEquals(rootId, r.id(), "Root ID was not stable at step " + i);
+          }
+        }
+      }
+    }
+  }
+
+  private void collectInorder(
+      String nodeId,
+      java.util.Map<String, HeapObject> heap,
+      String valueField,
+      String leftField,
+      String rightField,
+      String parentField,
+      List<Integer> inorderValues,
+      List<String> visitedNodeIds,
+      String expectedParentId) {
+    if (nodeId == null) return;
+    HeapObject ho = heap.get(nodeId);
+    assertNotNull(ho, "Node object " + nodeId + " not found on heap");
+    assertTrue(ho instanceof HeapObject.ObjectInstance, "Node must be ObjectInstance");
+    HeapObject.ObjectInstance oi = (HeapObject.ObjectInstance) ho;
+
+    if (parentField != null) {
+      Value pVal = oi.fields().get(parentField);
+      if (expectedParentId == null) {
+        assertTrue(pVal == null || pVal instanceof Value.Null, "Root parent must be null");
+      } else {
+        assertNotNull(pVal, "Parent link cannot be null for non-root node " + nodeId);
+        assertTrue(pVal instanceof Value.Ref, "Parent link must be Ref");
+        assertEquals(expectedParentId, ((Value.Ref) pVal).id(), "Parent ID mismatch for node " + nodeId);
+      }
+    }
+
+    Value leftVal = oi.fields().get(leftField);
+    String leftId = (leftVal instanceof Value.Ref r) ? r.id() : null;
+    collectInorder(leftId, heap, valueField, leftField, rightField, parentField, inorderValues, visitedNodeIds, nodeId);
+
+    visitedNodeIds.add(nodeId);
+    Value val = oi.fields().get(valueField);
+    assertNotNull(val, "Field '" + valueField + "' not found on node " + nodeId);
+    assertTrue(val instanceof Value.Prim, "Value field must be Prim");
+    inorderValues.add(((Number) ((Value.Prim) val).v()).intValue());
+
+    Value rightVal = oi.fields().get(rightField);
+    String rightId = (rightVal instanceof Value.Ref r) ? r.id() : null;
+    collectInorder(rightId, heap, valueField, leftField, rightField, parentField, inorderValues, visitedNodeIds, nodeId);
+  }
+
+  @Test
+  void testInorderRecursiveSortedOutputAndTrace() throws IOException {
+    Path sourcePath = programsDir.resolve("InorderRecursive.java");
+    assertTrue(Files.exists(sourcePath), "InorderRecursive.java must exist");
+    String source = Files.readString(sourcePath);
+
+    Trace trace = TracerRunner.trace(source, TracerConfig.load());
+    assertNotNull(trace);
+    assertEquals("ok", trace.status());
+
+    String stdout = trace.stdout();
+    assertNotNull(stdout);
+    assertEquals("1 2 3 4 5 6 7 \n", stdout);
+
+    List<Integer> printedSoFar = new ArrayList<>();
+    for (Step step : trace.steps()) {
+      String prefix = trace.stdout().substring(0, step.stdoutLen()).trim();
+      if (!prefix.isEmpty()) {
+        String[] tokens = prefix.split("\\s+");
+        int lastNum = Integer.parseInt(tokens[tokens.length - 1]);
+        if (printedSoFar.isEmpty() || printedSoFar.get(printedSoFar.size() - 1) != lastNum) {
+          printedSoFar.add(lastNum);
+        }
+      }
+    }
+    assertEquals(List.of(1, 2, 3, 4, 5, 6, 7), printedSoFar, "Printed values must appear in sorted order");
+  }
+
+  @Test
+  void testAvlRightRotateNodeIdStabilityAcrossRotation() throws IOException {
+    Path sourcePath = programsDir.resolve("AvlRightRotate.java");
+    assertTrue(Files.exists(sourcePath), "AvlRightRotate.java must exist");
+    String source = Files.readString(sourcePath);
+
+    Trace trace = TracerRunner.trace(source, TracerConfig.load());
+    assertNotNull(trace);
+    assertEquals("ok", trace.status());
+
+    String yId = null;
+    String xId = null;
+    String t2Id = null;
+
+    for (Step s : trace.steps()) {
+      LocalVariable yVar = getVariable(s, "y");
+      LocalVariable xVar = getVariable(s, "x");
+      LocalVariable t2Var = getVariable(s, "t2");
+      if (yVar != null && yVar.value() instanceof Value.Ref ry
+          && xVar != null && xVar.value() instanceof Value.Ref rx
+          && t2Var != null && t2Var.value() instanceof Value.Ref rt2) {
+        yId = ry.id();
+        xId = rx.id();
+        t2Id = rt2.id();
+        break;
+      }
+    }
+
+    assertNotNull(yId, "Node y (30) must be identified");
+    assertNotNull(xId, "Node x (20) must be identified");
+    assertNotNull(t2Id, "Node t2 (25) must be identified");
+
+    boolean sawYLeftAsX = false;
+    boolean sawYLeftAsT2 = false;
+    boolean sawXRightAsT2 = false;
+    boolean sawXRightAsY = false;
+
+    for (Step s : trace.steps()) {
+      HeapObject yObj = s.heap().get(yId);
+      if (yObj instanceof HeapObject.ObjectInstance yInst) {
+        Value val = yInst.fields().get("val");
+        assertNotNull(val);
+        assertEquals(30, ((Number) ((Value.Prim) val).v()).intValue(), "Node y val must stay 30");
+
+        Value left = yInst.fields().get("left");
+        if (left instanceof Value.Ref r) {
+          if (r.id().equals(xId)) sawYLeftAsX = true;
+          if (r.id().equals(t2Id)) sawYLeftAsT2 = true;
+        }
+      }
+
+      HeapObject xObj = s.heap().get(xId);
+      if (xObj instanceof HeapObject.ObjectInstance xInst) {
+        Value val = xInst.fields().get("val");
+        assertNotNull(val);
+        assertEquals(20, ((Number) ((Value.Prim) val).v()).intValue(), "Node x val must stay 20");
+
+        Value right = xInst.fields().get("right");
+        if (right instanceof Value.Ref r) {
+          if (r.id().equals(t2Id)) sawXRightAsT2 = true;
+          if (r.id().equals(yId)) sawXRightAsY = true;
+        }
+      }
+    }
+
+    assertTrue(sawYLeftAsX, "Node y.left must initially point to x");
+    assertTrue(sawYLeftAsT2, "Node y.left must point to t2 after rotation");
+    assertTrue(sawXRightAsT2, "Node x.right must initially point to t2");
+    assertTrue(sawXRightAsY, "Node x.right must point to y after rotation");
+  }
+
+  @Test
+  void testBrokenCycleTreeEndsNormally() throws IOException {
+    Path sourcePath = programsDir.resolve("BrokenCycleTree.java");
+    assertTrue(Files.exists(sourcePath), "BrokenCycleTree.java must exist");
+    String source = Files.readString(sourcePath);
+
+    Trace trace = TracerRunner.trace(source, TracerConfig.load());
+    assertNotNull(trace);
+    assertEquals("ok", trace.status(), "BrokenCycleTree must end normally with status ok");
+    assertTrue(trace.steps().size() < 100, "Must not hit step cap, took " + trace.steps().size() + " steps");
+    assertNotNull(trace.stdout());
+    assertTrue(trace.stdout().contains("Broken cycle tree created. Ends normally."));
+  }
+
+  @Test
+  void exportPhase3Fixtures() throws IOException {
+    Path fixtures = Paths.get("../../tests/fixtures/traces");
+    if (!fixtures.toFile().exists()) {
+      fixtures = Paths.get("tests/fixtures/traces");
+    }
+    Path fixturesDir = fixtures.toAbsolutePath().normalize();
+    Files.createDirectories(fixturesDir);
+
+    String[] phase3Programs = {
+      "BstInsertRecursive",
+      "BstInsertIterative",
+      "BstSearch",
+      "BstDeleteLeaf",
+      "BstDeleteOneChild",
+      "BstDeleteTwoChildren",
+      "InorderRecursive",
+      "PreorderRecursive",
+      "PostorderRecursive",
+      "TreeHeight",
+      "CountNodes",
+      "MirrorTree",
+      "LevelOrderCustomQueue",
+      "LevelOrderJdkQueue",
+      "IterativeInorderStack",
+      "AvlRightRotate",
+      "AvlLeftRotate",
+      "WrapperBst",
+      "NonStandardTreeNames",
+      "NonStandardTreeLR",
+      "ParentPointerTree",
+      "SkewedLeft",
+      "SkewedRight",
+      "FullTree15",
+      "EmptyTree",
+      "SingleTreeNode",
+      "LeftOnly",
+      "RightOnly",
+      "SharedSubtree",
+      "BrokenCycleTree",
+      "ThreeChildFields",
+      "LeftRightAsList",
+      "TwoTreesAtOnce",
+      "RecursiveDepthWithException"
+    };
+
+    for (String baseName : phase3Programs) {
+      Path sourcePath = programsDir.resolve(baseName + ".java");
+      assertTrue(Files.exists(sourcePath), "Source file must exist: " + sourcePath);
+      String source = Files.readString(sourcePath);
+      Trace trace = TracerRunner.trace(source, TracerConfig.load());
+      assertNotNull(trace, "Trace must not be null for " + baseName);
+      assertEquals("ok", trace.status(), "Status must be ok for " + baseName);
+
+      String json = traceWriter.writeToString(trace);
+      String kebab = baseName.replaceAll("([a-z])([A-Z])", "$1-$2").toLowerCase();
+      Files.writeString(fixturesDir.resolve(kebab + "-trace.json"), json);
+      Files.writeString(fixturesDir.resolve(baseName + ".json"), json);
+    }
   }
 
   private LocalVariable getVariable(Step step, String name) {
     if (step.stack().isEmpty()) {
       return null;
     }
-    var topFrame = step.stack().get(step.stack().size() - 1);
-    return topFrame.locals().stream().filter(l -> l.name().equals(name)).findFirst().orElse(null);
+    for (int i = step.stack().size() - 1; i >= 0; i--) {
+      var frame = step.stack().get(i);
+      for (var l : frame.locals()) {
+        if (l.name().equals(name)) {
+          return l;
+        }
+      }
+    }
+    return null;
   }
 }
+

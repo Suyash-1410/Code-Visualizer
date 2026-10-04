@@ -1,0 +1,4946 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class TowerOfHanoi {\n  public static void main(String[] args) {\n    solve(3, 'A', 'C', 'B');\n  }\n\n  public static void solve(int n, char from, char to, char aux) {\n    if (n == 1) {\n      System.out.println(\"Move disk 1 from \" + from + \" to \" + to);\n      return;\n    }\n    solve(n - 1, from, aux, to);\n    System.out.println(\"Move disk \" + n + \" from \" + from + \" to \" + to);\n    solve(n - 1, aux, to, from);\n  }\n}\n",
+  "stdout" : "Move disk 1 from A to C\nMove disk 2 from A to B\nMove disk 1 from C to B\nMove disk 3 from A to C\nMove disk 1 from B to A\nMove disk 2 from B to C\nMove disk 1 from A to C\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 24,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "return",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 24,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 24,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 48,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 48,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 48,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 48,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 72,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "return",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 72,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 72,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "return",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 72,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 72,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 96,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 120,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "return",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 120,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 120,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 144,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 144,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 144,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 144,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "return",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "return",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "return",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TowerOfHanoi.solve",
+      "signature" : "void solve(int, char, char, char)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "from",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "A"
+        }
+      }, {
+        "name" : "to",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "C"
+        }
+      }, {
+        "name" : "aux",
+        "type" : "char",
+        "value" : {
+          "k" : "prim",
+          "t" : "char",
+          "v" : "B"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "TowerOfHanoi.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 168,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "end",
+    "line" : 4,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 168,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 44,
+    "maxDepth" : 4,
+    "durationMs" : 1236
+  }
+}

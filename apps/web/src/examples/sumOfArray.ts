@@ -1,7 +1,7 @@
 export interface ExampleProgram {
   id: string;
   title: string;
-  category: 'Arrays' | 'Recursion' | 'OOP' | 'Errors';
+  category: 'Arrays' | 'Recursion' | 'OOP' | 'Errors' | 'Linked lists' | 'Binary trees' | 'Stacks, queues, heaps';
   description: string;
   code: string;
 }

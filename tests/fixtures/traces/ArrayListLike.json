@@ -1,0 +1,2475 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class ArrayListLike {\n  int[] data;\n  int size;\n\n  public ArrayListLike() {\n    this.data = new int[4];\n    this.size = 0;\n  }\n\n  public void add(int val) {\n    if (size == data.length) {\n      int[] next = new int[data.length * 2];\n      for (int i = 0; i < size; i++) next[i] = data[i];\n      data = next;\n    }\n    data[size++] = val;\n  }\n\n  public int get(int index) {\n    return data[index];\n  }\n\n  public void set(int index, int val) {\n    data[index] = val;\n  }\n\n  public static void main(String[] args) {\n    ArrayListLike list = new ArrayListLike();\n    list.add(10);\n    list.add(20);\n    list.add(30);\n    System.out.println(\"size=\" + list.size + \", elem1=\" + list.get(1));\n  }\n}\n",
+  "stdout" : "size=3, elem1=20\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 6,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 7,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayListLike.<init>",
+      "signature" : "ArrayListLike()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayListLike.add",
+      "signature" : "void add(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "call",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayListLike.get",
+      "signature" : "int get(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "index",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayListLike.get",
+      "signature" : "int get(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "index",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayListLike.get",
+      "signature" : "int get(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "index",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 20
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "return",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayListLike.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "list",
+        "type" : "ArrayListLike",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayListLike",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "end",
+    "line" : 33,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 34,
+    "maxDepth" : 2,
+    "durationMs" : 883
+  }
+}

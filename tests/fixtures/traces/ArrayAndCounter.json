@@ -1,0 +1,1710 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class ArrayAndCounter {\n  public static void main(String[] args) {\n    int[] arr = {1, 2, 3, 4, 5, 6};\n    int count = 0;\n\n    for (int i = 0; i < arr.length; i++) {\n      if (arr[i] % 2 == 0) {\n        count++;\n      }\n    }\n\n    System.out.println(\"evens=\" + count);\n  }\n}\n",
+  "stdout" : "evens=3\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 8,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "return",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayAndCounter.main",
+      "signature" : "void main(String[])",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "arr",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "count",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 6,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 6
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 8,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "end",
+    "line" : 13,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 8,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 22,
+    "maxDepth" : 1,
+    "durationMs" : 483
+  }
+}

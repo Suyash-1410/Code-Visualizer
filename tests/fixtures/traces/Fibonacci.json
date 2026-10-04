@@ -1,0 +1,5881 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class Fibonacci {\n  public static void main(String[] args) {\n    int res = fib(5);\n  }\n\n  public static int fib(int n) {\n    if (n <= 1) {\n      return n;\n    }\n    return fib(n - 1) + fib(n - 2);\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 0
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 2
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 0
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 3
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 48,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 49,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 50,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 51,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 52,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 53,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 54,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 55,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 14,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 56,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 14,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 57,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 14,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 58,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 14,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 59,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 60,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 15,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 61,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 15,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 62,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 15,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 63,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 15,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 0
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 64,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 65,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 13,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 66,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 67,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 16,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 68,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 16,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 69,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 16,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 70,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 16,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 1
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 71,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 72,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    }, {
+      "frameId" : 12,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 2
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 73,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 74,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Fibonacci.fib",
+      "signature" : "int fib(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 5
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 75,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 76,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "res",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 77,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "Fibonacci.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "res",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 78,
+    "event" : "end",
+    "line" : 4,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 79,
+    "maxDepth" : 6,
+    "durationMs" : 230
+  }
+}

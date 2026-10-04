@@ -1,0 +1,3599 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class ArrayQueueLinear {\n  int[] data;\n  int front;\n  int rear;\n\n  public ArrayQueueLinear(int cap) {\n    this.data = new int[cap];\n    this.front = 0;\n    this.rear = 0;\n  }\n\n  public void enqueue(int val) {\n    if (rear == data.length) return;\n    data[rear++] = val;\n  }\n\n  public int dequeue() {\n    if (front == rear) return -1;\n    return data[front++];\n  }\n\n  public static void main(String[] args) {\n    ArrayQueueLinear q = new ArrayQueueLinear(5);\n    q.enqueue(10);\n    q.enqueue(20);\n    q.enqueue(30);\n    int dequeued = q.dequeue();\n    q.enqueue(40);\n    System.out.println(\"dequeued=\" + dequeued + \", front=\" + q.front + \", rear=\" + q.rear + \", valAtFront=\" + q.data[q.front]);\n  }\n}\n",
+  "stdout" : "dequeued=10, front=1, rear=4, valAtFront=20\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ArrayQueueLinear.<init>",
+      "signature" : "ArrayQueueLinear(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "cap",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayQueueLinear.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayQueueLinear.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayQueueLinear.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 19,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "return",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ArrayQueueLinear.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 19,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 10
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ArrayQueueLinear.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 44,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "return",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ArrayQueueLinear.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "ArrayQueueLinear",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "dequeued",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ArrayQueueLinear",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "front" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "rear" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 44,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "end",
+    "line" : 30,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 44,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 43,
+    "maxDepth" : 2,
+    "durationMs" : 989
+  }
+}

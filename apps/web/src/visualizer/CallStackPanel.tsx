@@ -9,6 +9,7 @@ export interface CallStackPanelProps {
   selectedFrameId?: number | null;
   onSelectFrame?: (frameId: number) => void;
   onHoverHeap?: (id: string | null) => void;
+  onHoverFrame?: (frameId: number | null) => void;
 }
 
 export const CallStackPanel: React.FC<CallStackPanelProps> = ({
@@ -17,6 +18,7 @@ export const CallStackPanel: React.FC<CallStackPanelProps> = ({
   selectedFrameId,
   onSelectFrame,
   onHoverHeap,
+  onHoverFrame,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -48,6 +50,7 @@ export const CallStackPanel: React.FC<CallStackPanelProps> = ({
 
   // Hovering a frame: find its referenced heap IDs to highlight in diagram
   const handleFrameMouseEnter = (frame: StackFrame) => {
+    onHoverFrame?.(frame.frameId);
     const firstRef = frame.locals.find((l) => l.value.k === 'ref');
     if (firstRef && firstRef.value.k === 'ref') {
       onHoverHeap?.(firstRef.value.id);
@@ -55,6 +58,7 @@ export const CallStackPanel: React.FC<CallStackPanelProps> = ({
   };
 
   const handleFrameMouseLeave = () => {
+    onHoverFrame?.(null);
     onHoverHeap?.(null);
   };
 

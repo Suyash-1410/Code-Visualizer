@@ -1,0 +1,4247 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class ResizingStack {\n  int[] data;\n  int top;\n\n  public ResizingStack() {\n    this.data = new int[2];\n    this.top = -1;\n  }\n\n  public void push(int val) {\n    if (top == data.length - 1) {\n      resize();\n    }\n    data[++top] = val;\n  }\n\n  public int pop() {\n    if (top == -1) return -1;\n    return data[top--];\n  }\n\n  private void resize() {\n    int[] next = new int[data.length * 2];\n    for (int i = 0; i <= top; i++) {\n      next[i] = data[i];\n    }\n    this.data = next;\n  }\n\n  public static void main(String[] args) {\n    ResizingStack s = new ResizingStack();\n    s.push(10);\n    s.push(20);\n    s.push(30); // triggers resize from 2 to 4\n    s.push(40);\n    int popped = s.pop();\n    System.out.println(\"popped=\" + popped + \", size=\" + (s.top + 1) + \", cap=\" + s.data.length);\n  }\n}\n",
+  "stdout" : "popped=40, size=3, cap=4\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 6,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 7,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "ResizingStack.<init>",
+      "signature" : "ResizingStack()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 34,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "call",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 23,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 23,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 2,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "return",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "ResizingStack.resize",
+      "signature" : "void resize()",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "next",
+        "type" : "int[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 34,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 35,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "call",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "return",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "ResizingStack.push",
+      "signature" : "void push(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "line",
+    "line" : 36,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "ResizingStack.pop",
+      "signature" : "int pop()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "ResizingStack.pop",
+      "signature" : "int pop()",
+      "line" : 18,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "ResizingStack.pop",
+      "signature" : "int pop()",
+      "line" : 19,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "return",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "ResizingStack.pop",
+      "signature" : "int pop()",
+      "line" : 19,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 40
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 48,
+    "event" : "line",
+    "line" : 36,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 49,
+    "event" : "line",
+    "line" : 37,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "popped",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 50,
+    "event" : "line",
+    "line" : 38,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "popped",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 25,
+    "clipped" : false
+  }, {
+    "i" : 51,
+    "event" : "return",
+    "line" : 38,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "ResizingStack.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "ResizingStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "popped",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "ResizingStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 4,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 25,
+    "clipped" : false
+  }, {
+    "i" : 52,
+    "event" : "end",
+    "line" : 38,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 25,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 53,
+    "maxDepth" : 3,
+    "durationMs" : 962
+  }
+}

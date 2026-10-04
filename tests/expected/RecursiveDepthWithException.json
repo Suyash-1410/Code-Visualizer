@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Caught exception: Depth limit reached at node 40\n",
+  "hasExceptionEvent": true,
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 4,
+    "inorderValues": [40, 20, 10, 30]
+  }
+}

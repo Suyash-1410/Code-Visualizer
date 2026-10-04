@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Broken cycle tree created. Ends normally.\n",
+  "maxStepCount": 100
+}

@@ -1,0 +1,1911 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class MutualRecursion {\n  public static void main(String[] args) {\n    boolean res = isEven(4);\n  }\n\n  public static boolean isEven(int n) {\n    if (n == 0) {\n      return true;\n    }\n    return isOdd(n - 1);\n  }\n\n  public static boolean isOdd(int n) {\n    if (n == 0) {\n      return false;\n    }\n    return isEven(n - 1);\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "call",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "call",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "call",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "boolean",
+      "v" : true
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "boolean",
+      "v" : true
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "boolean",
+      "v" : true
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MutualRecursion.isOdd",
+      "signature" : "boolean isOdd(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "boolean",
+      "v" : true
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MutualRecursion.isEven",
+      "signature" : "boolean isEven(int)",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "n",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "boolean",
+      "v" : true
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "res",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MutualRecursion.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "res",
+        "type" : "boolean",
+        "value" : {
+          "k" : "prim",
+          "t" : "boolean",
+          "v" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "end",
+    "line" : 4,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 29,
+    "maxDepth" : 6,
+    "durationMs" : 180
+  }
+}

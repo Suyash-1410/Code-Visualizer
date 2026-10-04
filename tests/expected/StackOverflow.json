@@ -1,0 +1,6 @@
+{
+  "expectedStatus": "runtime_error",
+  "expectedRuntimeErrorType": "StackOverflowException",
+  "expectedRuntimeErrorMessage": "Stack overflow",
+  "hasExceptionEvent": true
+}

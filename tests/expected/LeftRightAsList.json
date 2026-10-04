@@ -1,0 +1,12 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "List: 1 <-> 2 <-> 3\n",
+  "expectedObject": {
+    "step": -2,
+    "var": "n1",
+    "expectedType": "ListNode",
+    "expectedFields": {
+      "val": { "k": "prim", "t": "int", "v": 1 }
+    }
+  }
+}

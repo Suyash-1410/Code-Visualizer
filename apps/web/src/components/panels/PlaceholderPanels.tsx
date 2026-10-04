@@ -38,6 +38,13 @@ export const DiagramPanel: React.FC = () => {
   const setFocusedHeapId = useAppStore((s) => s.setFocusedHeapId);
   const runState = useAppStore((s) => s.runState);
 
+  const prevIndexRef = React.useRef(currentStepIndex);
+  const isBackward = currentStepIndex < prevIndexRef.current;
+
+  React.useEffect(() => {
+    prevIndexRef.current = currentStepIndex;
+  }, [currentStepIndex]);
+
   if (runState === 'running') {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-3 bg-canvas p-6 text-center">
@@ -53,6 +60,13 @@ export const DiagramPanel: React.FC = () => {
   if (!trace) {
     return <EmptyState />;
   }
+
+  const prevStep =
+    trace && isBackward && prevIndexRef.current < trace.steps.length
+      ? trace.steps[prevIndexRef.current]
+      : trace && currentStepIndex > 0
+        ? trace.steps[currentStepIndex - 1]
+        : undefined;
 
   return (
     <div className="flex h-full flex-col overflow-hidden bg-canvas">
@@ -90,9 +104,11 @@ export const DiagramPanel: React.FC = () => {
         {vizTab === 'diagram' ? (
           <DiagramArea
             step={step}
+            prevStep={prevStep}
             selectedFrame={selectedFrame}
             statics={step?.statics}
             diff={diff}
+            isBackward={isBackward}
             hoveredHeapId={hoveredHeapId}
             focusedHeapId={focusedHeapId}
             onHoverHeap={setHoveredHeapId}
@@ -120,6 +136,7 @@ export const CallStackPanel: React.FC = () => {
   const selectedFrameId = useAppStore((s) => s.selectedFrameId);
   const setSelectedFrameId = useAppStore((s) => s.setSelectedFrameId);
   const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
+  const setHoveredFrameId = useAppStore((s) => s.setHoveredFrameId);
 
   return (
     <RealCallStackPanel
@@ -128,6 +145,7 @@ export const CallStackPanel: React.FC = () => {
       selectedFrameId={selectedFrameId}
       onSelectFrame={setSelectedFrameId}
       onHoverHeap={setHoveredHeapId}
+      onHoverFrame={setHoveredFrameId}
     />
   );
 };
@@ -140,17 +158,22 @@ export const VariablesPanel: React.FC = () => {
   const selectedFrame = useSelectedFrame();
   const diff = useStepDiff();
 
+  const hoveredVariableName = useAppStore((s) => s.hoveredVariableName);
   const setHoveredHeapId = useAppStore((s) => s.setHoveredHeapId);
   const setFocusedHeapId = useAppStore((s) => s.setFocusedHeapId);
+  const setHoveredVariableName = useAppStore((s) => s.setHoveredVariableName);
 
   return (
     <div className="flex h-full flex-col overflow-hidden bg-canvas">
       <RealVariablesPanel
         frame={selectedFrame}
         statics={step?.statics}
+        heap={step?.heap}
         diff={diff}
+        hoveredVariableName={hoveredVariableName}
         onHoverHeap={setHoveredHeapId}
         onFocusHeap={setFocusedHeapId}
+        onHoverVariable={setHoveredVariableName}
       />
     </div>
   );

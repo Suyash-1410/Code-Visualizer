@@ -3,6 +3,7 @@ import React from 'react';
 interface ReferenceChipProps {
   id: string;
   type?: string;
+  summary?: string;
   onHover?: (id: string | null) => void;
   onClick?: (id: string) => void;
   className?: string;
@@ -11,12 +12,13 @@ interface ReferenceChipProps {
 export const ReferenceChip: React.FC<ReferenceChipProps> = ({
   id,
   type,
+  summary,
   onHover,
   onClick,
   className = '',
 }) => {
-  // If type is supplied (e.g. "Node" or "int[]"), format as "Node@3" or "int[]@1"
-  const label = type ? `${type}${id}` : id;
+  // If summary is provided (e.g. "Node(3)"), use it directly; otherwise format as "Node@3"
+  const label = summary ?? (type ? (id.startsWith('@') ? `${type}${id}` : `${type}@${id}`) : id);
 
   return (
     <button

@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Size: 3, Contains 30: true, Contains 90: false\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "tree",
+    "field": "root",
+    "nodeCount": 3,
+    "inorderValues": [30, 50, 70]
+  }
+}

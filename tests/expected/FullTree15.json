@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Full tree 15 nodes created, root: 1\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 15,
+    "inorderValues": [8, 4, 9, 2, 10, 5, 11, 1, 12, 6, 13, 3, 14, 7, 15]
+  }
+}

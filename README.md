@@ -84,14 +84,14 @@ bash ./scripts/test-security.sh
 ```
 
 #### 4. Frontend Unit & Component Tests (Vitest)
-Executes 160+ unit and component tests (structure recognition, diff computation, step narration, timeline scrubbers, panel layout):
+Executes 520+ unit and component tests (data structure recognition, singly & doubly linked list layout, binary tree tidy layout, stack/queue/heap recognition & diffing, animation diffs, stack-linked active/recursion path derivation, step narration, timeline scrubbers, error boundaries, panel layout):
 ```bash
 cd apps/web
 npm test -- --run
 ```
 
 #### 5. End-to-End & Visual Sanity Tests (Playwright)
-Executes Playwright tests against the real running stack (empty state, Factorial call stack & stdout sync, Fibonacci(5) recursion call tree, BubbleSort array cell markers, compile error banners, runtime exceptions, recursion depth limits, and visual screenshot comparisons):
+Executes 42 Playwright tests across `javascope.spec.ts`, `binaryTrees.spec.ts`, `stacksQueues.spec.ts`, and `heaps.spec.ts` against the real running stack (empty state, Factorial call stack & stdout sync, Fibonacci recursion call tree, BubbleSort array cell markers, compile error banners, runtime exceptions, recursion depth limits, linked list reversal & cycle detection, BST insertions & traversals, AVL rotations, ArrayStack partial filling & pop stale slot, CircularQueue wraparound transitions, NodeQueue pointers, ResizingStack capacity doubling, StackUnderflow error banner, TwoStructuresAtOnce side-by-side layout, JdkCollectionsMix opaque cards, MinHeap insertion/extraction, HeapOffByOne live violation highlights, HeapSortBareArray interactive heap-size control & bidirectional "View as…" override):
 ```bash
 cd apps/web
 npm run test:e2e
@@ -110,22 +110,68 @@ The CI pipeline runs automatically on all pushes and pull requests across 3 dist
 
 ---
 
+## Supported Visualizations & Phase Milestones
+
+### Phase 1 Foundation
+- **`ArrayView`**: Cell indices, values, change highlighting, and stacked variable index markers (`i`, `j`).
+- **`GridView`**: 2D array row/col coordinates and cell values.
+- **`ObjectView`**: Class names, fields, cycles handled safely.
+- **`CallStackPanel`**: Animated frame push/pop, method signature with arguments (`fib(n = 3)`), return value indicators, and max depth tracking.
+- **`CallTreeView`**: Tidy top-to-bottom D3 layout, time-aware node reveals, path highlighting, return values (`fibo(5) → 5`).
+
+### Phase 2 Linked Lists (User-Written `Node` Classes)
+- **Singly Linked Lists**: Horizontal row of nodes with values, forward arrow connectors, and `null` terminators.
+- **Doubly Linked Lists**: Paired forward and backward links (`next` and `prev`) rendered cleanly with non-overlapping connectors and bidirectional integrity indicators.
+- **Pointer Tags**: Variables pointing to nodes (`head`, `tail`, `curr`, `prev`, `slow`, `fast`) appear as upward indicator chips directly under their target nodes (stacking neatly when multiple point to the same node).
+- **Cycle Detection**: Cycles loop back smoothly with curved arc connectors and display a "Cycle" badge.
+- **Wrapper Classes**: Encapsulating collections (e.g. `MyLinkedList` with `size` and `head`) show class metadata with nodes nested cleanly.
+- **Mid-Operation Multi-Chains**: During reversal or merges, separate disjoint chains are displayed side by side with active pointer tags and severed link indicators.
+- **View as… Manual Override**: Users can switch any structure between specialized Linked List and Generic Object views.
+
+### Phase 3 Binary Trees & BSTs (User-Written `TreeNode` / `BST` Classes)
+- **Tidy Tree Layout**: Top-to-bottom layout with parent centered above children. Uses phantom nodes to ensure left children strictly render to the left and right children strictly render to the right.
+- **Pure Parent-to-Child Edges**: Edges are clean lines behind nodes (no cross-canvas arrow spaghetti).
+- **Stack-Linked Recursion**: The top frame's node parameter is strongly highlighted as `[Active]`, while suspended caller frames highlight the recursion path upward to the root.
+- **Deterministic Traversal Progress**: Tracks node progress (`unvisited`, `active`, `in_progress`, `completed` in emerald green) matching preorder, inorder, and postorder traversal lifecycles.
+- **Pointer Chips**: Pointer variables (`root`, `curr`, `parent`, `succ`) attach as compact labeled chips on nodes.
+- **Animated Operations**: Smooth Framer Motion transitions for node insertions, deletions, successor replacements, and AVL tree rotations.
+- **BST Order Validator & Output Order Strip**: Optional live BST ordering verification and token-linked stdout traversal strip.
+- **View as… Manual Override**: Easily toggle between Binary Tree, Doubly Linked List, and Generic Object views.
+- *Note:* N-ary trees, graphs, and JDK collections (`TreeMap`, `PriorityQueue`, `ArrayDeque`) remain generic objects until Phase 4/5.
+
+### Phase 4 Stacks, Queues, and Heaps (User-Written Classes & In-Frame Local Trios)
+- **`StackView` (Array-Backed)**: Vertical container with bottom at index 0, values stacked upward, attached `← top` pointer chip, and faint dashed slots for remaining capacity. Includes "Show raw array" toggle to inspect un-erased or garbage array entries.
+- **`StackView` (Node-Backed)**: Vertical node chain descending from a labeled `top` pointer chip down through `next` links to `null`.
+- **`QueueView` (Linear & Circular)**: Horizontal indexed capacity slots with attached `front` and `rear` pointer chips. Linear queues dim consumed slots prior to `front`. Circular queues render wrapped segments cleanly with a curved purple SVG wrap connector from the final slot back to slot 0 with a "wraps to 0" badge.
+- **`QueueView` (Node-Backed)**: Horizontal node chain with attached `front` pointer at head and `rear` pointer at tail.
+- **`HeapView` (Dual Synchronized Views)**:
+  - **HeapArrayView (Top)**: 1D array cells with indices. Slots $\ge \text{size}$ are dimmed (outside heap bounds). Variable index markers (`i`, `parent`, `left`, `right`, `smallest`, `largest`) render beneath cells.
+  - **HeapTreeView (Bottom)**: Complete binary tree using a fixed, index-based layout ($\text{level} = \lfloor\log_2(i+1)\rfloor$, child at $2i+1$ and $2i+2$) with parent-to-child links.
+  - **Live Synchronization**: Hovering an array cell highlights its corresponding tree node and vice-versa. Clicking focuses both.
+  - **Live Violation Detection**: Optional "Highlight violations" toggle detects order defects dynamically, highlighting violating parent-child edges and badges.
+  - **Bare Array Heap Sort**: Adjustable interactive heap-size slider allows stepping through Heap Sort on bare arrays with green "sorted" markers on settled elements.
+- **Honest State Animations & Derived Value Tokens**:
+  - Push/pop and enqueue/dequeue animate physical entry and departure. Decrementing pointers without clearing cells honestly reveals dim `(stale)` slots.
+  - Array reallocation transitions render `"resized: capacity N → 2N"` badges.
+  - Heap swaps animate value tokens flying between cells in the array view and between nodes in the tree view simultaneously using order-preserving minimal-cost matching.
+  - Equal value swaps pulse in amber without impossible motions. Inline 3-line swaps honestly render intermediate states (`temp = a[i]`, `a[i] = a[j]`, `a[j] = temp`).
+- **View as… Manual Override**: Available on every array and structure card to switch between Array, Stack, Queue, Heap, Linked list, Binary tree, or Generic object views.
+- *Note:* Graphs, N-ary trees, and JDK collection implementations (`java.util.Stack`, `java.util.ArrayDeque`, `java.util.PriorityQueue`, `java.util.ArrayList`, `java.util.HashMap`) remain opaque reference cards until Phase 5.
+
+---
+
 ## Definition of Done (PRD Section 12.5)
 
 For any release or phase milestone to be considered complete, all of the following criteria must be satisfied:
 
-1. **Golden Tests Pass**: All Phase 1 golden tests pass, and all earlier-phase tests continue to pass.
+1. **Golden Tests Pass**: All Phase 1, Phase 2, and Phase 3 golden tests pass, and all earlier-phase tests continue to pass.
 2. **Security Tests Pass**: Hostile program suite (`tests/security/`) passes against the hardened container configuration.
-3. **P0 Visualizers Meet Requirements**:
-   - `ArrayView`: cell indices, values, change highlighting, and stacked variable index markers (`i`, `j`).
-   - `GridView`: 2D array coordinates and cell values.
-   - `ObjectView`: class names, fields, cycles handled safely.
-   - `CallStackPanel`: animated frame push/pop, method signature with arguments (`fib(n = 3)`), return value indicators, and max depth tracking.
-   - `CallTreeView`: tidy top-to-bottom D3 layout, time-aware node reveals, path highlighting, return values (`fibo(5) → 5`).
+3. **P0 Visualizers Meet Requirements**: All Phase 1, Phase 2, and Phase 3 visualizers satisfy acceptance criteria and handle edge cases gracefully.
 4. **Interactive Playback & Timeline**:
    - Stepping forward and backward restores the exact snapshot state, variable values, highlighted line, and stdout.
    - Truncated traces (step cap, depth limit) remain playable with clear persistent status banners.
-5. **No Open P0 Bugs**: All core user flows and error paths operate smoothly without layout regressions or uncaught exceptions.
+5. **Robustness & Error Boundaries**: Visualizer errors fall back to generic object cards without crashing the application.
+6. **No Open P0 Bugs**: All core user flows and error paths operate smoothly without layout regressions or uncaught exceptions.
 
 ---
 

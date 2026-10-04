@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 30,
+  "expectedStdout": "size=5, min=10\n",
+  "expectedCalls": [
+    {
+      "method": "MinHeapInsert.swap",
+      "count": 3
+    }
+  ]
+}

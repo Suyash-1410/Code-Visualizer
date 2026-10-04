@@ -1,0 +1,1507 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class HeapOffByOne {\n  int[] heap;\n  int size;\n\n  public HeapOffByOne() {\n    this.heap = new int[]{50, 10, 20, 0, 0};\n    this.size = 3;\n  }\n\n  // Buggy sift-down that incorrectly checks > instead of <, failing to restore min-heap invariant\n  public void buggySiftDown(int i) {\n    int left = 2 * i + 1;\n    int right = 2 * i + 2;\n    int smallest = left;\n    if (right < size && heap[right] < heap[left]) {\n      smallest = right;\n    }\n    // Bug: condition inverted\n    if (heap[smallest] > heap[i]) {\n      int temp = heap[i];\n      heap[i] = heap[smallest];\n      heap[smallest] = temp;\n    }\n  }\n\n  public static void main(String[] args) {\n    HeapOffByOne h = new HeapOffByOne();\n    h.buggySiftDown(0);\n    System.out.println(\"root=\" + h.heap[0] + \", left=\" + h.heap[1] + \", right=\" + h.heap[2]);\n  }\n}\n",
+  "stdout" : "root=50, left=10, right=20\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 5,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 6,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 7,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "return",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "HeapOffByOne.<init>",
+      "signature" : "HeapOffByOne()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "call",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "right",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "right",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "smallest",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "right",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "smallest",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "right",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "smallest",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "return",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "HeapOffByOne.buggySiftDown",
+      "signature" : "void buggySiftDown(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "i",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }
+      }, {
+        "name" : "left",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      }, {
+        "name" : "right",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      }, {
+        "name" : "smallest",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 27,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "HeapOffByOne.main",
+      "signature" : "void main(String[])",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "h",
+        "type" : "HeapOffByOne",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "HeapOffByOne",
+        "fields" : {
+          "heap" : {
+            "k" : "ref",
+            "id" : "@672"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@672" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 27,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "end",
+    "line" : 30,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 27,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 21,
+    "maxDepth" : 2,
+    "durationMs" : 953
+  }
+}

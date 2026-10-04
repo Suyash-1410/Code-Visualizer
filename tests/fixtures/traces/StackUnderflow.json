@@ -1,0 +1,1197 @@
+{
+  "schemaVersion" : 1,
+  "status" : "runtime_error",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : {
+    "type" : "StackUnderflowException",
+    "message" : "Stack underflow",
+    "line" : 14,
+    "stackTrace" : [ {
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "line" : 14
+    }, {
+      "method" : "StackUnderflow.main",
+      "line" : 22
+    } ]
+  },
+  "source" : "class StackUnderflowException extends RuntimeException {\n  public StackUnderflowException(String msg) {\n    super(msg);\n  }\n}\n\npublic class StackUnderflow {\n  static class SimpleStack {\n    int[] data = new int[5];\n    int top = -1;\n\n    public int pop() {\n      if (top == -1) {\n        throw new StackUnderflowException(\"Stack underflow\");\n      }\n      return data[top--];\n    }\n  }\n\n  public static void main(String[] args) {\n    SimpleStack s = new SimpleStack();\n    s.pop();\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "StackUnderflow$SimpleStack.<init>",
+      "signature" : "SimpleStack()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "StackUnderflow$SimpleStack.<init>",
+      "signature" : "SimpleStack()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "StackUnderflow$SimpleStack.<init>",
+      "signature" : "SimpleStack()",
+      "line" : 9,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "StackUnderflow$SimpleStack.<init>",
+      "signature" : "SimpleStack()",
+      "line" : 10,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "StackUnderflow$SimpleStack.<init>",
+      "signature" : "SimpleStack()",
+      "line" : 10,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 13,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 13,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    }, {
+      "frameId" : 4,
+      "method" : "StackUnderflowException.<init>",
+      "signature" : "StackUnderflowException(String)",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "msg",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Stack underflow",
+          "full" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    }, {
+      "frameId" : 4,
+      "method" : "StackUnderflowException.<init>",
+      "signature" : "StackUnderflowException(String)",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "msg",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Stack underflow",
+          "full" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    }, {
+      "frameId" : 4,
+      "method" : "StackUnderflowException.<init>",
+      "signature" : "StackUnderflowException(String)",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "msg",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Stack underflow",
+          "full" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "return",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    }, {
+      "frameId" : 4,
+      "method" : "StackUnderflowException.<init>",
+      "signature" : "StackUnderflowException(String)",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "msg",
+        "type" : "String",
+        "value" : {
+          "k" : "str",
+          "v" : "Stack underflow",
+          "full" : true
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "exception",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "StackUnderflow.main",
+      "signature" : "void main(String[])",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "s",
+        "type" : "SimpleStack",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "StackUnderflow$SimpleStack.pop",
+      "signature" : "int pop()",
+      "line" : 14,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "SimpleStack",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "top" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : -1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 5,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 0
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "end",
+    "line" : 14,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 18,
+    "maxDepth" : 3,
+    "durationMs" : 378
+  }
+}

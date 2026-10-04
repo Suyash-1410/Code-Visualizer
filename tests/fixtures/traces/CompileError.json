@@ -1,0 +1,19 @@
+{
+  "schemaVersion" : 1,
+  "status" : "compile_error",
+  "truncation" : null,
+  "compileErrors" : [ {
+    "line" : 3,
+    "column" : 13,
+    "message" : "illegal start of expression"
+  } ],
+  "runtimeError" : null,
+  "source" : "public class CompileError {\n  public static void main(String[] args) {\n    int x = ;\n  }\n}\n",
+  "stdout" : "",
+  "steps" : [ ],
+  "stats" : {
+    "stepCount" : 0,
+    "maxDepth" : 0,
+    "durationMs" : 14
+  }
+}

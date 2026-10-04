@@ -1,0 +1,15 @@
+{
+  "schemaVersion" : 1,
+  "status" : "unsupported",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class NoMain {\n  public static void foo() {\n    System.out.println(\"No main here\");\n  }\n}\n",
+  "stdout" : "No class with 'public static void main(String[] args)' found.",
+  "steps" : [ ],
+  "stats" : {
+    "stepCount" : 0,
+    "maxDepth" : 0,
+    "durationMs" : 46
+  }
+}

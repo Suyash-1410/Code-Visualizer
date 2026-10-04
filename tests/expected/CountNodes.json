@@ -1,0 +1,20 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Count: 5\n",
+  "expectedCalls": [
+    { "method": "CountNodes.count", "count": 11 }
+  ],
+  "expectedReturns": [
+    {
+      "method": "CountNodes.count",
+      "count": 11,
+      "lastReturnValue": { "k": "prim", "t": "int", "v": 5 }
+    }
+  ],
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 5,
+    "inorderValues": [40, 20, 50, 10, 30]
+  }
+}

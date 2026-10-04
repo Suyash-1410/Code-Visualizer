@@ -1,0 +1,4181 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class FindMiddle {\n  public static void main(String[] args) {\n    Node head = new Node(1);\n    head.next = new Node(2);\n    head.next.next = new Node(3);\n    head.next.next.next = new Node(4);\n    head.next.next.next.next = new Node(5);\n\n    Node slow = head;\n    Node fast = head;\n    while (fast != null && fast.next != null) {\n      slow = slow.next;\n      fast = fast.next.next;\n    }\n\n    System.out.println(\"Middle: \" + slow.val);\n  }\n}\n\nclass Node {\n  int val;\n  Node next;\n\n  Node(int val) {\n    this.val = val;\n  }\n}\n",
+  "stdout" : "Middle: 3\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "call",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "return",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 4
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "call",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 24,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 24,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 25,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 25,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "return",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 26,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 5
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 12,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 12,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 10,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "return",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "FindMiddle.main",
+      "signature" : "void main(String[])",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "head",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "slow",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      }, {
+        "name" : "fast",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 5
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 4
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 10,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "end",
+    "line" : 17,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 10,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 48,
+    "maxDepth" : 2,
+    "durationMs" : 534
+  }
+}

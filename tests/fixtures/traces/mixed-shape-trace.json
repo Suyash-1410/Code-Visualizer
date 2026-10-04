@@ -1,0 +1,1920 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class MixedShape {\n  public static void main(String[] args) {\n    MixedNode n1 = new MixedNode(1);\n    MixedNode n2 = new MixedNode(2);\n    MixedNode n3 = new MixedNode(3);\n\n    n1.next = n2;\n    n1.other = n3;\n\n    System.out.println(n1.val + \" next:\" + n1.next.val + \" other:\" + n1.other.val);\n  }\n}\n\nclass MixedNode {\n  int val;\n  MixedNode next;\n  MixedNode other;\n\n  MixedNode(int val) {\n    this.val = val;\n  }\n}\n",
+  "stdout" : "1 next:2 other:3\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 1
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 2
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "MixedNode.<init>",
+      "signature" : "MixedNode(int)",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 3
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "n3",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "n3",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "n3",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "other" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "n3",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "other" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "return",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "MixedShape.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "n1",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "n2",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "n3",
+        "type" : "MixedNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "other" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "MixedNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          },
+          "next" : {
+            "k" : "null"
+          },
+          "other" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "end",
+    "line" : 11,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 27,
+    "maxDepth" : 2,
+    "durationMs" : 955
+  }
+}

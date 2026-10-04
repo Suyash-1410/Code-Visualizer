@@ -1,0 +1,7658 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class NodeQueue {\n  static class Node {\n    int val;\n    Node next;\n    Node(int val) {\n      this.val = val;\n    }\n  }\n\n  Node front;\n  Node rear;\n  int size;\n\n  public void enqueue(int val) {\n    Node newNode = new Node(val);\n    if (rear == null) {\n      front = rear = newNode;\n    } else {\n      rear.next = newNode;\n      rear = newNode;\n    }\n    size++;\n  }\n\n  public int dequeue() {\n    if (front == null) return -1;\n    int v = front.val;\n    front = front.next;\n    if (front == null) rear = null;\n    size--;\n    return v;\n  }\n\n  public static void main(String[] args) {\n    NodeQueue q = new NodeQueue();\n    q.enqueue(10);\n    q.enqueue(20);\n    q.enqueue(30);\n    int d1 = q.dequeue();\n    q.enqueue(40);\n    System.out.println(\"dequeued=\" + d1 + \", front=\" + q.front.val + \", rear=\" + q.rear.val + \", size=\" + q.size);\n  }\n}\n",
+  "stdout" : "dequeued=10, front=20, rear=40, size=3\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 35,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 1,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NodeQueue.<init>",
+      "signature" : "NodeQueue()",
+      "line" : 1,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 1,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NodeQueue.<init>",
+      "signature" : "NodeQueue()",
+      "line" : 1,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "return",
+    "line" : 1,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NodeQueue.<init>",
+      "signature" : "NodeQueue()",
+      "line" : 1,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 35,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 35,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 36,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "call",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "line",
+    "line" : 17,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 17,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "null"
+          },
+          "rear" : {
+            "k" : "null"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 0
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "return",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 36,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "line",
+    "line" : 37,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "call",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "return",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 1
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "return",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 37,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@674"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 38,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "call",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "return",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 48,
+    "event" : "return",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 38,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 49,
+    "event" : "line",
+    "line" : 39,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 50,
+    "event" : "call",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 26,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 51,
+    "event" : "line",
+    "line" : 26,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 26,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 52,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 27,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 53,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 54,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 55,
+    "event" : "line",
+    "line" : 30,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 30,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 56,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 57,
+    "event" : "return",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    }, {
+      "frameId" : 9,
+      "method" : "NodeQueue.dequeue",
+      "signature" : "int dequeue()",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "v",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "prim",
+      "t" : "int",
+      "v" : 10
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 58,
+    "event" : "line",
+    "line" : 39,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 39,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 59,
+    "event" : "line",
+    "line" : 40,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 60,
+    "event" : "call",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 61,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 62,
+    "event" : "call",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 63,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 64,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 65,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 66,
+    "event" : "return",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    }, {
+      "frameId" : 11,
+      "method" : "NodeQueue$Node.<init>",
+      "signature" : "Node(int)",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 67,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 68,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 69,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 70,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 71,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 2
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 72,
+    "event" : "line",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 73,
+    "event" : "return",
+    "line" : 23,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 40,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    }, {
+      "frameId" : 10,
+      "method" : "NodeQueue.enqueue",
+      "signature" : "void enqueue(int)",
+      "line" : 23,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        }
+      }, {
+        "name" : "newNode",
+        "type" : "Node",
+        "value" : {
+          "k" : "ref",
+          "id" : "@676"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 74,
+    "event" : "line",
+    "line" : 41,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 41,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 75,
+    "event" : "line",
+    "line" : 42,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 39,
+    "clipped" : false
+  }, {
+    "i" : 76,
+    "event" : "return",
+    "line" : 42,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NodeQueue.main",
+      "signature" : "void main(String[])",
+      "line" : 42,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "q",
+        "type" : "NodeQueue",
+        "value" : {
+          "k" : "ref",
+          "id" : "@671"
+        }
+      }, {
+        "name" : "d1",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@671" : {
+        "kind" : "object",
+        "type" : "NodeQueue",
+        "fields" : {
+          "front" : {
+            "k" : "ref",
+            "id" : "@674"
+          },
+          "rear" : {
+            "k" : "ref",
+            "id" : "@676"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@675"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 40
+          },
+          "next" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "Node",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "next" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 39,
+    "clipped" : false
+  }, {
+    "i" : 77,
+    "event" : "end",
+    "line" : 42,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 39,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 78,
+    "maxDepth" : 3,
+    "durationMs" : 1062
+  }
+}

@@ -123,13 +123,17 @@ test.describe('JavaScope E2E Quality Gates (PRD 12.4 & 12.5)', () => {
   });
 
   test('5. Compile Error: banner with hints and Monaco line markers', async ({ page }) => {
-    // Set invalid Java syntax in Monaco editor
-    const editor = page.locator('.monaco-editor');
-    await editor.click();
-    await page.keyboard.press('Control+A');
-    await page.keyboard.type(
-      'public class Main { public static void main(String[] args) { int x = ; } }',
-    );
+    // Set invalid Java syntax
+    const badCode = 'public class Main { public static void main(String[] args) { int x = ; } }';
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, badCode);
+    await page.reload();
+
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
 
     // Run code
     await page.getByRole('button', { name: /Run/i }).click();
@@ -155,13 +159,18 @@ test.describe('JavaScope E2E Quality Gates (PRD 12.4 & 12.5)', () => {
   test('7. Depth Limit: recursion exceeding 200 frames shows depth-limit message and is playable', async ({
     page,
   }) => {
-    // Type recursion with parameter to track real stack frames up to depth 200
-    const editor = page.locator('.monaco-editor');
-    await editor.click();
-    await page.keyboard.press('Control+A');
-    await page.keyboard.type(
-      'public class Main { public static void rec(int n) { rec(n + 1); } public static void main(String[] args) { rec(0); } }',
-    );
+    // Deep recursion exceeding 200 frames
+    const recCode =
+      'public class Main { public static void rec(int n) { rec(n + 1); } public static void main(String[] args) { rec(0); } }';
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, recCode);
+    await page.reload();
+
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
 
     await page.getByRole('button', { name: /Run/i }).click();
 
@@ -240,4 +249,420 @@ test.describe('JavaScope E2E Quality Gates (PRD 12.4 & 12.5)', () => {
       animations: 'disabled',
     });
   });
+
+  test('9. ReverseIterative: steps through list reversal and checks final order', async ({ page }) => {
+    const reverseCode = `public class ReverseIterative {
+  public static void main(String[] args) {
+    Node head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+
+    Node prev = null;
+    Node curr = head;
+    while (curr != null) {
+      Node next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    head = prev;
+    System.out.println("Reversed: " + head.val + " " + head.next.val + " " + head.next.next.val + " " + head.next.next.next.val);
+  }
+}
+
+class Node {
+  int val;
+  Node next;
+
+  Node(int val) {
+    this.val = val;
+  }
+}
+`;
+
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, reverseCode);
+    await page.reload();
+
+    // Ensure in edit mode (clear any active trace)
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
+
+    // Run execution
+    const runBtn = page.getByRole('button', { name: /Run/i });
+    await expect(runBtn).toBeEnabled();
+    await runBtn.click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Jump to end to verify final execution
+    await page.getByLabel('Jump to end').click();
+
+    // Final stdout check (at program end, output is complete)
+    const stdoutPanel = page.locator('[data-testid="stdout-panel"]');
+    await expect(stdoutPanel).toBeVisible();
+    await expect(stdoutPanel).toContainText('Reversed: 4 3 2 1');
+
+    // Step back into main method (step 57) before frame returned
+    const stepBack = page.getByLabel('Step back');
+    await stepBack.click();
+    await stepBack.click();
+
+    // LinkedListView should be visible with singly linked list badge
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText('Singly linked list')).toBeVisible();
+
+    // Final reversed list view has head tag on new head node
+    await expect(page.locator('[data-testid="tag-head"]')).toBeVisible();
+  });
+
+  test('10. ReverseRecursive: active node follows top frame and Variables panel shows readable summary (Stage 5)', async ({ page }) => {
+    const recursiveCode = `public class ReverseRecursive {
+  public static void main(String[] args) {
+    Node head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+
+    Node newHead = reverse(head);
+    System.out.println("Done: " + newHead.val);
+  }
+
+  static Node reverse(Node node) {
+    if (node == null || node.next == null) {
+      return node;
+    }
+    Node newHead = reverse(node.next);
+    node.next.next = node;
+    node.next = null;
+    return newHead;
+  }
+}
+
+class Node {
+  int val;
+  Node next;
+
+  Node(int val) {
+    this.val = val;
+  }
+}
+`;
+
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, recursiveCode);
+    await page.reload();
+
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
+
+    const runBtn = page.getByRole('button', { name: /Run/i });
+    await expect(runBtn).toBeEnabled();
+    await runBtn.click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Step forward until we enter reverse() recursion
+    const stepFwd = page.getByLabel('Step forward');
+    let enteredReverse = false;
+    for (let i = 0; i < 40; i++) {
+      const reverseFrame = page.locator('[data-testid="call-stack-panel"]').getByText(/reverse\(/);
+      if (await reverseFrame.count() > 0) {
+        enteredReverse = true;
+        break;
+      }
+      await stepFwd.click();
+    }
+    expect(enteredReverse).toBe(true);
+
+    // Verify Active badge exists in diagram on the active node
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText('Active').first()).toBeVisible();
+
+    // Verify Variables panel shows readable summary (e.g. Node(1) or Node(2))
+    await expect(page.getByText(/Node\(\d+\)/).first()).toBeVisible();
+  });
+
+  test('11. NullPointerException during list traversal shows error banner and keeps list visible (Stage 5)', async ({ page }) => {
+    const npeCode = `public class Main {
+  public static void main(String[] args) {
+    Node head = new Node(10);
+    head.next = new Node(20);
+    Node curr = head;
+    curr = curr.next.next;
+    System.out.println(curr.val);
+  }
+}
+
+class Node {
+  int val;
+  Node next;
+
+  Node(int val) {
+    this.val = val;
+  }
+}
+`;
+
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, npeCode);
+    await page.reload();
+
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
+
+    const runBtn = page.getByRole('button', { name: /Run/i });
+    await expect(runBtn).toBeEnabled();
+    await runBtn.click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    // Jump to end where NPE occurs
+    const jumpEndBtn = page.getByLabel('Jump to end');
+    await jumpEndBtn.click();
+
+    // Verify NullPointerException in status banner
+    const statusBanner = page.locator('[data-testid="status-banner"]');
+    await expect(statusBanner).toBeVisible();
+    await expect(statusBanner).toContainText('NullPointerException');
+
+    // Step back from the post-mortem 'end' step to the 'exception' step where the list is live
+    await page.getByLabel('Step back').click();
+
+    // Verify list view is still visible with nodes allocated prior to failure
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText('10').first()).toBeVisible();
+    await expect(page.getByText('20').first()).toBeVisible();
+  });
+
+  test('12. DeleteMiddle: steps through middle node deletion and unlinks node', async ({ page }) => {
+    await page.locator('#example-select').selectOption('linked-list-delete');
+    await page.getByRole('button', { name: /Run/i }).click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Jump to end, then step back into main before method return
+    await page.getByLabel('Jump to end').click();
+    await page.getByLabel('Step back').click();
+    await page.getByLabel('Step back').click();
+
+    // Verify list view is visible with remaining nodes 10 and 30
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible();
+    await expect(page.getByText('10').first()).toBeVisible();
+    await expect(page.getByText('30').first()).toBeVisible();
+
+    // Verify stdout shows correct result
+    const stdoutPanel = page.locator('[data-testid="stdout-panel"]');
+    await expect(stdoutPanel).toContainText('10 -> 30');
+  });
+
+  test('13. Cycle Detection: detects cycle with Floyd\'s algorithm and shows Cycle badge', async ({ page }) => {
+    await page.locator('#example-select').selectOption('linked-list-cycle-detect');
+    await page.getByRole('button', { name: /Run/i }).click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Step forward until cycle is created and detected
+    await page.getByLabel('Jump to end').click();
+    await page.getByLabel('Step back').click();
+    await page.getByLabel('Step back').click();
+
+    // Verify cycle badge is rendered
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible();
+    const cycleBadge = page.locator('[data-testid="cycle-badge"]');
+    await expect(cycleBadge).toBeVisible();
+    await expect(cycleBadge.getByText('Cycle')).toBeVisible();
+
+    // Verify output confirms cycle detected
+    const stdoutPanel = page.locator('[data-testid="stdout-panel"]');
+    await expect(stdoutPanel).toContainText('Cycle detected: true');
+  });
+
+  test('14. Doubly Linked List: displays doubly linked list badge with two-way connectors', async ({ page }) => {
+    await page.locator('#example-select').selectOption('linked-list-doubly');
+    await page.getByRole('button', { name: /Run/i }).click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    await page.getByLabel('Jump to end').click();
+    await page.getByLabel('Step back').click();
+    await page.getByLabel('Step back').click();
+
+    // Verify doubly linked badge inside list view
+    const listView = page.locator('[data-testid="linked-list-view"]');
+    await expect(listView).toBeVisible();
+    await expect(listView.getByText('Doubly linked list')).toBeVisible();
+
+    // Verify nodes 10, 20, 30 are rendered in forward order
+    await expect(listView.getByText('10').first()).toBeVisible();
+    await expect(listView.getByText('20').first()).toBeVisible();
+    await expect(listView.getByText('30').first()).toBeVisible();
+  });
+
+  test('15. Wrapper Class: renders user-written MyLinkedList container with fields and nodes', async ({ page }) => {
+    await page.locator('#example-select').selectOption('linked-list-wrapper');
+    await page.getByRole('button', { name: /Run/i }).click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    await page.getByLabel('Jump to end').click();
+    await page.getByLabel('Step back').click();
+    await page.getByLabel('Step back').click();
+
+    // Verify linked list view rendered
+    await expect(page.locator('[data-testid="linked-list-view"]')).toBeVisible();
+    await expect(page.getByText('MyLinkedList').first()).toBeVisible();
+
+    // Verify remaining nodes 10 and 30 (20 was removed)
+    await expect(page.getByText('10').first()).toBeVisible();
+    await expect(page.getByText('30').first()).toBeVisible();
+  });
+
+  test('16. View as… Override: switches between Linked List and Generic Object views', async ({ page }) => {
+    await page.locator('#example-select').selectOption('linked-list-build');
+    await page.getByRole('button', { name: /Run/i }).click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Step forward 10 steps so list is partially built
+    for (let i = 0; i < 10; i++) {
+      await page.getByLabel('Step forward').click();
+    }
+
+    // 1. Initially recognized as LinkedListView
+    const listView = page.locator('[data-testid="linked-list-view"]');
+    await expect(listView).toBeVisible();
+
+    // 2. Click "View as…" button and select "Generic object"
+    await page.locator('[data-testid="view-as-button"]').click();
+    const dropdown = page.locator('[data-testid="view-as-dropdown"]');
+    await expect(dropdown).toBeVisible();
+    await dropdown.getByText('Generic object').click();
+
+    // 3. LinkedListView should be hidden, and Generic Object views should be displayed
+    await expect(listView).toBeHidden();
+    const genericObject = page.locator('[data-testid^="object-view-"]').first();
+    await expect(genericObject).toBeVisible();
+
+    // 4. Click "View as…" button on the generic object card and switch back to "Linked list"
+    const objViewAsBtn = page.locator('[data-testid^="view-as-button-"]').first();
+    await objViewAsBtn.click();
+    const objDropdown = page.locator('[data-testid^="view-as-dropdown-"]').first();
+    await expect(objDropdown).toBeVisible();
+    await objDropdown.getByText('Linked list').click();
+
+    // 5. LinkedListView should reappear
+    await expect(listView).toBeVisible();
+  });
+
+  test('17. Binary Tree: renders tree nodes, edges, attached tags, and navigates steps cleanly', async ({ page }) => {
+    const bstCode = `public class SmallBst {
+  public static void main(String[] args) {
+    TreeNode root = new TreeNode(50);
+    root.left = new TreeNode(30);
+    root.right = new TreeNode(70);
+    System.out.println("BST: " + root.val);
+  }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int val) { this.val = val; }
+}
+`;
+
+    await page.evaluate((code) => {
+      localStorage.setItem('javascope_editor_code', code);
+    }, bstCode);
+    await page.reload();
+
+    // Ensure edit mode
+    const editBtn = page.getByRole('button', { name: /Edit/i });
+    if (await editBtn.isVisible()) {
+      await editBtn.click();
+    }
+
+    // Run execution
+    const runBtn = page.getByRole('button', { name: /Run/i });
+    await expect(runBtn).toBeEnabled();
+    await runBtn.click();
+
+    await expect(page.getByLabel('Timeline scrubber')).toBeVisible({ timeout: 25000 });
+
+    const pauseBtn = page.getByLabel('Pause');
+    if (await pauseBtn.isVisible()) {
+      await pauseBtn.click();
+    }
+
+    // Step forward 10 steps so tree is built
+    for (let i = 0; i < 10; i++) {
+      await page.getByLabel('Step forward').click();
+    }
+
+    // Tree should be recognized and rendered
+    await expect(page.getByText(/Detected as: Binary tree/i)).toBeVisible({ timeout: 10000 });
+    const nodes = page.locator('.nodes circle');
+    await expect(nodes.first()).toBeVisible();
+
+    // Values 50, 30, 70 should be visible
+    await expect(page.getByText('50').first()).toBeVisible();
+    await expect(page.getByText('30').first()).toBeVisible();
+    await expect(page.getByText('70').first()).toBeVisible();
+
+    // Variable tag 'root' attached
+    await expect(page.locator('[data-testid="tag-root"]')).toBeVisible();
+
+    // Step backward and verify smooth transition without crashes
+    await page.getByLabel('Step back').click();
+    await page.getByLabel('Step back').click();
+    await expect(page.getByText(/Detected as: Binary tree/i)).toBeVisible();
+  });
 });
+

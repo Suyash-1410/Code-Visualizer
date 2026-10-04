@@ -1,0 +1,915 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class NamedHeapNotHeap {\n  static class MinHeap {\n    int[] data;\n    int size;\n\n    MinHeap() {\n      // Deliberately non-heap ordered elements\n      data = new int[]{100, 50, 40};\n      size = 3;\n    }\n\n    void corrupt() {\n      data[0] = 999;\n    }\n  }\n\n  public static void main(String[] args) {\n    MinHeap heap = new MinHeap();\n    heap.corrupt();\n    System.out.println(\"size=\" + heap.size + \", root=\" + heap.data[0]);\n  }\n}\n",
+  "stdout" : "size=3, root=999\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 6,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 6,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 8,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 9,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 10,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "NamedHeapNotHeap$MinHeap.<init>",
+      "signature" : "MinHeap()",
+      "line" : 10,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NamedHeapNotHeap$MinHeap.corrupt",
+      "signature" : "void corrupt()",
+      "line" : 13,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NamedHeapNotHeap$MinHeap.corrupt",
+      "signature" : "void corrupt()",
+      "line" : 13,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NamedHeapNotHeap$MinHeap.corrupt",
+      "signature" : "void corrupt()",
+      "line" : 14,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 999
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "NamedHeapNotHeap$MinHeap.corrupt",
+      "signature" : "void corrupt()",
+      "line" : 14,
+      "locals" : [ ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 999
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 999
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 999
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "return",
+    "line" : 21,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NamedHeapNotHeap.main",
+      "signature" : "void main(String[])",
+      "line" : 21,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "heap",
+        "type" : "MinHeap",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "MinHeap",
+        "fields" : {
+          "data" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "size" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 3
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "array",
+        "elemType" : "int",
+        "length" : 3,
+        "items" : [ {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 999
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }, {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 40
+        } ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 17,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "end",
+    "line" : 21,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 17,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 17,
+    "maxDepth" : 2,
+    "durationMs" : 669
+  }
+}

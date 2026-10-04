@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 5,
+  "expectedStdout": "1 next:2 other:3\n",
+  "expectedObject": {
+    "step": -2,
+    "var": "n1",
+    "expectedType": "MixedNode"
+  }
+}

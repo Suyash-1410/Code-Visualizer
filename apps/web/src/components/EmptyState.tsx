@@ -17,7 +17,12 @@ export const EmptyState: React.FC = () => {
   };
 
   const featured = EXAMPLES.filter((e) =>
-    ['sum-of-array', 'fibonacci', 'binary-search', 'tower-of-hanoi'].includes(e.id),
+    [
+      'min-heap-insert',
+      'circular-queue',
+      'bst-insert',
+      'linked-list-reverse-iterative',
+    ].includes(e.id),
   );
 
   return (
@@ -89,23 +94,45 @@ export const EmptyState: React.FC = () => {
                 ✔ Supported Java Subset:
               </span>
               <ul className="mt-1 list-inside list-disc space-y-0.5 pl-1">
-                <li>Java 21 single-file source with standard entry point</li>
-                <li>Primitives, Strings, 1D and 2D arrays</li>
+                <li>Java 21 single-file source with standard entry point (<code>public class Main</code>)</li>
+                <li>Primitives, Strings, 1D and 2D arrays (with index pointer markers)</li>
+                <li>
+                  <strong>User-written Stacks, Queues &amp; Heaps (Phase 4):</strong>
+                  <ul className="list-inside list-circle pl-3 space-y-0.5 text-gray-400">
+                    <li><strong>Stacks:</strong> Array-backed (vertical container with top pointer, stale slots on pop, free capacity slots above) and node-backed (linked chain from top pointer downward).</li>
+                    <li><strong>Queues:</strong> Linear queues (front and rear markers, consumed slots dimmed), Circular queues (modulo wraparound connector, count/empty/full badges), and node-backed queues.</li>
+                    <li><strong>Heaps:</strong> Dual synchronized views (HeapArrayView and HeapTreeView complete binary tree), animated token swaps, equal-value pulse, live heap-property violation hints, heapsort sorted-region boundary highlighting, and capacity resizing badges.</li>
+                    <li><strong>Local-variable structures:</strong> Stacks and queues held purely in local variables (e.g. <code>int[] stack, int top</code>) are automatically recognized.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>User-written Binary Trees &amp; BSTs:</strong> Automatically recognized with tidy-tree layout, positionally meaningful left/right child placement, stack-linked active node and recursion path highlighting, traversal progress lifecycle, ghost node garbage visibility on deletion, and optional BST order verification.
+                </li>
+                <li>
+                  <strong>User-written Singly &amp; Doubly Linked Lists:</strong> Automatically recognized with node layout, forward/backward arrows, indicator tags, and cycle detection.
+                </li>
+                <li>
+                  <strong>Detection, Confidence &amp; &quot;View as…&quot; Menu:</strong> Structures are recognized automatically from heap class shapes, field names, and method history with High, Medium, or Low confidence and visible reasons. For ambiguous structures or bare-array heap sort, switch visual presentation anytime via the &quot;View as…&quot; dropdown.
+                </li>
                 <li>Classes, constructors, fields, methods, inheritance &amp; overriding</li>
-                <li>Recursion, call stacks, and return values</li>
-                <li>System.out.print, println, printf</li>
-                <li>Exception throwing and catching</li>
+                <li>Recursion, call stacks, active nodes, and return values</li>
+                <li><code>System.out.print</code>, <code>println</code>, <code>printf</code> with output order token linking</li>
+                <li>Exception throwing and catching with line markers</li>
               </ul>
             </div>
 
             {/* Unsupported */}
             <div>
               <span className="font-semibold text-amber-400">
-                ⊘ Explicitly Unsupported:
+                ⊘ Explicitly Unsupported (or Later Phases):
               </span>
               <ul className="mt-1 list-inside list-disc space-y-0.5 pl-1">
-                <li>Multithreading (Thread, ExecutorService)</li>
-                <li>Interactive input (Scanner, System.in)</li>
+                <li>
+                  JDK Collections (<code>Stack</code>, <code>ArrayDeque</code>, <code>PriorityQueue</code>, <code>ArrayList</code>, <code>LinkedList</code>, <code>HashMap</code>, <code>TreeMap</code>, <code>TreeSet</code>) — rendered as opaque reference cards until Phase 5. Write your own classes or arrays for rich animated visualization.
+                </li>
+                <li>N-ary trees and general graphs (Phase 5).</li>
+                <li>Multithreading (<code>Thread</code>, <code>ExecutorService</code>)</li>
+                <li>Interactive input (<code>Scanner</code>, <code>System.in</code>)</li>
                 <li>File I/O, network sockets, reflection, JNI</li>
                 <li>Graphical user interfaces (Swing, AWT, JavaFX)</li>
               </ul>

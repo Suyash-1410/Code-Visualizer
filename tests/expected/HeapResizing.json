@@ -1,0 +1,5 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 35,
+  "expectedStdout": "size=5, cap=8, min=5\n"
+}

@@ -135,7 +135,7 @@ export const runtimeStackFrameSchema = z.object({
 
 export const runtimeErrorSchema = z.object({
   type: z.string(),
-  message: z.string(),
+  message: z.string().nullable().optional(),
   line: z.number().int(),
   stackTrace: z.array(runtimeStackFrameSchema),
 });

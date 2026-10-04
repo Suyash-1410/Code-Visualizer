@@ -1,0 +1,20 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Height: 3\n",
+  "expectedCalls": [
+    { "method": "TreeHeight.height", "count": 11 }
+  ],
+  "expectedReturns": [
+    {
+      "method": "TreeHeight.height",
+      "count": 11,
+      "lastReturnValue": { "k": "prim", "t": "int", "v": 3 }
+    }
+  ],
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 5,
+    "inorderValues": [4, 2, 5, 1, 3]
+  }
+}

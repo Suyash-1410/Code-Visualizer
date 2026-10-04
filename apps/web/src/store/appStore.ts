@@ -53,10 +53,15 @@ interface AppState {
   // Playback
   playback: PlaybackState;
 
-  // Selection & Interactions (Stage 9)
+  // Selection & Interactions (Stage 9 & Phase 2 Stage 5)
   selectedFrameId: number | null;
   hoveredHeapId: string | null;
   focusedHeapId: string | null;
+  hoveredFrameId: number | null;
+  hoveredVariableName: string | null;
+
+  // Visualization settings (Phase 2 Stage 4)
+  showGhostNodes: boolean;
 
   // ---------------------------------------------------------------------------
   // Actions
@@ -91,6 +96,11 @@ interface AppState {
   setSelectedFrameId: (frameId: number | null) => void;
   setHoveredHeapId: (id: string | null) => void;
   setFocusedHeapId: (id: string | null) => void;
+  setHoveredFrameId: (frameId: number | null) => void;
+  setHoveredVariableName: (name: string | null) => void;
+
+  // Visualization settings
+  setShowGhostNodes: (show: boolean) => void;
 }
 
 // ---------------------------------------------------------------------------
@@ -117,8 +127,12 @@ export const useAppStore = create<AppState>((set, get) => ({
   selectedFrameId: null,
   hoveredHeapId: null,
   focusedHeapId: null,
+  hoveredFrameId: null,
+  hoveredVariableName: null,
+  showGhostNodes: true,
 
   setSource: (source) => set({ source }),
+  setShowGhostNodes: (showGhostNodes) => set({ showGhostNodes }),
 
   startRun: () =>
     set({
@@ -130,6 +144,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       selectedFrameId: null,
       hoveredHeapId: null,
       focusedHeapId: null,
+      hoveredFrameId: null,
+      hoveredVariableName: null,
     }),
 
   setTrace: (trace) =>
@@ -141,6 +157,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       selectedFrameId: null,
       hoveredHeapId: null,
       focusedHeapId: null,
+      hoveredFrameId: null,
+      hoveredVariableName: null,
     }),
 
   setError: (message) =>
@@ -160,6 +178,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       selectedFrameId: null,
       hoveredHeapId: null,
       focusedHeapId: null,
+      hoveredFrameId: null,
+      hoveredVariableName: null,
     }),
 
   setStepIndex: (index) => {
@@ -198,6 +218,8 @@ export const useAppStore = create<AppState>((set, get) => ({
   setSelectedFrameId: (selectedFrameId) => set({ selectedFrameId }),
   setHoveredHeapId: (hoveredHeapId) => set({ hoveredHeapId }),
   setFocusedHeapId: (focusedHeapId) => set({ focusedHeapId }),
+  setHoveredFrameId: (hoveredFrameId) => set({ hoveredFrameId }),
+  setHoveredVariableName: (hoveredVariableName) => set({ hoveredVariableName }),
 }));
 
 // ---------------------------------------------------------------------------

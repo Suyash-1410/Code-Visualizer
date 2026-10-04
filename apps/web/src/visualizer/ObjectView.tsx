@@ -1,6 +1,8 @@
 import React from 'react';
 import type { InstanceObject, Value } from '../trace/types';
+import type { StructureOverride } from '../recognition/types';
 import { ValueView } from './ValueView';
+import { ViewAsMenu } from './ViewAsMenu';
 import type { FieldChange } from './diff';
 
 export interface ObjectViewProps {
@@ -10,8 +12,10 @@ export interface ObjectViewProps {
   changes?: FieldChange[];
   isHovered?: boolean;
   isFocused?: boolean;
+  canViewAsList?: boolean;
   onHoverRef?: (id: string | null) => void;
   onClickRef?: (id: string) => void;
+  onViewOverride?: (id: string, kind: StructureOverride) => void;
   className?: string;
 }
 
@@ -22,8 +26,10 @@ export const ObjectView: React.FC<ObjectViewProps> = ({
   changes = [],
   isHovered = false,
   isFocused = false,
+  canViewAsList = false,
   onHoverRef,
   onClickRef,
+  onViewOverride,
   className = '',
 }) => {
   const changeMap = new Map<string, Value>();
@@ -57,9 +63,18 @@ export const ObjectView: React.FC<ObjectViewProps> = ({
             {obj.type}
           </span>
         </div>
-        <span className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-[10px] text-gray-500">
-          {id}
-        </span>
+        <div className="flex items-center gap-1.5">
+          {canViewAsList && (
+            <ViewAsMenu
+              targetId={id}
+              currentKind="object"
+              onOverride={onViewOverride}
+            />
+          )}
+          <span className="rounded bg-white/5 px-1.5 py-0.5 font-mono text-[10px] text-gray-500">
+            {id}
+          </span>
+        </div>
       </div>
 
       {/* Fields */}

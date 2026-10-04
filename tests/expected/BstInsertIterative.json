@@ -1,0 +1,12 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Root: 50\n",
+  "minStepCount": 50,
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 7,
+    "inorderValues": [20, 30, 40, 50, 60, 70, 80],
+    "checkIdStability": true
+  }
+}

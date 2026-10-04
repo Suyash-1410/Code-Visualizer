@@ -123,7 +123,7 @@ jobs:
 
       - name: Start Spring Boot API Server
         run: |
-          java -jar services/api/target/api-1.0.0-SNAPSHOT.jar > api.log 2>&1 &
+          java -Xmx256m -Djavascope.rateLimit.runsPerMinute=1000 -jar services/api/target/api-1.0.0-SNAPSHOT.jar > api.log 2>&1 &
           echo "Waiting for API to start on port 8080..."
           for i in {1..30}; do
             if curl -s http://localhost:8080/actuator/health >/dev/null 2>&1 || curl -s http://localhost:8080/api/run >/dev/null 2>&1; then

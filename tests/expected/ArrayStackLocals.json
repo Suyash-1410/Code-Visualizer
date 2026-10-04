@@ -1,0 +1,19 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 10,
+  "expectedStdout": "popped=30, topIdx=2, topVal=40\n",
+  "expectedArray": {
+    "step": -2,
+    "var": "stack",
+    "expectedElemType": "int",
+    "expectedLength": 5,
+    "expectedItems": [
+      { "k": "prim", "t": "int", "v": 10 },
+      { "k": "prim", "t": "int", "v": 20 },
+      { "k": "prim", "t": "int", "v": 40 },
+      { "k": "prim", "t": "int", "v": 0 },
+      { "k": "prim", "t": "int", "v": 0 }
+    ],
+    "expectedClipped": false
+  }
+}

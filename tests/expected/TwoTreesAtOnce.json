@@ -1,0 +1,10 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "TreeA root: 1, TreeB root: 10\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "treeA",
+    "nodeCount": 3,
+    "inorderValues": [2, 1, 3]
+  }
+}

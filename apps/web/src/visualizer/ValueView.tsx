@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import type { Value } from '../trace/types';
+import type { Value, HeapObject } from '../trace/types';
 import { ReferenceChip } from './ReferenceChip';
+import { formatNodeSummary } from './nodeSummary';
 
 export interface ValueViewProps {
   value: Value;
   type?: string;
+  heap?: Record<string, HeapObject>;
   isChanged?: boolean;
   prevValue?: Value;
   onHoverRef?: (id: string | null) => void;
@@ -33,6 +35,7 @@ function formatRawValue(v: Value): string {
 export const ValueView: React.FC<ValueViewProps> = ({
   value,
   type,
+  heap,
   isChanged = false,
   prevValue,
   onHoverRef,
@@ -76,15 +79,18 @@ export const ValueView: React.FC<ValueViewProps> = ({
       case 'null':
         return <span className="font-mono italic text-gray-500">null</span>;
 
-      case 'ref':
+      case 'ref': {
+        const summary = heap ? formatNodeSummary(value.id, heap) : undefined;
         return (
           <ReferenceChip
             id={value.id}
             type={type}
+            summary={summary}
             onHover={onHoverRef}
             onClick={onClickRef}
           />
         );
+      }
 
       case 'opaque':
         return (

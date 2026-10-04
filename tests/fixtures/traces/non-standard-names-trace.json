@@ -1,0 +1,2393 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class NonStandardNames {\n  public static void main(String[] args) {\n    AlphaNode a = new AlphaNode(10);\n    a.nextNode = new AlphaNode(20);\n\n    BetaNode b = new BetaNode(100);\n    b.link = new BetaNode(200);\n\n    System.out.println(\"Alpha: \" + a.data + \" -> \" + a.nextNode.data);\n    System.out.println(\"Beta: \" + b.data + \" -> \" + b.link.data);\n  }\n}\n\nclass AlphaNode {\n  int data;\n  AlphaNode nextNode;\n\n  AlphaNode(int data) {\n    this.data = data;\n  }\n}\n\nclass BetaNode {\n  int data;\n  BetaNode link;\n\n  BetaNode(int data) {\n    this.data = data;\n  }\n}\n",
+  "stdout" : "Alpha: 10 -> 20\nBeta: 100 -> 200\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 10
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 18,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 18,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 20,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "AlphaNode.<init>",
+      "signature" : "AlphaNode(int)",
+      "line" : 20,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 100
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "call",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 200
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 27,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 27,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 200
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 28,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 28,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 200
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 200
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "return",
+    "line" : 29,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "BetaNode.<init>",
+      "signature" : "BetaNode(int)",
+      "line" : 29,
+      "locals" : [ {
+        "name" : "data",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 200
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 7,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 7,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 200
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 200
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 16,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 200
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 33,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "return",
+    "line" : 11,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "NonStandardNames.main",
+      "signature" : "void main(String[])",
+      "line" : 11,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "a",
+        "type" : "AlphaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "b",
+        "type" : "BetaNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 10
+          },
+          "nextNode" : {
+            "k" : "ref",
+            "id" : "@673"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 100
+          },
+          "link" : {
+            "k" : "ref",
+            "id" : "@676"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "AlphaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "nextNode" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@676" : {
+        "kind" : "object",
+        "type" : "BetaNode",
+        "fields" : {
+          "data" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 200
+          },
+          "link" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 33,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "end",
+    "line" : 11,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 33,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 33,
+    "maxDepth" : 2,
+    "durationMs" : 917
+  }
+}

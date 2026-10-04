@@ -1,0 +1,21 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 6,
+  "expectedStdout": "Alpha: 10 -> 20\nBeta: 100 -> 200\n",
+  "expectedChains": [
+    {
+      "step": -2,
+      "var": "a",
+      "valueField": "data",
+      "nextField": "nextNode",
+      "expectedValues": [10, 20]
+    },
+    {
+      "step": -2,
+      "var": "b",
+      "valueField": "data",
+      "nextField": "link",
+      "expectedValues": [100, 200]
+    }
+  ]
+}

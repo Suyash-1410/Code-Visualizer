@@ -1,22 +1,28 @@
 import React from 'react';
-import type { StackFrame, StaticField, Value } from '../trace/types';
+import type { StackFrame, StaticField, Value, HeapObject } from '../trace/types';
 import type { StepDiff } from './diff';
 import { ValueView } from './ValueView';
 
 export interface VariablesPanelProps {
   frame?: StackFrame;
   statics?: StaticField[];
+  heap?: Record<string, HeapObject>;
   diff?: StepDiff;
+  hoveredVariableName?: string | null;
   onHoverHeap?: (id: string | null) => void;
   onFocusHeap?: (id: string) => void;
+  onHoverVariable?: (name: string | null) => void;
 }
 
 export const VariablesPanel: React.FC<VariablesPanelProps> = ({
   frame,
   statics = [],
+  heap,
   diff,
+  hoveredVariableName = null,
   onHoverHeap,
   onFocusHeap,
+  onHoverVariable,
 }) => {
   // Map of changed variable names -> previous Value
   const changedMap = new Map<string, Value | undefined>();
@@ -26,6 +32,27 @@ export const VariablesPanel: React.FC<VariablesPanelProps> = ({
       changedMap.set(c.name, c.prev);
     }
   }
+
+  // Find valid in-scope array lengths to annotate index variables (e.g. i = 3 → cell 3)
+  const inScopeArrayLengths = React.useMemo(() => {
+    if (!frame || !heap) return [];
+    const lengths: number[] = [];
+    for (const l of frame.locals) {
+      if (l.value.k === 'ref') {
+        const obj = heap[l.value.id];
+        if (obj?.kind === 'array') {
+          lengths.push(obj.items.length);
+        } else if (obj?.kind === 'object') {
+          for (const fVal of Object.values(obj.fields)) {
+            if (fVal.k === 'ref' && heap[fVal.id]?.kind === 'array') {
+              lengths.push((heap[fVal.id] as { items: unknown[] }).items.length);
+            }
+          }
+        }
+      }
+    }
+    return lengths;
+  }, [frame, heap]);
 
   return (
     <div className="flex h-full flex-col overflow-hidden">
@@ -56,12 +83,34 @@ export const VariablesPanel: React.FC<VariablesPanelProps> = ({
               {frame.locals.map((local) => {
                 const isChanged = changedMap.has(local.name);
                 const prevVal = changedMap.get(local.name);
+                const isHovered = local.name === hoveredVariableName;
+                const isCellIndex =
+                  local.value.k === 'prim' &&
+                  typeof local.value.v === 'number' &&
+                  Number.isInteger(local.value.v) &&
+                  local.value.v >= 0 &&
+                  inScopeArrayLengths.some((len) => (local.value as { v: number }).v < len);
 
                 return (
                   <tr
                     key={local.name}
+                    data-testid={`var-row-${local.name}`}
+                    onMouseEnter={() => {
+                      onHoverVariable?.(local.name);
+                      if (local.value.k === 'ref') {
+                        onHoverHeap?.(local.value.id);
+                      }
+                    }}
+                    onMouseLeave={() => {
+                      onHoverVariable?.(null);
+                      onHoverHeap?.(null);
+                    }}
                     className={`border-b border-white/4 transition-colors ${
-                      isChanged ? 'bg-amber-950/20' : 'hover:bg-white/4'
+                      isHovered
+                        ? 'bg-cyan-950/40 ring-1 ring-cyan-400/60'
+                        : isChanged
+                          ? 'bg-amber-950/20'
+                          : 'hover:bg-white/4'
                     }`}
                   >
                     <td className="px-3 py-1.5 font-mono font-medium text-blue-300">
@@ -71,14 +120,25 @@ export const VariablesPanel: React.FC<VariablesPanelProps> = ({
                       {local.type}
                     </td>
                     <td className="px-3 py-1.5">
-                      <ValueView
-                        value={local.value}
-                        type={local.type}
-                        isChanged={isChanged}
-                        prevValue={prevVal}
-                        onHoverRef={onHoverHeap}
-                        onClickRef={onFocusHeap}
-                      />
+                      <div className="flex items-center gap-1.5">
+                        <ValueView
+                          value={local.value}
+                          type={local.type}
+                          heap={heap}
+                          isChanged={isChanged}
+                          prevValue={prevVal}
+                          onHoverRef={onHoverHeap}
+                          onClickRef={onFocusHeap}
+                        />
+                        {isCellIndex && local.value.k === 'prim' && (
+                          <span
+                            data-testid={`var-cell-label-${local.name}`}
+                            className="font-mono text-[10px] text-gray-500 font-normal"
+                          >
+                            → cell {local.value.v}
+                          </span>
+                        )}
+                      </div>
                     </td>
                   </tr>
                 );
@@ -132,6 +192,7 @@ export const VariablesPanel: React.FC<VariablesPanelProps> = ({
                       <ValueView
                         value={s.value}
                         type={s.type}
+                        heap={heap}
                         onHoverRef={onHoverHeap}
                         onClickRef={onFocusHeap}
                       />

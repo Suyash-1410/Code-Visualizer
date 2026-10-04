@@ -122,7 +122,7 @@ export interface RuntimeStackFrame {
 
 export interface RuntimeError {
   type: string;
-  message: string;
+  message: string | null;
   line: number;
   stackTrace: RuntimeStackFrame[];
 }

@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "expectedStdout": "Single node val: 42\n",
+  "expectedTree": {
+    "step": -2,
+    "var": "root",
+    "nodeCount": 1,
+    "inorderValues": [42],
+    "checkIdStability": true
+  }
+}

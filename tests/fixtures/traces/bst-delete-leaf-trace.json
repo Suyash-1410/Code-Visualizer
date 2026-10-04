@@ -1,0 +1,5455 @@
+{
+  "schemaVersion" : 1,
+  "status" : "ok",
+  "truncation" : null,
+  "compileErrors" : [ ],
+  "runtimeError" : null,
+  "source" : "public class BstDeleteLeaf {\n  public static void main(String[] args) {\n    TreeNode root = new TreeNode(50);\n    root.left = new TreeNode(30);\n    root.right = new TreeNode(70);\n    root.left.left = new TreeNode(20);\n\n    root = deleteNode(root, 20);\n    System.out.println(\"Deleted 20, 30 left is null: \" + (root.left.left == null));\n  }\n\n  static TreeNode deleteNode(TreeNode root, int key) {\n    if (root == null) return null;\n    if (key < root.val) {\n      root.left = deleteNode(root.left, key);\n    } else if (key > root.val) {\n      root.right = deleteNode(root.right, key);\n    } else {\n      if (root.left == null) return root.right;\n      if (root.right == null) return root.left;\n    }\n    return root;\n  }\n}\n\nclass TreeNode {\n  int val;\n  TreeNode left;\n  TreeNode right;\n\n  TreeNode(int val) {\n    this.val = val;\n  }\n}\n",
+  "stdout" : "Deleted 20, 30 left is null: true\n",
+  "steps" : [ {
+    "i" : 0,
+    "event" : "call",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 1,
+    "event" : "call",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 2,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 3,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 4,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 5,
+    "event" : "return",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    }, {
+      "frameId" : 2,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 50
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 6,
+    "event" : "line",
+    "line" : 3,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 3,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 7,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 8,
+    "event" : "call",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 9,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 10,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 11,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 12,
+    "event" : "return",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 3,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 30
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 13,
+    "event" : "line",
+    "line" : 4,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 4,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 14,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 15,
+    "event" : "call",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 70
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 16,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 70
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 17,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 70
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 18,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 70
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 19,
+    "event" : "return",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 4,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 70
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 20,
+    "event" : "line",
+    "line" : 5,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 5,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 21,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 22,
+    "event" : "call",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 23,
+    "event" : "line",
+    "line" : 31,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 31,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 24,
+    "event" : "line",
+    "line" : 32,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 32,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 25,
+    "event" : "line",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 26,
+    "event" : "return",
+    "line" : 33,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 5,
+      "method" : "TreeNode.<init>",
+      "signature" : "TreeNode(int)",
+      "line" : 33,
+      "locals" : [ {
+        "name" : "val",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 27,
+    "event" : "line",
+    "line" : 6,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 6,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 28,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 29,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 30,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 31,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 32,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 33,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 34,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 35,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 36,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 37,
+    "event" : "call",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 38,
+    "event" : "line",
+    "line" : 13,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 13,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 39,
+    "event" : "line",
+    "line" : 14,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 14,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 40,
+    "event" : "line",
+    "line" : 16,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 16,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 41,
+    "event" : "line",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 42,
+    "event" : "return",
+    "line" : 19,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 8,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 19,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@675"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "null"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 43,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@675"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@675" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 20
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 44,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 45,
+    "event" : "return",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    }, {
+      "frameId" : 7,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@673"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "ref",
+      "id" : "@673"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 46,
+    "event" : "line",
+    "line" : 15,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 15,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 47,
+    "event" : "line",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 48,
+    "event" : "return",
+    "line" : 22,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    }, {
+      "frameId" : 6,
+      "method" : "BstDeleteLeaf.deleteNode",
+      "signature" : "TreeNode deleteNode(TreeNode, int)",
+      "line" : 22,
+      "locals" : [ {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      }, {
+        "name" : "key",
+        "type" : "int",
+        "value" : {
+          "k" : "prim",
+          "t" : "int",
+          "v" : 20
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "ref",
+      "id" : "@672"
+    },
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 49,
+    "event" : "line",
+    "line" : 8,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 8,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 50,
+    "event" : "line",
+    "line" : 9,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 9,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 0,
+    "clipped" : false
+  }, {
+    "i" : 51,
+    "event" : "line",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 34,
+    "clipped" : false
+  }, {
+    "i" : 52,
+    "event" : "return",
+    "line" : 10,
+    "stack" : [ {
+      "frameId" : 1,
+      "method" : "BstDeleteLeaf.main",
+      "signature" : "void main(String[])",
+      "line" : 10,
+      "locals" : [ {
+        "name" : "args",
+        "type" : "String[]",
+        "value" : {
+          "k" : "ref",
+          "id" : "@670"
+        }
+      }, {
+        "name" : "root",
+        "type" : "TreeNode",
+        "value" : {
+          "k" : "ref",
+          "id" : "@672"
+        }
+      } ]
+    } ],
+    "heap" : {
+      "@670" : {
+        "kind" : "array",
+        "elemType" : "String",
+        "length" : 0,
+        "items" : [ ],
+        "clipped" : false
+      },
+      "@672" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 50
+          },
+          "left" : {
+            "k" : "ref",
+            "id" : "@673"
+          },
+          "right" : {
+            "k" : "ref",
+            "id" : "@674"
+          }
+        }
+      },
+      "@673" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 30
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      },
+      "@674" : {
+        "kind" : "object",
+        "type" : "TreeNode",
+        "fields" : {
+          "val" : {
+            "k" : "prim",
+            "t" : "int",
+            "v" : 70
+          },
+          "left" : {
+            "k" : "null"
+          },
+          "right" : {
+            "k" : "null"
+          }
+        }
+      }
+    },
+    "statics" : [ ],
+    "returnValue" : {
+      "k" : "void"
+    },
+    "stdoutLen" : 34,
+    "clipped" : false
+  }, {
+    "i" : 53,
+    "event" : "end",
+    "line" : 10,
+    "stack" : [ ],
+    "heap" : { },
+    "statics" : [ ],
+    "returnValue" : null,
+    "stdoutLen" : 34,
+    "clipped" : false
+  } ],
+  "stats" : {
+    "stepCount" : 54,
+    "maxDepth" : 4,
+    "durationMs" : 755
+  }
+}

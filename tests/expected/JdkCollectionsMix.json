@@ -1,0 +1,11 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 15,
+  "expectedStdout": "sVal=20, dVal=30, pVal=15\n",
+  "expectedOpaque": {
+    "step": -2,
+    "var": "pq",
+    "expectedType": "java.util.PriorityQueue",
+    "expectedSummaryPrefix": "size="
+  }
+}

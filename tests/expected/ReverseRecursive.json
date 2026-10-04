@@ -1,0 +1,17 @@
+{
+  "expectedStatus": "ok",
+  "minStepCount": 15,
+  "expectedStdout": "Reversed: 4 3 2 1\n",
+  "expectedCalls": [
+    { "method": "ReverseRecursive.reverse", "count": 4 }
+  ],
+  "expectedReturns": [
+    { "method": "ReverseRecursive.reverse", "count": 4 }
+  ],
+  "expectedChain": {
+    "step": -2,
+    "var": "newHead",
+    "expectedValues": [4, 3, 2, 1],
+    "checkIdStability": true
+  }
+}

@@ -37,6 +37,14 @@ Write-Host "====================================================================
 Write-Host "Working Directory: $RootDir"
 Write-Host ""
 
+# Ensure port 8080 and any lingering api-1.0.0-SNAPSHOT processes are cleaned up
+Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue | ForEach-Object {
+    Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue
+}
+Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like "*api-1.0.0-SNAPSHOT.jar*" } | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
+
 # Gate 1: Tracer Unit & Golden Tests
 $gateStart = Get-Date
 Write-Host "--> Running Gate 1: Java Tracer Unit & Golden Tests..." -ForegroundColor Yellow
@@ -81,6 +89,9 @@ Write-Host "--> Running Gate 5: Web Frontend Unit & Component Tests (Vitest)..."
 Push-Location $WebDir
 $testOutput = npx vitest run 2>&1
 $testSuccess = ($LASTEXITCODE -eq 0)
+if (-not $testSuccess) {
+    Write-Host $testOutput -ForegroundColor DarkRed
+}
 Pop-Location
 $gateDuration = [math]::Round(((Get-Date) - $gateStart).TotalSeconds, 2).ToString() + "s"
 Report-Gate "5. Web Frontend Unit & Component Tests" $testSuccess $gateDuration
@@ -98,15 +109,30 @@ Report-Gate "6. Web Frontend Production Build" $buildSuccess $gateDuration
 # Gate 7: Playwright End-to-End & Visual Sanity Tests
 $gateStart = Get-Date
 Write-Host "--> Running Gate 7: Playwright E2E & Visual Sanity Suite..." -ForegroundColor Yellow
+Get-NetTCPConnection -LocalPort 8080 -State Listen -ErrorAction SilentlyContinue | ForEach-Object {
+    Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue
+}
+Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like "*api-1.0.0-SNAPSHOT.jar*" } | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
 $apiJar = Join-Path $RootDir "services\api\target\api-1.0.0-SNAPSHOT.jar"
 if (-not (Test-Path $apiJar)) {
     Write-Host "--> Packaging API and tracer JARs for E2E runner..."
     Start-Process -FilePath "mvn.cmd" -ArgumentList "package", "-DskipTests", "-B", "-pl", "services/tracer,services/api" -WorkingDirectory $RootDir -NoNewWindow -Wait
 }
+Write-Host "--> Cooling down for 60s to replenish rate-limiting tokens after prior test gates..."
+Start-Sleep -Seconds 60
 Push-Location $WebDir
 $e2eOutput = npx playwright test 2>&1
 $e2eSuccess = ($LASTEXITCODE -eq 0)
+if (-not $e2eSuccess) {
+    Write-Host $e2eOutput -ForegroundColor DarkRed
+}
 Pop-Location
+# Cleanup API after Playwright
+Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like "*api-1.0.0-SNAPSHOT.jar*" } | ForEach-Object {
+    Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue
+}
 $gateDuration = [math]::Round(((Get-Date) - $gateStart).TotalSeconds, 2).ToString() + "s"
 Report-Gate "7. Playwright E2E & Visual Sanity" $e2eSuccess $gateDuration
 
